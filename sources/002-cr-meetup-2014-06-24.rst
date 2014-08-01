@@ -1,0 +1,31 @@
+Rencontre et key signing party 24 mai 2014
+###########################################
+
+:date: 2014-07-31
+:tags: python,pgp
+:category: comptes-rendus
+:author: Florent Lebreton
+:summary: Un meetup pour faire connaissance et préparer la suite.
+
+Après le meetup-pilote qui nous a permis de découvrir GrapheekDB, cette rencontre avait pour principal objectif de faire connaissance et préparer les prochains évènements.
+
+Il en est sortie l'idée d'organiser un meetup par mois en alternant conférences et barcamps.
+
+Quelques sujets potentiels de présentations ont déjà émergés :
+
+* Initiation à Python ou comment écrire du code pythonesque pour ceux qui viennent d'autres langages
+* Retour d'expérience sur migration vers Python3
+* Python legacy avec Zope, Grok, etc.
+* Demo d'IPython Notebook avec un peu de dataviz
+* Programmation un Raspberry PI avec Python
+* Présentation/Introduction à Django
+* Retour d'expérience sur apps Django et bibliothèques sympas
+* Sites et blogs statiques avec Pelican
+* Générateurs et co-routines
+
+La `key signing party <http://fr.wikipedia.org/wiki/Key_signing_party>`_ organisée par `Pablo <https://twitter.com/pabluk>`_ a permis d'animer la suite du meetup, en attendant la bière !
+
+.. image:: /images/002-1.png
+    :alt: rencontre et key signing party
+
+À bientôt, et en attendant ... respectez la PEP8 :)

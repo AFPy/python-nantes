@@ -2,7 +2,7 @@ Barcamp estival du 29 juillet 2014
 ###################################
 
 :date: 2014-07-31
-:tags: python,django,fabric,ansible,salt-stack,barcamp
+:tags: django,fabric,ansible,salt,barcamp
 :category: comptes-rendus
 :author: Florent Lebreton
 :summary: Un petit compte-rendu de notre premier meetup en format barcamp.
@@ -14,7 +14,7 @@ Notre premier barcamp, animé par `Georges <https://twitter.com/netiru>`_ nous a
 * Outils, conventions et bonnes pratiques
 * Administration système et déploiement
 
-.. image:: /images/002-1.jpg
+.. image:: /images/003-1.jpg
     :alt: barcamp estival du 29 juillet 2014
 
 À bientôt, et en attendant ... respectez la PEP8 :)
