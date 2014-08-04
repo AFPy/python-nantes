@@ -1,0 +1,4 @@
+*.pyc
+localsettings.py
+www
+www-local

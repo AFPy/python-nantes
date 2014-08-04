@@ -1,12 +1,18 @@
 # -*- coding: utf-8 -*-
 AUTHOR = u'Python-Nantes'
-SITENAME = u"Python-Nantes: rencontres autour de Python"
+SITENAME = u"Python-Nantes"
+TAGLINE = u"Rencontres pythoniques et ligériennes"
 SITEURL = 'http://python-nantes.github.io'
 
 PATH = 'sources/'
 OUTPUT_PATH = 'www/'
 
 TIMEZONE = 'Europe/Paris'
+
+PLUGIN_PATH = "pelican-plugins/"
+PLUGINS = ['gravatar']
+
+COVER_IMG_URL = '/images/sidebar.jpg'
 
 LINKS = (
     ('AFPY', 'http://www.afpy.org/'),
@@ -16,8 +22,11 @@ LINKS = (
 
 SOCIAL = (
     ('twitter', 'https://twitter.com/PythonNantes'),
-    ('github', 'https://github.com/python-nantes')
+    ('github', 'https://github.com/python-nantes'),
+    ('rss', "/feeds/all.atom.xml")
 )
+
+THEME = 'pure'
 
 PAGE_DIR = 'pages'
 

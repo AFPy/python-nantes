@@ -1,10 +1,11 @@
-Fin des vacances, Nantes se replonge dans Python :) !
-#####################################################
+Fin des vacances, Nantes se replonge dans Python :)
+####################################################
 
 :date: 2014-08-01
 :tags: python,django,nantes
 :category: évènements
 :author: Florent Lebreton
+:email: florentlebreton@free.fr
 :summary: Notre prochain meetup est prévu le 26 août à la Cantine.
 
 Tout le monde est bien reposé, il est de temps de se replonger dans le bain. Rien de tel qu'un meetup de rentrée !

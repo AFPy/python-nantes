@@ -5,6 +5,7 @@ Rencontre et key signing party 24 mai 2014
 :tags: python,pgp
 :category: comptes-rendus
 :author: Florent Lebreton
+:email: florentlebreton@free.fr
 :summary: Un meetup pour faire connaissance et préparer la suite.
 
 Après le meetup-pilote qui nous a permis de découvrir GrapheekDB, cette rencontre avait pour principal objectif de faire connaissance et préparer les prochains évènements.

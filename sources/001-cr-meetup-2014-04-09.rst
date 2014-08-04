@@ -5,6 +5,7 @@ Retour sur le meetup du 09 avril 2014
 :tags: grapheekdb
 :category: comptes-rendus
 :author: Florent Lebreton
+:email: florentlebreton@free.fr
 :summary: Compte-rendu du premier meetup Python nantais lors duquel nous avons eu le plaisir de découvrir GrapheekDB.
 
 Lors de ce premier meetup Python, où plus d'une vingtaine de personnes étaient présentes, Raphaël Braud nous a présenté `GrapheekDB <https://bitbucket.org/nidusfr/grapheekdb>`_, une base de données de graphe libre !
