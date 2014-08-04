@@ -1,6 +1,6 @@
 PY=python
 PELICAN=pelican
-PELICANOPTS= -t pelican-sober
+PELICANOPTS= -t pure
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/sources
