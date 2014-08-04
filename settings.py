@@ -26,8 +26,6 @@ SOCIAL = (
     ('rss', "/feeds/all.atom.xml")
 )
 
-THEME = 'pure'
-
 PAGE_DIR = 'pages'
 
 STATIC_PATHS = ['images', 'documents']
