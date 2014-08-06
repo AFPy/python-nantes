@@ -1,19 +1,27 @@
 Le blog de la communauté Python-Nantes, propulsé par `Pelican <http://http://docs.getpelican.com/>`_.
 
-* `Blog <http://python-nantes.github.io>`_
-* `Repos Github <https://github.com/python-nantes/python-nantes.github.io>`_
-* `Build Travis <https://travis-ci.org/python-nantes/python-nantes.github.io>`_
+* Blog
+* `Repos Github <https://github.com/AFPy/python-nantes>`_
+* Build Travis
 
-# Contribuer
+Écrire un article
+##################
 
-* Forker/Clone le dépôt
-* Lancer la génération du blog en local : ``pelican -s localsettings.py``. Attention certains settings sont fixes pour le moment: 
-    * ``OUTPUT_PATH = '/var/www/dev.python-nantes.github.io/'``
-    * ``SITEURL = 'http://dev.python-nantes.github.io'``
+* Il suffit de le rédiger dans un fichier ``sources/00X-article.rst`` en suivant les exemples existants (metadata)
+* L'ajout du fichier dans le repos sur la branche master relancera automatiquement le déploiement du blog en statique
 
-# Publier
+Générer le blog en local
+#########################
 
-* Pour que des modifications soient prises en compte, il faut pousser sur la branche ``content`` (branche construite par Travis)
+* Forker/Cloner le dépôt
+* Adapter un fichier de settings local ``settings.py`` à partir de ``localsetting.py.sample``
+* Lancer la génération du blog en local : ``pelican -s localsettings.py``
+
+Framapad
+#########
+
+Le framapad suivant est diponible pour toute remarque ou idée concernant les futurs meetups, le blog, ou autre: `pad <http://lite4.framapad.org/p/aiWGnNwwIb>`_
+
 
 
 
