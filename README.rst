@@ -14,7 +14,7 @@ Générer le blog en local
 #########################
 
 * Forker/Cloner le dépôt
-* Adapter un fichier de settings local ``settings.py`` à partir de ``localsetting.py.sample``
+* Adapter un fichier de settings ``localsettings.py`` à partir de ``localsetting.py.sample``
 * Lancer la génération du blog en local : ``pelican -s localsettings.py``
 
 Framapad
