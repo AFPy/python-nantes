@@ -21,9 +21,16 @@ LINKS = (
 )
 
 SOCIAL = (
+    ('envelope', 'http://lists.afpy.org/listinfo/nantes'),
+    ('user', 'http://www.meetup.com/Nantes-Python-Meetup/'),
+    ('rss', '/feeds/all.atom.xml'),
     ('twitter', 'https://twitter.com/PythonNantes'),
     ('github', 'https://github.com/afpy/python-nantes'),
-    ('rss', "/feeds/all.atom.xml")
+)
+
+MENUITEMS = (
+    ('A propos', '/pages/a-propos-de-python-nantes.html'),
+    ('Archives', '/archives.html')
 )
 
 PAGE_DIR = 'pages'
