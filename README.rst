@@ -1,8 +1,8 @@
 Le blog de la communauté Python-Nantes, propulsé par `Pelican <http://docs.getpelican.com/>`_.
 
-* Blog
+* `Blog <http://nantes.afpy.org>`_
 * `Repos Github <https://github.com/AFPy/python-nantes>`_
-* Build Travis
+* `Build Travis <https://travis-ci.org/AFPy/python-nantes>`_
 
 Écrire un article
 ##################
