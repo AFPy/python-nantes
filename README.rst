@@ -1,4 +1,4 @@
-Le blog de la communauté Python-Nantes, propulsé par `Pelican <http://http://docs.getpelican.com/>`_.
+Le blog de la communauté Python-Nantes, propulsé par `Pelican <http://docs.getpelican.com/>`_.
 
 * Blog
 * `Repos Github <https://github.com/AFPy/python-nantes>`_
