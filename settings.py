@@ -10,15 +10,15 @@ OUTPUT_PATH = 'www/'
 TIMEZONE = 'Europe/Paris'
 
 PLUGIN_PATH = "pelican-plugins/"
-PLUGINS = ['gravatar']
+#PLUGINS = ['gravatar']
 
 COVER_IMG_URL = '/images/sidebar.jpg'
 
-LINKS = (
-    ('AFPY', 'http://www.afpy.org/'),
-    ('Python', 'https://www.python.org/'),
-    ('La Cantine', 'http://cantine.atlantic2.org/'),
-)
+#LINKS = (
+#    ('AFPY', 'http://www.afpy.org/'),
+#    ('Python', 'https://www.python.org/'),
+#    ('La Cantine', 'http://cantine.atlantic2.org/'),
+#)
 
 SOCIAL = (
     ('envelope', 'http://lists.afpy.org/listinfo/nantes'),
