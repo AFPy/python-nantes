@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Écrire du code vraiment Pythonic !</title>
+
+		<meta name="description" content="">
+		<meta name="author" content="Alex Garel">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+    <section>
+        <h1>Écrire du code vraiment Pythonic !</h1>
+        <div class="fragment roll-in" data-fragment-index="1">
+        <pre class="fragment shrink" data-fragment-index="2"><code class="python">
+          &gt;&gt;&gt;&nbsp;import this
+        </code></pre>
+        </div>
+        
+        <pre class="fragment roll-in" data-fragment-index="2"><code class="python">
+          Readability counts.
+        </code></pre>
+        <p>
+            Par Alex Garel pour le Nantes Python Meetup #4
+        </p>
+    </section>
+
+    <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+            if this == other:
+              return True
+            else:
+              return False
+        </code></pre>
+      </section>
+      <section>
+        <h2>Le vrai du faux</h2>
+        <p>
+            La valeur du test est un booléen, il suffit de le renvoyer !
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+            return this == other
+        </code></pre>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+            if len(my_list) == 0:
+              print("Oh Gosh, this is empty !")
+            if len(your_list) > 0:
+              print("Gimme some !")
+        </code></pre>
+      </section>
+      <section>
+        <h2>Le vrai du faux</h2>
+        <p>
+            Pas besoin de tester la longueur pour savoir q'une liste est vide.
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+            if not my_list:
+              print("Oh Gosh, this is empty !")
+            if your_list:
+              print("Gimme some !")
+        </code></pre>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+            def is_empty(a_list):
+                return a_list
+        </code></pre>
+      </section>
+      <section>
+        <h2>Le vrai du faux</h2>
+        <p>
+            Si une fonction doit renvoyer un booléen, faite le,
+            <code>bool</code> est là pour ça
+        </p>
+        <p><blockquote>Soyez tolérant dans ce que vous acceptez, exigeant dans ce que vous donner</blockquote></p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+            def is_empty(a_list):
+                return bool(a_list)
+        </code></pre>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+            f = open('path/to/file', 'w')
+            # lot of maybe failing processing here
+            f.write('Coucou')
+            f.close()
+        </code></pre>
+      </section>
+      <section>
+        <h2>Fiché !</h2>
+        <p>
+            Les <code>ContextManager</code> sont tes amis.
+            Aussi toujours utiliser <code>open</code> avec <code>with</code>.
+        </p>
+        <p>
+            L'assurance d'un fichier bien fermé !
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+            with open('path/to/file', 'w') as f:
+                f.write("I feel so smart")
+        </code></pre>
+      </section>
+      <section>
+        <h2>And more !</h2>
+        <pre><code class="python">
+            import tempfile
+            with tempfile.NamedTemporaryFile() as f:
+                f.write("This message will auto-destruct")
+        </code></pre>
+      </section>
+    </section>
+
+
+    <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+            v = values.get(key, None)
+            w = v is not None and int(v) or v
+        </code></pre>
+      </section>
+      <section>
+        <h2>Les vieilles habitudes !</h2>
+        <p>
+          Pour éviter ce design pattern,
+          les
+          <a href="https://docs.python.org/3/reference/expressions.html#conditional-expressions">
+            expressions conditionnelles
+          </a> ont été ajoutées en Python 2.5
+        </p>
+        <p>
+          Ne pas en abuser ! (KISS)
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+            v = values.get(key, None)
+            w = int(v) if v is not None else v
+        </code></pre>
+      </section>
+    </section>
+
+   <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+            for i in range(len(my_list)):
+                elt = my_list[i]
+                print(i, ': ', elt)
+        </code></pre>
+      </section>
+      <section>
+        <h2>Un couple sur qui compter</h2>
+        <p>
+          <code>enumerate</code> renvoie successivement les couples index et élément
+          d'un itérable.
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+            for i, elt in enumerate(my_list):
+                print(i, ': ', elt)
+        </code></pre>
+      </section>
+      <section>
+        <h2>Bonus...</h2>
+        <p>On peut aligner nos indexes en utilisant les options de <code>%d</code></p>
+        <pre><code class="python">
+            print('% 5d: %s' % (i, elt))
+        </code></pre>
+      </section>
+    </section>
+
+   <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+            # making an index of text
+            index = {}
+            for token in text.split():
+                letter = token[0]
+                if letter not in index:
+                    index[letter] = []
+                index[letter].append(token)
+        </code></pre>
+      </section>
+      <section>
+        <h2>Impression de déjà vu…</h2>
+        <p>
+          <code>setdefault</code> permet d'obtenir un élément d'un dictionnaire
+          ou a défaut de mettre une nouvelle valeur dans le dictionnaire
+          qui est ensuite retournée.
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+            # making an index of text
+            index = {}
+            for token in text.split():
+                values = index.setdefault(letter, [])
+                values.append(token)
+        </code></pre>
+      </section>
+    </section>
+
+    <section>
+        <h2>Merci de votre attention</h2>
+        <p>
+            Des questions ?
+        </p>
+    </section>
+
+
+</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+    });
+
+</script>
+
+</body>
+</html>
