@@ -20,6 +20,9 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+        <!-- Personal CSS -->
+		<link rel="stylesheet" href="pres.css">
+
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
 			if( window.location.search.match( /print-pdf/gi ) ) {
@@ -123,13 +126,166 @@
             Si une fonction doit renvoyer un booléen, faite le,
             <code>bool</code> est là pour ça
         </p>
-        <p><blockquote>Soyez tolérant dans ce que vous acceptez, exigeant dans ce que vous donner</blockquote></p>
+        <p>
+            <blockquote>
+                Soyez tolérant dans ce que vous acceptez, exigeant dans ce que vous donnez.
+            </blockquote>
+            -- d’après <a href="http://www.postel.org/postel.html">Jon Postel</a>
+        </p>
       </section>
       <section>
         <h2>Yeah !</h2>
         <pre><code class="python">
             def is_empty(a_list):
                 return bool(a_list)
+        </code></pre>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+            # adding value to a query string
+            # we need to escape the '&amp;'
+            query_string_list = []
+            if isinstance(value, str):
+                try:
+                    param_value = value.replace('&', '%26')
+                except AttributeError:
+                    param_value = value
+                query_string_list.append('%s=%s' % (param, param_value))
+            elif isinstance(value, list):
+                for subvalue in value:
+                    try:
+                        param_value = subvalue.replace('&', '%26')
+                    except AttributeError:
+                        param_value = subvalue
+                    query_string_list.append('%s=%s' % (param, param_value))
+        </code></pre>
+      </section>
+      <section>
+        <h2>Je ne veux voir qu'une tête !</h2>
+        <p>
+            Avant de traiter, normaliser les entrées évite de dupliquer le code,
+            et permet de simplifier sa compréhension.
+        </p>
+        <p>
+        <blockquote>
+            Special cases aren't special enough <br>to break the rules
+        </blockquote>
+        -- zen of python #8
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+            # adding value to a query string
+            # we need to escape the '&amp;'
+            query_string_list = []
+            for param, value in params.items():
+                if not isinstance(value, list):
+                    value = [value]
+                for subvalue in value:
+                    param_value = str(subvalue).replace('&', '%26')
+                    query_string_list.append('%s=%s' % (param, param_value))
+        </code></pre>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+            # swap x and y
+            temp = y
+            y = x
+            x = y
+        </code></pre>
+      </section>
+      <section>
+        <h2>Échange rapide</h2>
+        <p>
+            En python on peut directement affecter une valeur a un tuple.
+            On appelle ça <em>unpacking</em> (dépaquetage ?)".
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+            x, y = y, x
+        </code></pre>
+      </section>
+            <section>
+        <h2>En profondeur</h2>
+        <pre><code class="python">
+            circle = (2.0, (1.0, 1.0))
+            r, (x, y) = circle
+        </code></pre>
+        <pre><code class="python">
+            import math
+
+            def distance((x0, y0), (x1, y1)):
+                return math.sqrt((x1 - x0)**2 + (y1 - y0)**2)
+
+            point1 = (0.0, 0.0)
+            point2 = (1.0, 1.0)
+            distance(point1, point2)
+        </code></pre>
+        <p>Pour les cas simples, hein !
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+            s = 'The - pythonic - and - elegant - way'
+            result = ""
+            for c in s:
+              if c == ' ':
+                pass  # skip
+              elif c == '-':
+                result += ' '
+              else:
+                result += c
+        </code></pre>
+      </section>
+      <section>
+        <h2>Se montrer <em>Compréhensif</em></h2>
+        <p>
+            Pour une itération simple on peut utiliser les <em>list comprehension</em>.
+        </p>
+        <p>
+            <blockquote>
+                la syntaxe de certains langages de programmation permet de définir
+                des listes en compréhension,
+                c'est-à-dire des listes dont le contenu
+                est défini par filtrage du contenu d'une autre liste
+                selon un principe analogue à celui de la définition
+                par compréhension de la théorie des ensembles.
+            </blockquote>
+            -- Wikipedia
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+            s = 'The - pythonic - and - elegant - way'
+            result = ''.join(c if c != '-' else ' ' for c in s if c != ' ')
+        </code></pre>
+        <p>
+            Ma nouvelle chaine est composé des éléments de ma chaine
+            qui ne sont pas des espaces, en remplaçant les - par des espaces.
+        </p>
+      </section>
+      <section>
+        <h2>Savoir enchainer</h2>
+        <pre><code class="python">
+            s = 'The - pythonic - and - elegant - way'
+            no_space = (c for c in s if c != ' ')
+            result = ''.join(c if c != '-' else ' ' for c in no_space)
         </code></pre>
       </section>
     </section>
