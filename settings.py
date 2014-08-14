@@ -35,7 +35,7 @@ MENUITEMS = (
 
 PAGE_DIR = 'pages'
 
-STATIC_PATHS = ['images', 'documents', 'extra/CNAME']
+STATIC_PATHS = ['images', 'documents', 'extra/CNAME', 'presentations']
 
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}}
 
