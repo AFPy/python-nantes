@@ -49,7 +49,7 @@
         <h1>Écrire du code vraiment Pythonic !</h1>
         <div class="fragment roll-in" data-fragment-index="1">
         <pre class="fragment shrink" data-fragment-index="2"><code class="python">
-          &gt;&gt;&gt;&nbsp;import this
+&gt;&gt;&gt; import this
         </code></pre>
         </div>
         
@@ -65,10 +65,10 @@
       <section>
         <h2>Bouh !</h2>
         <pre><code class="python">
-            if this == other:
-              return True
-            else:
-              return False
+if this == other:
+  return True
+else:
+  return False
         </code></pre>
       </section>
       <section>
@@ -89,13 +89,13 @@
       <section>
         <h2>Bouh !</h2>
         <pre><code class="python">
-            a,b=23, 12
+a,b=23, 12
 
 
-            for x  in range( 12 ) :
-                process(x,a = "This is a bit long",
-                    b = i)
-            value = theBigObject_on_steroids.theProperty_with_a_long_name.Thelong_method(another_long_indentifier*New_object()).am_i_still_in_screen()
+for x  in range( 12 ) :
+    process(x,a = "This is a bit long",
+        b = i)
+value = theBigObject_on_steroids.theProperty_with_a_long_name.Thelong_method(another_long_indentifier*New_object()).am_i_still_in_screen()
         </code></pre>
       </section>
       <section>
@@ -112,17 +112,17 @@
       <section>
         <h2>Yeah !</h2>
         <pre><code class="python">
-            a, b = 23, 12
+a, b = 23, 12
 
-            for x in range(12):
-                process(
-                    x, a="This is a bit long", b=i)
+for x in range(12):
+    process(
+        x, a="This is a bit long", b=i)
 
-            value = (the_big_object_on_steroids
-                .the_property_with_a_long_name
-                .the_long_method(
-                    another_long_indentifier * NewObject())
-                .am_i_still_in_screen())
+value = (the_big_object_on_steroids
+    .the_property_with_a_long_name
+    .the_long_method(
+        another_long_indentifier * NewObject())
+    .am_i_still_in_screen())
         </code></pre>
       </section>
     </section>
@@ -131,10 +131,10 @@
       <section>
         <h2>Bouh !</h2>
         <pre><code class="python">
-            if len(my_list) == 0:
-              print("Oh Gosh, this is empty !")
-            if len(your_list) > 0:
-              print("Gimme some !")
+if len(my_list) == 0:
+  print("Oh Gosh, this is empty !")
+if len(your_list) > 0:
+  print("Gimme some !")
         </code></pre>
       </section>
       <section>
@@ -146,10 +146,10 @@
       <section>
         <h2>Yeah !</h2>
         <pre><code class="python">
-            if not my_list:
-              print("Oh Gosh, this is empty !")
-            if your_list:
-              print("Gimme some !")
+if not my_list:
+  print("Oh Gosh, this is empty !")
+if your_list:
+  print("Gimme some !")
         </code></pre>
       </section>
     </section>
@@ -158,8 +158,8 @@
       <section>
         <h2>Bouh !</h2>
         <pre><code class="python">
-            def is_empty(a_list):
-                return a_list
+def is_empty(a_list):
+    return a_list
         </code></pre>
       </section>
       <section>
@@ -172,14 +172,14 @@
             <blockquote>
                 Soyez tolérant dans ce que vous acceptez, exigeant dans ce que vous donnez.
             </blockquote>
-            -- d’après <a href="http://www.postel.org/postel.html">Jon Postel</a>
+            <span class="sign">d’après <a href="http://www.postel.org/postel.html">Jon Postel</a></span>
         </p>
       </section>
       <section>
         <h2>Yeah !</h2>
         <pre><code class="python">
-            def is_empty(a_list):
-                return bool(a_list)
+def is_empty(a_list):
+    return bool(a_list)
         </code></pre>
       </section>
     </section>
@@ -188,22 +188,22 @@
       <section>
         <h2>Bouh !</h2>
         <pre><code class="python">
-            # adding value to a query string
-            # we need to escape the '&amp;'
-            query_string_list = []
-            if isinstance(value, str):
-                try:
-                    param_value = value.replace('&', '%26')
-                except AttributeError:
-                    param_value = value
-                query_string_list.append('%s=%s' % (param, param_value))
-            elif isinstance(value, list):
-                for subvalue in value:
-                    try:
-                        param_value = subvalue.replace('&', '%26')
-                    except AttributeError:
-                        param_value = subvalue
-                    query_string_list.append('%s=%s' % (param, param_value))
+# adding value to a query string
+# we need to escape the '&amp;'
+query_string_list = []
+if isinstance(value, str):
+    try:
+        param_value = value.replace('&', '%26')
+    except AttributeError:
+        param_value = value
+    query_string_list.append('%s=%s' % (param, param_value))
+elif isinstance(value, list):
+    for subvalue in value:
+        try:
+            param_value = subvalue.replace('&', '%26')
+        except AttributeError:
+            param_value = subvalue
+        query_string_list.append('%s=%s' % (param, param_value))
         </code></pre>
       </section>
       <section>
@@ -216,21 +216,21 @@
         <blockquote>
             Special cases aren't special enough <br>to break the rules
         </blockquote>
-        -- zen of python #8
+        <span class="sign">zen of python #8</span>
         </p>
       </section>
       <section>
         <h2>Yeah !</h2>
         <pre><code class="python">
-            # adding value to a query string
-            # we need to escape the '&amp;'
-            query_string_list = []
-            for param, value in params.items():
-                if not isinstance(value, list):
-                    value = [value]
-                for subvalue in value:
-                    param_value = str(subvalue).replace('&', '%26')
-                    query_string_list.append('%s=%s' % (param, param_value))
+# adding value to a query string
+# we need to escape the '&amp;'
+query_string_list = []
+for param, value in params.items():
+    if not isinstance(value, list):
+        value = [value]
+    for subvalue in value:
+        param_value = str(subvalue).replace('&', '%26')
+        query_string_list.append('%s=%s' % (param, param_value))
         </code></pre>
       </section>
     </section>
@@ -239,10 +239,10 @@
       <section>
         <h2>Bouh !</h2>
         <pre><code class="python">
-            # swap x and y
-            temp = y
-            y = x
-            x = y
+# swap x and y
+temp = y
+y = x
+x = y
         </code></pre>
       </section>
       <section>
@@ -255,7 +255,7 @@
       <section>
         <h2>Yeah !</h2>
         <pre><code class="python">
-            x, y = y, x
+x, y = y, x
         </code></pre>
       </section>
             <section>
@@ -265,16 +265,20 @@
             r, (x, y) = circle
         </code></pre>
         <pre><code class="python">
-            import math
+import math
 
-            def distance((x0, y0), (x1, y1)):
-                return math.sqrt((x1 - x0)**2 + (y1 - y0)**2)
+def distance((x0, y0), (x1, y1)):
+    return math.sqrt((x1 - x0)**2 + (y1 - y0)**2)
 
-            point1 = (0.0, 0.0)
-            point2 = (1.0, 1.0)
-            distance(point1, point2)
+point1 = (0.0, 0.0)
+point2 = (1.0, 1.0)
+distance(point1, point2)
         </code></pre>
-        <p>Pour les cas simples, hein !
+        <p>
+          <blockquote>
+            Although practicality beats purity.
+          </blockquote>
+          <span class="sign">zen of python #9</span>
         </p>
       </section>
     </section>
@@ -283,10 +287,10 @@
       <section>
         <h2>Bouh !</h2>
         <pre><code class="python">
-            even_squares = []
-            for n in range(20):
-              if n % 2 == 0:
-                  even_squares.append(n ** 2)
+even_squares = []
+for n in range(20):
+  if n % 2 == 0:
+      even_squares.append(n ** 2)
         </code></pre>
       </section>
       <section>
@@ -303,13 +307,13 @@
                 selon un principe analogue à celui de la définition
                 par compréhension de la théorie des ensembles.
             </blockquote>
-            -- Wikipedia
+            <span class="sign">Wikipedia</span>
         </p>
       </section>
       <section>
         <h2>Yeah !</h2>
         <pre><code class="python">
-            even_squares = [n ** 2 for n in range(20) if n % 2 == 0]
+even_squares = [n ** 2 for n in range(20) if n % 2 == 0]
         </code></pre>
         <p>
             Le carré des nombres de 0 à 20 qui sont pairs.
@@ -318,8 +322,8 @@
       <section>
         <h2>Savoir enchainer</h2>
         <pre><code class="python">
-            evens = (n for n in range(20) if n % 2 == 0)
-            even_squares = [n**2 for n in evens]
+evens = (n for n in range(20) if n % 2 == 0)
+even_squares = [n**2 for n in evens]
         </code></pre>
       </section>
     </section>
@@ -354,7 +358,7 @@
                 selon un principe analogue à celui de la définition
                 par compréhension de la théorie des ensembles.
             </blockquote>
-            -- Wikipedia
+            <span class="sign">Wikipedia</span>
         </p>
       </section>
       <section>
@@ -383,10 +387,10 @@
       <section>
         <h2>Bouh !</h2>
         <pre><code class="python">
-            f = open('path/to/file', 'w')
-            # lot of maybe failing processing here
-            f.write('Coucou')
-            f.close()
+f = open('path/to/file', 'w')
+# lot of maybe failing processing here
+f.write('Coucou')
+f.close()
         </code></pre>
       </section>
       <section>
@@ -402,16 +406,16 @@
       <section>
         <h2>Yeah !</h2>
         <pre><code class="python">
-            with open('path/to/file', 'w') as f:
-                f.write("I feel so smart")
+with open('path/to/file', 'w') as f:
+    f.write("I feel so smart")
         </code></pre>
       </section>
       <section>
         <h2>And more !</h2>
         <pre><code class="python">
-            import tempfile
-            with tempfile.NamedTemporaryFile() as f:
-                f.write("This message will auto-destruct")
+import tempfile
+with tempfile.NamedTemporaryFile() as f:
+    f.write("This message will auto-destruct")
         </code></pre>
       </section>
     </section>
@@ -421,10 +425,10 @@
       <section>
         <h2>Bouh !</h2>
         <pre><code class="python">
-            # sorting on values
-            l = [(v, k) for k, v in my_dict.items()]
-            l.sort()
-            l = [(k, v) for k, v in l]
+# sorting on values
+l = [(v, k) for k, v in my_dict.items()]
+l.sort()
+l = [(k, v) for k, v in l]
         </code></pre>
       </section>
       <section>
@@ -440,8 +444,8 @@
       <section>
         <h2>Yeah !</h2>
         <pre><code class="python">
-            # sorting on values
-            l = sorted(my_dict.items(), key=lambda e: e[1])
+# sorting on values
+l = sorted(my_dict.items(), key=lambda e: e[1])
         </code></pre>
       </section>
     </section>
@@ -450,8 +454,8 @@
       <section>
         <h2>Bouh !</h2>
         <pre><code class="python">
-            v = values.get(key, None)
-            w = v is not None and int(v) or v
+v = values.get(key, None)
+w = v is not None and int(v) or v
         </code></pre>
       </section>
       <section>
@@ -470,8 +474,8 @@
       <section>
         <h2>Yeah !</h2>
         <pre><code class="python">
-            v = values.get(key, None)
-            w = int(v) if v is not None else v
+v = values.get(key, None)
+w = int(v) if v is not None else v
         </code></pre>
       </section>
     </section>
@@ -480,9 +484,9 @@
       <section>
         <h2>Bouh !</h2>
         <pre><code class="python">
-            for i in range(len(my_list)):
-                elt = my_list[i]
-                print(i, ': ', elt)
+for i in range(len(my_list)):
+    elt = my_list[i]
+    print(i, ': ', elt)
         </code></pre>
       </section>
       <section>
@@ -495,57 +499,15 @@
       <section>
         <h2>Yeah !</h2>
         <pre><code class="python">
-            for i, elt in enumerate(my_list):
-                print(i, ': ', elt)
+for i, elt in enumerate(my_list):
+    print(i, ': ', elt)
         </code></pre>
       </section>
       <section>
         <h2>Bonus...</h2>
         <p>On peut aligner nos indexes en utilisant les options de <code>%d</code></p>
         <pre><code class="python">
-            print('% 5d: %s' % (i, elt))
-        </code></pre>
-      </section>
-    </section>
-
-    <section>
-      <section>
-        <h2>Bouh !</h2>
-        <pre><code class="python">
-            import random
-
-            class ListGenerator(object):
-                def __init__(self, len):
-                    self.len = len
-
-                def generate():
-                    return [random.random() for i in range(self.len)]
-
-            generator = ListGenerator(len=4)
-            return generator.generate()            
-        </code></pre>
-      </section>
-      <section>
-        <h2>__call__ of ’</h2>
-        <p>
-            Une instance d'objet qui possède une méthode <code>__call__</code>
-            peut être appelé comme une fonction.
-        </p>
-      </section>
-      <section>
-        <h2>Yeah !</h2>
-        <pre><code class="python">
-            import random
-
-            class ListGenerator(object):
-                def __init__(self, len):
-                    self.len = len
-
-                def __call__():
-                    return [random.random() for i in range(self.len)]
-
-            generator = ListGenerator(len=4)
-            return generator()
+print('% 5d: %s' % (i, elt))
         </code></pre>
       </section>
     </section>
@@ -581,6 +543,268 @@
                 values.append(token)
         </code></pre>
       </section>
+    </section>
+
+
+    <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+import random
+
+class ListGenerator(object):
+    def __init__(self, len):
+        self.len = len
+
+    def generate(self):
+        return [random.random() for i in range(self.len)]
+
+generator = ListGenerator(len=4)
+generator.generate()            
+        </code></pre>
+      </section>
+      <section>
+        <h2>__call__ of ’</h2>
+        <p>
+            Une instance d'objet qui possède une méthode <code>__call__</code>
+            peut être appelé comme une fonction.
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+import random
+
+class ListGenerator(object):
+    def __init__(self, len):
+        self.len = len
+
+    def __call__(self):
+        return [random.random() for i in range(self.len)]
+
+generator = ListGenerator(len=4)
+generator()
+        </code></pre>
+      </section>
+    </section>
+
+
+    <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+def all_factorials(n):
+    acc = 1
+    results = []
+    for i in range(1, n):
+        acc = acc * i
+        results.append(acc)
+    return results
+
+for i in all_factorials(10):
+    print(i)
+        </code></pre>
+      </section>
+      <section>
+        <h2>Production en flux tendu</h2>
+        <p>
+            Une fonction contentant l'instruction <code>yield</code>
+            est un générateur sur lequel on peut itérer.
+        </p>
+        <p>
+            Lorsque l'on demande le nombre suivant,
+            la fonction reprend là où elle s'était arrété.
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+def all_factorials(n):
+    acc = 1
+    for i in range(1, n):
+        acc = acc * i
+        yield acc
+
+for i in all_factorials(10):
+    print(i)
+        </code></pre>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+def all_factorials(n):
+    acc = 1
+    for i in range(1, n):
+        acc = acc * i
+        yield acc
+
+def sqrt(numbers):
+    for n in numbers:
+        yield n**0.5
+
+for i in sqrt(all_factorials(10)):
+    print(i)
+        </code></pre>
+      </section>
+    </section>
+
+   <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+class Temperature(object):
+
+    def __init__(self, celsius):
+        self.celsius = celsius
+
+    def get_celsius(self):
+        return self.celsius
+
+    def set_celsius(self, v):
+        self.celsius = v
+
+    def get_farenheit(self):
+        return self.celsius * 1.8 + 32
+
+    def set_farefheit(self, v):
+        self.celsius = (v - 32) / 1.8
+
+t = Temperature(30)
+t.get_celsius() # 30
+t.set_celsius(3) # chilling
+t.get_farenheit()  # 37.4
+t.set_farenheit(32)  # celsius is now 0.0
+        </code></pre>
+      </section>
+      <section>
+        <h2>La tribu d'Ynamic !</h2>
+        <p>
+          En python on peut définir des attributs de manière dynamique
+          via le décorateur <code>property</code>.
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+class Temperature(object):
+
+    def __init__(self, celsius):
+        self.celsius = float(celsius)
+
+    @property
+    def farenheit(self):
+        return self.celsius * 1.8 + 32
+
+    @farenheit.setter
+    def farenheit(self, v):
+        self.celsius = (v - 32) / 1.8
+
+t = Temperature(30)
+t.celsius # 30
+t.celsius = 3 # chilling
+t.farenheit  # 37.4
+t.farenheit = 32  # celsius is now 0.0
+        </code></pre>
+      </section>
+    </section>
+
+
+   <section>
+      <section>
+        <h2>Bouh !</h2>
+        <pre><code class="python">
+class ArithTemperature(Temperature):
+
+    def add(self, t):
+        return ArithTemperature(self.celsius + t.celsius)
+
+    def substract(self, t):
+        return ArithTemperature(self.celsius - t.celsius)
+
+    def is_zero(self):
+        return self.celsius == - 273.15
+
+t1 = ArithTemperature(30)
+t2 = ArithTemperature(22)
+t = t1.add(t2)
+print(t.celsius) # 52
+t = t1.substract(t2)
+print(t.celsius) # 8
+t.is_zero() # False
+        </code></pre>
+      </section>
+      <section>
+        <h2>Opérations en surcharge (non pondérale)</h2>
+        <p>
+          En python on peut surcharger les opérateurs.
+          Dès que ça a du sens, il ne faut pas hésiter !
+        </p>
+      </section>
+      <section>
+        <h2>Yeah !</h2>
+        <pre><code class="python">
+class ArithTemperature(Temperature):
+
+    def __add__(self, t):
+        return ArithTemperature(self.celsius + t.celsius)
+
+    def __sub__(self, t):
+        return ArithTemperature(self.celsius - t.celsius)
+
+    def __nonzero__(self):
+        return self.celsius != - 273.15
+
+    def __str__(self):
+        return "%d°" % self.celsius
+
+t1 = ArithTemperature(30)
+t2 = ArithTemperature(22)
+print(t1 + t2) # 52°
+t = t1 - t2
+print(t) # 8°
+bool(t) # True
+        </code></pre>
+      </section>
+      <section>
+        <h2>Un monde d'opérations</h2>
+        <p>
+          Python permet d'émuler les types arithmétiques mais aussi
+          les listes (découpage, accès a un élément, etc…)
+          les fonctions (voir <code>__call__</code>)
+          <a href="https://docs.python.org/2/reference/datamodel.html#special-method-names">
+              et plein d'autres choses
+          </a>
+        </p>
+      </section>
+    </section>
+
+
+    <section>
+        <h2>Pour vos longues soirées d'hivers !</h2>
+        <p>
+            <a href="https://docs.python.org/3/reference/datamodel.html#special-method-names">Special method names</a> −
+            <a href="https://docs.python.org/3/reference/compound_stmts.html#the-with-statement">The with statement</a>
+        </p>
+        <p>
+            <a href="https://docs.python.org/3/library/functions.html">Builtin functions</a> −
+            <a href="https://docs.python.org/3/library/stdtypes.html">Builtin types</a> −
+            <a href="https://docs.python.org/3/library/string.html">string</a> −
+            <a href="https://docs.python.org/3/library/re.html">re</a> −
+            <a href="https://docs.python.org/3/library/datetime.html">datetime</a> −
+            <a href="https://docs.python.org/3/library/collections.html">collections</a> −
+            <a href="https://docs.python.org/3/library/enum.html">enum</a> −
+            <a href="https://docs.python.org/3/library/itertools.html">itertools</a> −
+            <a href="https://docs.python.org/3/library/functools.html">functools</a> −
+            <a href="https://docs.python.org/3/library/os.path.html">os.path</a> −
+            <a href="https://docs.python.org/3/library/shutil.html">shutil</a> −
+            <a href="https://docs.python.org/3/library/argparse.html">argparse</a> −
+            <a href="https://docs.python.org/3/library/logging.html">logging</a> −
+            <a href="https://docs.python.org/3/library/importlib.html">importlib</a>
+        </p>
+        <p>
+            <a href="https://docs.python.org/3/tutorial/">The python tutorial</a> −
+            <a href="http://fr.assimil.com/methodes/le-neerlandais">Apprendre la néerlandais</a>
+        </p>
     </section>
 
     <section>

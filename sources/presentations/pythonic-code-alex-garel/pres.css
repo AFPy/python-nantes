@@ -1,3 +1,20 @@
 .reveal pre code {
     max-height: 80%;
 }
+
+.reveal p code {
+  color: #19b273; /*#f22264;*/
+}
+
+.reveal blockquote {
+  width: inherit;
+  background-color: #b22619;
+}
+
+.reveal span.sign {
+  color: grey;
+}
+
+.reveal span.sign::before {
+  content: "ᚲᚲ ";
+}
