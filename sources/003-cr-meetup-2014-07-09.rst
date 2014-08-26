@@ -8,14 +8,153 @@ Barcamp estival du 29 juillet 2014
 :email: florentlebreton@free.fr
 :summary: Un petit compte-rendu de notre premier meetup en format barcamp.
 
-Notre premier barcamp, animé par `Georges <https://twitter.com/netiru>`_ nous a permis d'aborder différents sujets en groupes de 3 à 5 personnes pendant 45 minutes environ :
+Notre premier barcamp, animé par `Georges <https://netiru.fr>`_ nous
+a permis d'aborder différents sujets en groupes de 3 à 5 personnes pendant 45
+minutes environ. 
 
-* Retours d'expériences sur des projets Python
-* Django et son environnement
-* Outils, conventions et bonnes pratiques
-* Administration système et déploiement
+Les comptes-rendus sont ci-dessous, rendez-vous à la prochaine rencontre !
 
 .. image:: /images/003-1.jpg
     :alt: barcamp estival du 29 juillet 2014
 
-À bientôt, et en attendant ... respectez la PEP8 :)
+==============================================================================
+Regards croisés sur des projets python
+==============================================================================
+
+Participants : Jean D., Georges G., Jean-Baptiste, ?
+
+Rapporteur : Jean D.
+
+J'ai compris que Python est recherché pour simplifier et debugger des
+développements existants. D'un accès facile sur le Web, il est également
+rapide d'apprentissage. Il permet de réduire la taille d'un développement
+classique. L'ordre de grandeur de cette réduction peut-être de 75 % du temps.
+Ceci grâce à 2 atouts principaux : son "moteur" performant ses nombreuses
+fonctionnalités.
+
+==============================================================================
+Django
+==============================================================================
+
+Participants : Mathieu F., ?, ?, ?
+Rapporteur : Mathieu F.
+
+Nous avons évoqué les serveurs web et leurs modes "FastCGI" et WSGI".
+
+FastCGI : 
+
+- http://fr.wikipedia.org/wiki/FastCGI (voir aussi les liens vers les
+  implémentations / modules pour Apache / Lighttpd / Nginx / Cherokee)
+
+WSGI :
+
+- http://fr.wikipedia.org/wiki/WSGI
+- http://wsgi.readthedocs.org/en/latest/what.html
+- https://code.google.com/p/modwsgi/
+
+Nous avons ensuite rapidement parlé de Gunicorn (http://gunicorn.org/), un
+serveur web conçu pour Python et WSGI.
+
+Puis Django :
+
+- framework de développement web
+- permet d'architecturer le code selon le modèle MVC
+- permet de définir une liste d'URL (exemple pour "www.monsite.fr" : /login,
+  /blog, /admin, /voirArticle et d'associer une action / un script à chacune
+  (ce que Symfony appelle des routes, dans le monde PHP ;-)
+- fournit une commande shell "manage.py" permet des actions de debug,
+  initialisation, lancement du serveur web en local, etc
+- Django permet de créer un back office très light (CRUD) de manière presque
+  automatique
+
+Les "virtualenv" :
+
+- permettent de faire cohabiter des logiciels écrits en Python ayant des
+  prérequis différents. Par exemple : le logiciel "Toto" requiert la lib "libA"
+  en version 12, alors que le logiciel "Truc" requiert la lib "libA" en version
+  10
+- sont utiles (indispensables !) à la fois en environnement de dév et en prod
+- voir commandes "virtualenv", "virtualenvwrapper" et "venv"
+
+Déploiement d'applis Django :
+
+- peut se faire avec des outils maison ou des outils dédiés tels que Fabric
+  (http://www.fabfile.org/)
+
+Hébergement :
+
+- a priori, peu d'hébergement mutualisé pour Python (loin de l'offre de PHP)
+- quelques hébergeurs :
+
+  - https://www.alwaysdata.com/ (propose du mutualisé avec Python en
+    gratuit), support technique réacti (joignable via IRC)
+  - https://www.heroku.com/
+  - http://aws.amazon.com/fr/
+
+Python 2.7 ou Python 3.x ? (troll inside ;-)
+ ==> A ce jour, la seule raison de commencer un développement en 2.7 plutôt
+ qu'en 3.x serait d'avoir un besoin impératif d'une lib non dispo en Python 3
+ (et dont le portage n'est pas envisagé). De très nombreuses libs ont été
+ mises à jour, donc ce cas de figure devrait se raréfier.
+
+Depuis la version 1.6, Django (https://www.djangoproject.com/) supporte Python
+3.
+
+Pour terminer, un petit lien vers un blog TRES intéressant sur Python (mais
+pas que ;-) :
+
+- Sam & Max: Python, Django, Git et du cul (ouioui, vous avez bien lu ;-) :
+  http://sametmax.com/
+
+==============================================================================
+Outils Python pour les adminsys/devops
+==============================================================================
+
+Participants : Florent, Antoine et Pablo
+Rapporteur : Pablo
+
+L'idée était de discuter des outils Python disponibles pour les adminsys.
+
+Les point abordés étaient :
+
+- Les outils pour disponibles pour le déploiement/provisioning, comme Fabric
+  http://www.fabfile.org/, Ansible http://www.ansible.com/home ou Saltstack
+  http://www.saltstack.com/
+- Les nouvelles façons de travailler entre développeurs et administrateurs
+  systèmes, Antoine nous a raconté son expérience avec Fabric et Puppet (Ruby)
+  chez Wikipedia, nous avons évoqué la problématique du stockage/versioning de
+  donnés sensibles et partagées dans une même équipe 
+- Les outils de monitoring comme Graphite http://graphite.wikidot.com/ et
+  ElasticSearch/Logstash/Kibana (Java) pour les métriques des apps/activités
+- L'utilisation de Sentry https://getsentry.com/ pour le tracking des
+  erreurs/exception dans une application Python
+
+Pour résumer, la discussion a été ouverte et variée. De plus, c'était la
+première fois que nous nous rencontrions et les échanges ont permis de mieux
+connaître l'intérêt et l'expérience de chacun sur le sujet, le tout dans une
+très bonne ambiance. 
+
+==============================================================================
+Bonnes pratiques et outils python
+==============================================================================
+
+Participants : Reine, Nicolas, Yoann
+Rapporteur : Yoann
+
+Tout d'abord, nous avons discuté de maisons d'édition chez qui paraissent des
+livres intéressants pour de la doc ou de l'outillage (Python/Linux mais pas
+que) : Packt, O'Reilly, Apress, No starch press. Nous avons aussi parlé de
+sites plus orientés Linux : TLLTS (The Linux Link Tech Show:podcasts sur
+youtube), Linux Luddites, distrowatch.
+
+Ensuite, nous avons abordé la démarche générale à suivre dans les projets pour
+en venir plus particulièrement à l'outillage : en fonction des besoins du
+projet on choisit les technologies, puis vient le choix des outils. Avec
+Python, la référence permet généralement comprendre rapidement comment
+utiliser les librairies.
+
+Enfin, nous avons parlé des virtualenv qui permettent d'avoir plusieurs
+environnements bien séparés sur une machine physique (et donc de disposer de
+différentes versions des librairies, voire de Python) ainsi que les
+importer/exporter grâce à pip, par l'intermédiaire d'un fichier listant les
+dépendances du projet.
