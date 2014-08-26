@@ -18,25 +18,40 @@ Les comptes-rendus sont ci-dessous, rendez-vous à la prochaine rencontre !
     :alt: barcamp estival du 29 juillet 2014
 
 ==============================================================================
-Regards croisés sur des projets python
+Outils Python pour les adminsys/devops
 ==============================================================================
 
-Participants : Jean D., Georges G., Jean-Baptiste, ?
+Participants : Florent, Antoine et Pablo
 
-Rapporteur : Jean D.
+Rapporteur : Pablo
 
-J'ai compris que Python est recherché pour simplifier et debugger des
-développements existants. D'un accès facile sur le Web, il est également
-rapide d'apprentissage. Il permet de réduire la taille d'un développement
-classique. L'ordre de grandeur de cette réduction peut-être de 75 % du temps.
-Ceci grâce à 2 atouts principaux : son "moteur" performant ses nombreuses
-fonctionnalités.
+L'idée était de discuter des outils Python disponibles pour les adminsys.
+
+Les point abordés étaient :
+
+- Les outils pour disponibles pour le déploiement/provisioning, comme Fabric
+  http://www.fabfile.org/, Ansible http://www.ansible.com/home ou Saltstack
+  http://www.saltstack.com/
+- Les nouvelles façons de travailler entre développeurs et administrateurs
+  systèmes, Antoine nous a raconté son expérience avec Fabric et Puppet (Ruby)
+  chez Wikipedia, nous avons évoqué la problématique du stockage/versioning de
+  donnés sensibles et partagées dans une même équipe 
+- Les outils de monitoring comme Graphite http://graphite.wikidot.com/ et
+  ElasticSearch/Logstash/Kibana (Java) pour les métriques des apps/activités
+- L'utilisation de Sentry https://getsentry.com/ pour le tracking des
+  erreurs/exception dans une application Python
+
+Pour résumer, la discussion a été ouverte et variée. De plus, c'était la
+première fois que nous nous rencontrions et les échanges ont permis de mieux
+connaître l'intérêt et l'expérience de chacun sur le sujet, le tout dans une
+très bonne ambiance. 
 
 ==============================================================================
 Django
 ==============================================================================
 
 Participants : Mathieu F., ?, ?, ?
+
 Rapporteur : Mathieu F.
 
 Nous avons évoqué les serveurs web et leurs modes "FastCGI" et WSGI".
@@ -107,38 +122,11 @@ pas que ;-) :
   http://sametmax.com/
 
 ==============================================================================
-Outils Python pour les adminsys/devops
-==============================================================================
-
-Participants : Florent, Antoine et Pablo
-Rapporteur : Pablo
-
-L'idée était de discuter des outils Python disponibles pour les adminsys.
-
-Les point abordés étaient :
-
-- Les outils pour disponibles pour le déploiement/provisioning, comme Fabric
-  http://www.fabfile.org/, Ansible http://www.ansible.com/home ou Saltstack
-  http://www.saltstack.com/
-- Les nouvelles façons de travailler entre développeurs et administrateurs
-  systèmes, Antoine nous a raconté son expérience avec Fabric et Puppet (Ruby)
-  chez Wikipedia, nous avons évoqué la problématique du stockage/versioning de
-  donnés sensibles et partagées dans une même équipe 
-- Les outils de monitoring comme Graphite http://graphite.wikidot.com/ et
-  ElasticSearch/Logstash/Kibana (Java) pour les métriques des apps/activités
-- L'utilisation de Sentry https://getsentry.com/ pour le tracking des
-  erreurs/exception dans une application Python
-
-Pour résumer, la discussion a été ouverte et variée. De plus, c'était la
-première fois que nous nous rencontrions et les échanges ont permis de mieux
-connaître l'intérêt et l'expérience de chacun sur le sujet, le tout dans une
-très bonne ambiance. 
-
-==============================================================================
 Bonnes pratiques et outils python
 ==============================================================================
 
 Participants : Reine, Nicolas, Yoann
+
 Rapporteur : Yoann
 
 Tout d'abord, nous avons discuté de maisons d'édition chez qui paraissent des
@@ -158,3 +146,18 @@ environnements bien séparés sur une machine physique (et donc de disposer de
 différentes versions des librairies, voire de Python) ainsi que les
 importer/exporter grâce à pip, par l'intermédiaire d'un fichier listant les
 dépendances du projet.
+
+==============================================================================
+Regards croisés sur des projets python
+==============================================================================
+
+Participants : Jean D., Georges G., Jean-Baptiste, ?
+
+Rapporteur : Jean D.
+
+Python est recherché pour simplifier et debugger des développements existants.
+D'un accès facile sur le Web, il est également rapide d'apprentissage. Il
+permet de réduire la taille d'un développement classique. L'ordre de grandeur
+de cette réduction peut-être de 75 % du temps.  Ceci grâce à 2 atouts
+principaux : son "moteur" performant ses nombreuses fonctionnalités.
+
