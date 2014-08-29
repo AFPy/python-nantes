@@ -20,7 +20,7 @@ Générer le blog en local
 Framapad
 #########
 
-Le framapad suivant est diponible pour toute remarque ou idée concernant les futurs meetups, le blog, ou autre: `pad <http://lite4.framapad.org/p/aiWGnNwwIb>`_
+Le framapad suivant est diponible pour toute remarque ou idée concernant les futurs meetups, le blog, ou autre: `le pad <http://lite4.framapad.org/p/aiWGnNwwIb>`_
 
 
 
