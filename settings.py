@@ -4,8 +4,11 @@ SITENAME = u"Python-Nantes"
 TAGLINE = u"Rencontres pythoniques et ligériennes"
 SITEURL = 'http://nantes.afpy.org'
 
-PATH = 'sources/articles/'
+PATH = 'sources/'
 OUTPUT_PATH = 'www/'
+
+ARTICLE_DIR = 'articles'
+PAGE_DIR = 'pages'
 
 TIMEZONE = 'Europe/Paris'
 
@@ -32,8 +35,6 @@ MENUITEMS = (
     ('A propos', '/pages/a-propos-de-python-nantes.html'),
     ('Archives', '/archives.html')
 )
-
-PAGE_DIR = 'pages'
 
 STATIC_PATHS = ['images', 'documents', 'extra/CNAME', 'presentations']
 

@@ -3,7 +3,7 @@ PELICAN=pelican
 PELICANOPTS= -t pure
 
 BASEDIR=$(CURDIR)
-INPUTDIR=$(BASEDIR)/sources/articles/
+INPUTDIR=$(BASEDIR)/sources
 OUTPUTDIR=$(BASEDIR)/www
 CONFFILE=$(BASEDIR)/settings.py
 PUBLISHCONF=$(BASEDIR)/settings.py
@@ -53,7 +53,7 @@ help:
 	@echo '                                                                       '
 
 html:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+	$(PELICAN) -s $(CONFFILE)
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
