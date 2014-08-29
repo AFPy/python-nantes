@@ -4,13 +4,13 @@ SITENAME = u"Python-Nantes"
 TAGLINE = u"Rencontres pythoniques et ligériennes"
 SITEURL = 'http://nantes.afpy.org'
 
-PATH = 'sources/'
+PATH = 'sources/articles/'
 OUTPUT_PATH = 'www/'
 
 TIMEZONE = 'Europe/Paris'
 
 PLUGIN_PATH = "pelican-plugins/"
-#PLUGINS = ['gravatar']
+PLUGINS = ['gravatar']
 
 COVER_IMG_URL = '/images/sidebar.jpg'
 
