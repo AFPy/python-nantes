@@ -6,4 +6,4 @@
 	url = https://github.com/python-nantes/pure.git
 [submodule "sources/presentations/reveal.js"]
 	path = sources/presentations/reveal.js
-	url = git@github.com:hakimel/reveal.js.git
+	url = https://github.com/hakimel/reveal.js.git
