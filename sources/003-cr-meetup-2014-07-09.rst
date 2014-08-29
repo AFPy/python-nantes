@@ -4,8 +4,8 @@ Barcamp estival du 29 juillet 2014
 :date: 2014-07-31
 :tags: django,fabric,ansible,salt,barcamp
 :category: comptes-rendus
-:author: Florent Lebreton
-:email: florentlebreton@free.fr
+:author: Georges Gouriten
+:email: georges.gouriten@gmail.com
 :summary: Un petit compte-rendu de notre premier meetup en format barcamp.
 
 Notre premier barcamp, animé par `Georges <https://netiru.fr>`_ nous
