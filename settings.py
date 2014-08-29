@@ -7,12 +7,12 @@ SITEURL = 'http://nantes.afpy.org'
 PATH = 'sources/'
 OUTPUT_PATH = 'www/'
 
-ARTICLE_DIR = 'articles'
-PAGE_DIR = 'pages'
+ARTICLE_PATHS = ['articles']
+PAGE_PATHS = ['pages']
 
 TIMEZONE = 'Europe/Paris'
 
-PLUGIN_PATH = "pelican-plugins/"
+PLUGIN_PATHS = ["pelican-plugins/"]
 PLUGINS = ['gravatar']
 
 COVER_IMG_URL = '/images/sidebar.jpg'
