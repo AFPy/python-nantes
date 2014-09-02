@@ -90,7 +90,7 @@ Il est aisé de définir plusieurs environnements (prod, pre-prod, dev) via les 
 
 Pour les tests unitaires, les capacités de test de Python sont très utiles. Ainsi que le module LiveServerTestCase pour tester les requêtes réellement à travers de réelles requêtes HTTP.
 
-Il est possible d'utiliser Django sans installer un SGBD relationnel sur son poste, grâce à SQLite. L'utilisation du framework sans base de donnée du tout limitera à l'utilisation du routage d'URL, des vues et des templates. Dans un tel cas d'utilisation, un coup d'oeil à un framework plus léger comme Flask (c.f. plus haut) est conseillé.
+Il est possible d'utiliser Django sans installer un SGBD relationnel sur son poste, grâce à SQLite. L'utilisation du framework sans base de donnée du tout se limitera à l'utilisation du routage d'URL, des vues et des templates. Dans un tel cas d'utilisation, un coup d'oeil à un framework plus léger comme Flask (c.f. plus haut) est conseillé.
 
 ==============================================================================
 Python, les bonnes pratiques.
