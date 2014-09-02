@@ -20,6 +20,8 @@ Django, framework web
 
 Intervenant : Florent
 
+Les slides de la présentation sont disponibles ici : `Introduction à Django <http://fle.github.io/lectures/presentation-django-2014.html>`_
+
 \chapter Part I: Django
 Django
 
@@ -93,6 +95,11 @@ Il est possbile d'utiliser Django sans BDD, grâce à SQLite. Dans un tel cas d'
 ==============================================================================
 Python, les bonnes pratiques.
 ==============================================================================
+
+Intervenant : Alex
+
+Les slides de la présentation sont disponibles ici : `Écrire du code vraiment pythonique <http://nantes.afpy.org/presentations/pythonic-code-alex-garel>`_
+
 Vous voulez coder en Python ? D'accord, mais pas n'importe comment ! Les bonnes pratiques facilitent la relecture du code et le maintien que cela soit par un tier ou par son auteur lui-même. Il ne faut pas oublier qu'on laisse parfois nos projets personnels un peu en suspend, et lorsqu'on les reprend, on est alors un étranger dans sa propre maison. Au cas où, mieux vaut baliser le terrain ;).
 
 Notre intervenant commence par quelques généralités sur Python, sa syntaxe et sa philosophie. "Python essaie d'être élégant", voilà une des premières choses qu'on entend. Par rapport à d'autres langages (e.g. Ruby) qui recherchent en plus la *pureté*. Pour le développeur Python, la pureté n'est pas une fin en soi. c.f. `The Zen of Python <http://legacy.python.org/dev/peps/pep-0020/>`_ que je cite " Special cases aren't special enough to break the rules. Although practicality beats purity". En bref, un mot très important : pragramatisme (*practicality*).
@@ -117,7 +124,13 @@ Autre point fort, les ContextManager, ces objets qu'on utilise grâce au mots cl
 
 A propos des lambda functions, ces petits bouts de code très courts qui n'acceptent qu'une expression pour seule opération, rappel qui a son importance : pas de *unpacking* de tuple dans les paramètres (c.f. slydes et tuples pour la notion de *unpacking*).
 
-
+================
 Le mot de la fin
 ================
+
+Les slides des deux présentations sont disponibles ici:
+
+* `Introduction à Django, par Florent <http://fle.github.io/lectures/presentation-django-2014.html>`_
+* `Écrire du code vraiment pythonique, par Alex <http://nantes.afpy.org/presentations/pythonic-code-alex-garel>`_
+
 On a vu et appris plein de choses, c'était super ! A la prochaine fois, et d'ici là, codez bien !
