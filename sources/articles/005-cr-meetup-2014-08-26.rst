@@ -35,9 +35,9 @@ Le projet est développé selon les philosophies KISS (Keep It Shot & Simple) et
 
 Sous le capot ?
 ---------------
-Concernant les aspects techniques, l'environnement classique est une version 1.6 du framework sous python 2.7. Django est compatible python 3 mais ce n'est pas le cas de tous les modules qui peuvent s'y ajouter. Pour la partie serveur, il semble qu'il s'intègre correctement derrière tout et n'importe quoi (apache, nginx,...). Du côté base de données (BDD), django fonctionne essentiellement avec SQL (MySQL, PostgreSQL, SQLite). Il est possible de l'interfacer avec des bases NoSQL, mais il faut garder en tête que tout le framework est pensé pour intéragir avec SQL.
+Concernant les aspects techniques, l'environnement classique est une version 1.6 du framework sous python 2.7. Django est compatible python 3 mais ce n'est pas le cas de tous les modules qui peuvent s'y ajouter. Pour la partie serveur, il semble qu'il s'intègre correctement derrière tout et n'importe quoi (apache, nginx,...). Du côté base de données (BDD), django fonctionne essentiellement avec SQL (MySQL, PostgreSQL, SQLite). Il est possible de l'interfacer avec des bases NoSQL, mais il faut garder en tête que tout le framework est pensé pour intéragir avec des bases de données relationnelles.
 
-Pour ce qui est de la création de site, Django repose sur un modèle type MVC (modèle-vue-contrôleur) qui sera appelé MTV (modèle-template-vue). Les modèles, qui décrivent les objets stockés en base, sont écrits en Python. Cela rend la configuration intuitive. Il est à noter que le moteur de template, semblable à Jinja en terme de syntaxe, est lourd et lent.
+Pour ce qui est de la création de site, Django repose sur un modèle type MVC (modèle-vue-contrôleur) qui sera appelé MTV (modèle-template-vue). Les modèles, qui décrivent les objets stockés en base, sont écrits en Python. Cela rend la configuration intuitive. Il est à noter que le moteur de template, semblable à Jinja en terme de syntaxe, est réputé comme étant lourd et lent.
 
 En pratique...
 --------------
@@ -53,7 +53,7 @@ Les bases de Django en poche, on évoque rapidement les fonctionnalités avancé
 
 Django présente aussi des fonctionnalités d'internationnalisation, tant pour les URL que pour le contenu.
 
-Pour la gestion des login, la notion d'utilisateur est pré-intégrée et est aisément personnalisable.
+Pour la gestion des login, la notion de groupes, d'utilisateur et de droits est pré-intégrée et est aisément personnalisable.
 
 Il est ressorti des questions que Django possède un système de rétro-spécification, capable de définir les fichiers modèles nécessaires décrivant une BDD pré-existante, très utile quand combiné avec des modules de migration, type south (c.f. ci-après).
 
@@ -71,9 +71,9 @@ Conclusion & commentaires
 -------------------------
 Ce petit tour d'horizon nous aura permis de constater l'extrême rapidité de développement qu'offre Django. Énorme avantage également, sa large bibliothèque de modules.
 
-Concernant la question du choix du framework web, il existe des alternatives à Django. Pour choisir ce dernier, c'est l'usage final qui est déterminant. Bien que Django soit rapide et efficace, il est en revanche très monolythique. Si vous comptez utiliser une autre BDD par exemple (type noSQL), un framework plus modulaire serait `Pyramid <http://www.pylonsproject.org/>`_. Enfin, il existe des framework très léger comme `Flask <http://flask.pocoo.org/>`_.
+Concernant la question du choix du framework web, il existe des alternatives à Django. Pour choisir ce dernier, c'est l'usage final qui est déterminant. Bien que Django soit rapide et efficace, il est en revanche très monolythique. Si vous comptez utiliser un autre ORM par exemple, un framework plus modulaire serait `Pyramid <http://www.pylonsproject.org/>`_. Enfin, il existe des framework très léger comme `Flask <http://flask.pocoo.org/>`_.
 
-L'inévitable comparaison avec d'autres langages tels que PHP était plutôt sans appel (l'occasion pour certains templiers/trolls de partir en croisade contre Symphony :)). PHP est jugé (très) lourd et peu efficace. Il y avait d'ailleurs parmi nous 3 personnes qui souhaitaient quitter l'univers PHP au profit de Python.
+L'inévitable comparaison avec d'autres langages tels que PHP était plutôt sans appel (l'occasion pour certains templiers/trolls de partir en croisade contre Symfony :)). PHP est jugé (très) lourd et peu efficace. Il y avait d'ailleurs parmi nous 3 personnes qui souhaitaient quitter l'univers PHP au profit de Python.
 
 Finalement, Django présente quelques points noirs, tels que la personnalisation de l'interface d'administration ou bien la gestion de pages multi-formulaires. Si ces dernières se complexifient, leur maintien devient vite très difficile.
 
@@ -86,11 +86,11 @@ Questions
 ---------
 Les questions ont fait ressortir les points suivant.
 
-Il est aisé de définir plusieurs environnements (prod, pre-prod, dev) via les fichiers de configuration. Le script conf.py (configuration générale) se charge ensuite de sélectionner la configuration appropriée en fonction de l'environnement.
+Il est aisé de définir plusieurs environnements (prod, pre-prod, dev) via les fichiers de configuration. Le script settings.py (configuration générale) se charge ensuite de sélectionner la configuration appropriée en fonction de l'environnement.
 
 Pour les tests unitaires, les capacités de test de Python sont très utiles. Ainsi que le module LiveServerTestCase pour tester les requêtes réellement à travers de réelles requêtes HTTP.
 
-Il est possbile d'utiliser Django sans BDD, grâce à SQLite. Dans un tel cas d'utilisation, un coup d'oeil à un framework plus léger comme Flask (c.f. plus haut) est conseillé.
+Il est possible d'utiliser Django sans installer un SGBD relationnel sur son poste, grâce à SQLite. L'utilisation du framework sans base de donnée du tout limitera à l'utilisation du routage d'URL, des vues et des templates. Dans un tel cas d'utilisation, un coup d'oeil à un framework plus léger comme Flask (c.f. plus haut) est conseillé.
 
 ==============================================================================
 Python, les bonnes pratiques.
