@@ -34,7 +34,7 @@ La dernière release est 1.6 et celle à venir, 1.7, devrait présenter des mise
 Le projet est développé selon les philosophies KISS (Keep It Shot & Simple) et DRY (Don't Repeat Yourself). Si le premier objectif est bien rempli, il semble que le second soit sujet à débat. On notera différents avantages à django, notamment son installation très facile ainsi que son excellente documentation. Il dispose également d'une communauté très active.
 
 Sous le capot ?
---------------
+---------------
 Concernant les aspects techniques, l'environnement classique est une version 1.6 du framework sous python 2.7. Django est compatible python 3 mais ce n'est pas le cas de tous les modules qui peuvent s'y ajouter. Pour la partie serveur, il semble qu'il s'intègre correctement derrière tout et n'importe quoi (apache, nginx,...). Du côté base de données (BDD), django fonctionne essentiellement avec SQL (MySQL, PostgreSQL, SQLite). Il est possible de l'interfacer avec des bases NoSQL, mais il faut garder en tête que tout le framework est pensé pour intéragir avec SQL.
 
 Pour ce qui est de la création de site, Django repose sur un modèle type MVC (modèle-vue-contrôleur) qui sera appelé MTV (modèle-template-vue). Les modèles, qui décrivent les objets stockés en base, sont écrits en Python. Cela rend la configuration intuitive. Il est à noter que le moteur de template, semblable à Jinja en terme de syntaxe, est lourd et lent.
