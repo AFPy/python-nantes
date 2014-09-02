@@ -8,7 +8,7 @@
 :email: twildawnight@gmail.com
 :summary: Compte-rendu des conférences du 30 août 2014.
 
-Nous étions nombreux mardi dernier aux conférences. A la louche, une quarantaine. Un groupe assez hétérogène composé de curieux comme d'experts.
+Nous étions nombreux mardi dernier aux conférences. À la louche, une quarantaine. Un groupe assez hétérogène composé de curieux comme d'experts.
 
 Deux sujets ont donc été abordés, merci à Florent et Alex pour leur préparation :).
 
@@ -27,23 +27,23 @@ Django
 
 Présentation
 ------------
-Django est donc un framework pour le web développé dans l'optique d'être rapide à configurer et déployer. Ainsi, il présente un haut niveau d'abstraction. Etant un projet open-source, il est assez facile de l'étendre.
+Django est donc un framework pour le web développé dans l'optique d'être rapide à configurer et déployer. Ainsi, il présente un haut niveau d'abstraction. Étant un projet open-source, il est assez facile de l'étendre.
 
-La dernière release est 1.6 et celle à venir, 1.7, devrait présenter des mises à jour de fond, tel un système de migration intégré : django migration.
+La dernière release est 1.6 et celle à venir, 1.7, devrait présenter des mises à jour de fond, tel un système de migration intégré : django-migrations.
 
 Le projet est développé selon les philosophies KISS (Keep It Shot & Simple) et DRY (Don't Repeat Yourself). Si le premier objectif est bien rempli, il semble que le second soit sujet à débat. On notera différents avantages à django, notamment son installation très facile ainsi que son excellente documentation. Il dispose également d'une communauté très active.
 
-Sous le capo ?
+Sous le capot ?
 --------------
-Concernant les aspects techniques, l'environnement classique est une version 1.6 du framework sous python 2.7. Django est compatible python 3 mais ce n'est pas le cas de tous les modules qui peuvent s'y ajouter. Pour la partie serveur, il semble qu'il s'intègre correctement derrière tout et n'importe quoi (apache, nginx,...). Du côté base de données (BDD), django fonctionne essentiellement avec SQL (MySQL, PostGre, SQLite). Il est possible de l'interfacer avec des bases NoSQL, mais il faut garder en tête que tout le framework est pensé pour intéragir avec SQL.
+Concernant les aspects techniques, l'environnement classique est une version 1.6 du framework sous python 2.7. Django est compatible python 3 mais ce n'est pas le cas de tous les modules qui peuvent s'y ajouter. Pour la partie serveur, il semble qu'il s'intègre correctement derrière tout et n'importe quoi (apache, nginx,...). Du côté base de données (BDD), django fonctionne essentiellement avec SQL (MySQL, PostgreSQL, SQLite). Il est possible de l'interfacer avec des bases NoSQL, mais il faut garder en tête que tout le framework est pensé pour intéragir avec SQL.
 
-Pour ce qui est de la création de site, Django repose sur un modèle type MVC (modèle-vue-contrôleur) qui sera appelé MVT (modèle-vue-template). Les modèles, qui décrivent les objets stockés en base, sont écrits en Python. Cela rend la configue intuitive. Il est à noter que le moteur de template, semblable à Jinja en terme de syntaxe, est lourd et lent.
+Pour ce qui est de la création de site, Django repose sur un modèle type MVC (modèle-vue-contrôleur) qui sera appelé MTV (modèle-template-vue). Les modèles, qui décrivent les objets stockés en base, sont écrits en Python. Cela rend la configuration intuitive. Il est à noter que le moteur de template, semblable à Jinja en terme de syntaxe, est lourd et lent.
 
 En pratique...
 --------------
-Après toute cette théorie, démonstration rapide avec la mise en place d'un site pour recenser les coins à champignons. C'est l'occasion d'observer la rapidité avec laquelle il est possible de déployer un nouveau site (environ 4 commandes ^^). Cerise sur le gâteau, Django génère automatiquement une interface d'administration contenant formulaire et tout ce qu'il faut pour gérer le contenu de la BDD (opération CRUD). L'administration d'un projet se fait essentiellement via le script manage.py.
+Après toute cette théorie, démonstration rapide avec la mise en place d'un site pour recenser les coins à champignons. C'est l'occasion d'observer la rapidité avec laquelle il est possible de déployer un nouveau site (environ 4 commandes ^^). Cerise sur le gâteau, Django génère automatiquement une interface d'administration contenant formulaire et tout ce qu'il faut pour gérer le contenu de la BDD (opérations CRUD). L'administration d'un projet se fait essentiellement via le script manage.py.
 
-Django sépare les modules métiers sous forme d'applications. Chacune contenant un fichier models.py, views.py, admin.py et tests.py (pour vous **encourager** à créer des tests unitaires). Les modèles se déclarent sous forme de classes Python dont les membres sont des colonnes en base. Il est possible d'étendre facilement les types de membres pour créer des types spécifiques, autre que ceux de SQL.
+Django sépare les modules métiers sous forme d'applications. Chacune contenant un fichier models.py, views.py, admin.py et tests.py (pour vous **encourager** à créer des tests unitaires). Les modèles se déclarent sous forme de classes Python dont les champs sont des colonnes en base. Il est possible d'étendre facilement les types de champs pour créer des types spécifiques, autre que ceux de SQL.
 
 Concernant la définition des routes, comme souvent, elle se fait via l'utilisation de schémas et d'expressions régulières. Ici, on découvre avec plaisir que Django repère automatiquement lorsqu'un fichier est modifié et redéploie.
 
@@ -62,20 +62,20 @@ Les modules
 Que serait un framework (open-source) sans ses plugins & modules ? La communauté étant active, il existe de nombreux modules très utiles, il ressort de la conférence :
 
 	1) South. Un outil pour effectuer des migrations de base de données. Un exemple de cas d'utilisation : l'intervenant devait migrer une vieille application vers Django. Parmi les problèmes, il faisait face à la structure SQL de très mauvaise qualité (du genre clé étrangère non unique...). A l'aide de l'outils de rétro-spécification de Django, il a été capable de récupérer les définitions des modèles et de corriger la BDD grâce à South. Hallelujah ! Comme mentionné plus haut, la version 1.7 de Django intègre un tel module (essentiellement basé sur South). Cela peut également être très utile pour manipuler différentes bases sur différents serveurs (dev, prod, pre-prod,...).
-	2) django-extansion: utilitaire pour manage.py ajoutant des commandes pour faciliter l'administration.
-	3) django_debug_toolbar: outil pour faire du profiling dans le navigateur.
-	4) factory_boy: création de grappes de données pour le test (Déclaration de factory). Par rapport à l'utilisation de fixture, il permet un maintien plus facile des données de test. De plus, la gestion des clés étrangères est très pratique.
+	2) django-extensions: utilitaire pour manage.py ajoutant des commandes pour faciliter l'administration.
+	3) django-debug-toolbar: outil pour faire du profiling dans le navigateur.
+	4) factory-boy: création de grappes de données pour le test (Déclaration de factory). Par rapport à l'utilisation de fixtures, il permet un maintien plus facile des données de test. De plus, la gestion des clés étrangères est très pratique.
 	5) Un module shop très différent de prestashop. Beaucoup plus modulaire que ce dernier (donc pas solution out of the box).
 
 Conclusion & commentaires
 -------------------------
-Ce petit tour d'horizon nous aura permis de constater l'extrême rapidité de développement qu'offre Django. Enorme avantage également, sa large bibliothèque de modules.
+Ce petit tour d'horizon nous aura permis de constater l'extrême rapidité de développement qu'offre Django. Énorme avantage également, sa large bibliothèque de modules.
 
 Concernant la question du choix du framework web, il existe des alternatives à Django. Pour choisir ce dernier, c'est l'usage final qui est déterminant. Bien que Django soit rapide et efficace, il est en revanche très monolythique. Si vous comptez utiliser une autre BDD par exemple (type noSQL), un framework plus modulaire serait `Pyramid <http://www.pylonsproject.org/>`_. Enfin, il existe des framework très léger comme `Flask <http://flask.pocoo.org/>`_.
 
 L'inévitable comparaison avec d'autres langages tels que PHP était plutôt sans appel (l'occasion pour certains templiers/trolls de partir en croisade contre Symphony :)). PHP est jugé (très) lourd et peu efficace. Il y avait d'ailleurs parmi nous 3 personnes qui souhaitaient quitter l'univers PHP au profit de Python.
 
-Finalement, Django présente quelques points noirs, tels que la personnalisation de l'interface d'administration ou bien la gestion des formulaires. Si ces derniers se complexifient, leur maintien devient vite très difficile.
+Finalement, Django présente quelques points noirs, tels que la personnalisation de l'interface d'administration ou bien la gestion de pages multi-formulaires. Si ces dernières se complexifient, leur maintien devient vite très difficile.
 
 Quelques liens pour se documenter :
     - `site du projet <https://www.djangoproject.com/>`_,
@@ -88,7 +88,7 @@ Les questions ont fait ressortir les points suivant.
 
 Il est aisé de définir plusieurs environnements (prod, pre-prod, dev) via les fichiers de configuration. Le script conf.py (configuration générale) se charge ensuite de sélectionner la configuration appropriée en fonction de l'environnement.
 
-Pour les tests unitaires, les capacités de test de Python sont très utiles. Ainsi que le module LiveServerTestCase pour tester les requêtes en environnement type pré-production.
+Pour les tests unitaires, les capacités de test de Python sont très utiles. Ainsi que le module LiveServerTestCase pour tester les requêtes réellement à travers de réelles requêtes HTTP.
 
 Il est possbile d'utiliser Django sans BDD, grâce à SQLite. Dans un tel cas d'utilisation, un coup d'oeil à un framework plus léger comme Flask (c.f. plus haut) est conseillé.
 
