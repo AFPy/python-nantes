@@ -11,7 +11,7 @@ Un barcamp pour bien terminer l'été indien
 Suite au succès du `dernier meetup <http://nantes.afpy.org/40-pythons-1-
 conference-et-des-trolls.html>`_, et pour bien finir ce mois de septembre
 ensoleillé, nous sommes heureux de vous proposer un nouveau
-`BarCamp <http://fr.wikipedia.org/wiki/BarCamp>`_.
+`BarCamp <http://fr.wikipedia.org/wiki/BarCamp>`_, le mardi 30 septembre, 19 heure, à la Cantine numérique Nantaise.
 
 Le concept sera de se retrouver autour de plusieurs ateliers, et de
 participer collectivement, chacun étant invité à présenter ses trouvailles,
