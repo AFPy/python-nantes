@@ -24,6 +24,8 @@ collaboratif.
 Comme d'habitude, ceux qui le souhaitent pourront prolonger l'évènement
 autour d'un verre.
 
+Pour vous inscrire à l'évènement, `cliquez ici <http://www.meetup.com/Nantes-Python-Meetup/events/207797652/>`_.
+
 Pour vous tenir informé du contenu exact de l'évènement, ou pour faire part de
 vos suggestions, n'hésitez pas à vous inscrire à la `liste de diffusion
 <http://lists.afpy.org/listinfo/nantes>`_ des pythonistes nantais.
