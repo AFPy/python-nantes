@@ -13,7 +13,7 @@ conference-et-des-trolls.html>`_, et pour bien finir ce mois de septembre
 ensoleillé, nous sommes heureux de vous proposer un nouveau
 `BarCamp <http://fr.wikipedia.org/wiki/BarCamp>`_.
 
-Le concept sera de se retrouver autours de plusieurs ateliers, et de
+Le concept sera de se retrouver autour de plusieurs ateliers, et de
 participer collectivement, chacun étant invité à présenter ses trouvailles,
 à poser ses questions, etc.
 
@@ -21,12 +21,12 @@ Que vous soyez pythoniste confirmé, ou simple curieux, le format du
 barcamp devrait donc répondre à vos attentes : la découverte, l'échange, le
 collaboratif.
 
-Comme d'habitude, ceux qui le souhaiterons pourront prolonger l'évènement
-autours d'un verre.
+Comme d'habitude, ceux qui le souhaitent pourront prolonger l'évènement
+autour d'un verre.
 
 Pour vous tenir informé du contenu exact de l'évènement, ou pour faire part de
 vos suggestions, n'hésitez pas à vous inscrire à la `liste de diffusion
-<http://lists.afpy.org/listinfo/nantes>`_ des pythoniste nantais.
+<http://lists.afpy.org/listinfo/nantes>`_ des pythonistes nantais.
 
-Vous pouvez aussi aussi nous rejoindre sur le `chan IRC de l'AFPy Nantes
-<http://webchat.freenode.net/?channels=afpy-nantes>`_.
+Vous pouvez aussi nous rejoindre sur le `chan IRC de l'AFPy Nantes
+<http://webchat.freenode.net/?channels=afpy-nantes>`_. :)
