@@ -12,8 +12,8 @@ PAGE_PATHS = ['pages']
 
 TIMEZONE = 'Europe/Paris'
 
-PLUGIN_PATHS = ["pelican-plugins/"]
-PLUGINS = ['gravatar']
+PLUGIN_PATHS = ["pelican-plugins/", "pelican-plugins/pelican_youtube"]
+PLUGINS = ['gravatar', 'pelican_youtube']
 
 COVER_IMG_URL = '/images/sidebar.jpg'
 
