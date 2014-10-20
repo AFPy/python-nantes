@@ -2,10 +2,14 @@ language: python
 branches:
   only:
   - master
+git:
+  submodules: false
+before_install:
+  - git submodule update --init --recursive
 install:
-- pip install pelican ghp-import
+  - pip install pelican ghp-import
 script:
-- make publish github
+  - make publish github
 env:
   global:
     secure: vBsIJelX8MWrIwKJTePdrGydZpM1Qtj22FdsAdK/RkX6rnw+U7e9Y9gPtrCzYgFdzdc74GensIFi2ZncHGByfSNBrW+IB8L49+m8eHplaW9W7TZSuobXGhPFO9Xz9pt66TbPoWaa8/R5KvzRpUouJsINfVx830egG7FO4CUo0rQ=
