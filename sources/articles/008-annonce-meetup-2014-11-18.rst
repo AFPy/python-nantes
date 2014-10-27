@@ -7,7 +7,6 @@ Meetup / Conférences Python le 18 novembre
 :author: Florent Lebreton
 :email: florentlebreton@free.fr
 :summary: Au programme pour cette session du 18 novembre, toujours à la Cantine : iPython et Pelican !
-:status: draft
 
 Pour éviter de faire de l'ombre à la PyConFr (</joke>), nous avons décalé la prochaine rencontre des pythonistes nantais au mois de novembre.
 
