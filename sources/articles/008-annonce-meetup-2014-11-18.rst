@@ -14,7 +14,7 @@ Le meetup est donc prévu le 18 novembre, toujours à La Cantine de Nantes, à p
 
 Au programme cette fois-ci, deux conférences:
 
-* **IPython & dataviz** : Quand on pense cartographie, certains pensent logiciels bureautiques, d'autres en ligne, ici nous montrerons qu'il existe d'autres voies en particulier pour l'analyse de données. Ainsi, nous vous proposons de voir l'utilisation de IPython pour découvrir des données et les cartographier. Nous pourrons ainsi introduire quelques bibliothèques pour l'analyse statistique, la manipulation de données et les représentation cartographiques.
+* **IPython & dataviz** : Quand on pense cartographie, certains pensent logiciels bureautiques, d'autres en ligne, ici nous montrerons qu'il existe d'autres voies en particulier pour l'analyse de données. Ainsi, nous vous proposons de voir l'utilisation de IPython pour découvrir des données et les cartographier. Nous pourrons ainsi introduire quelques bibliothèques pour l'analyse statistique, la manipulation de données et les représentations cartographiques.
 * **Pelican** : À contre-courant des frameworks web « full-stack », complexes et lourds, se trouve Pelican, et les générateurs de sites statiques. Pourquoi opter pour une approche si minimaliste ? Que peut-on en tirer ? Découvrez l’utilisation de Pelican, ses forces, ses limites, et comment les contourner.
 
 Comme d'habitude, nous espérons vous compter parmi nous pour ces conférences, ainsi pour le verre qui s'en suivra probablement :).
