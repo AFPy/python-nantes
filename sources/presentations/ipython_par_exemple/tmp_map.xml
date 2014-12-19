@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Map srs="+proj=lcc +lat_1=44 +lat_2=49 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +units=m +no_defs" background-color="rgb(255,255,255)">
+    <Style name="My Style">
+        <Rule>
+            <PolygonSymbolizer fill="rgb(242,239,249)"/>
+            <LineSymbolizer stroke="rgb(128,128,128)" stroke-width="0.1000000014901161"/>
+        </Rule>
+    </Style>
+    <Style name="Text">
+        <Rule>
+            <Filter>(((([CODE_DEPT]!=&apos;75&apos;) and ([CODE_DEPT]!=&apos;92&apos;)) and ([CODE_DEPT]!=&apos;93&apos;)) and ([CODE_DEPT]!=&apos;94&apos;))</Filter>
+            <TextSymbolizer allow-overlap="true" face-name="DejaVu Sans Book" size="8">[CODE_DEPT]</TextSymbolizer>
+        </Rule>
+    </Style>
+    <Layer name="france" srs="+proj=lcc +lat_1=44 +lat_2=49 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +units=m +no_defs">
+        <StyleName>My Style</StyleName>
+        <StyleName>Text</StyleName>
+        <Datasource>
+            <Parameter name="base">.</Parameter>
+            <Parameter name="file">departement</Parameter>
+            <Parameter name="type">shape</Parameter>
+        </Datasource>
+    </Layer>
+</Map>
