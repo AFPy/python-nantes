@@ -1,0 +1,82 @@
+
+================================================
+TITRE DU JEU DE DONNEES
+================================================
+
+Localisation des colonnes aériennes de Nantes Métropole
+
+================================================
+DESCRIPTION
+================================================
+Localisation et caractéristiques des colonnes d'apport volontaire aériennes de Nantes
+Métropole utilisées pour la collecte des déchets.
+
+Ces colonnes sont implantées sur l'ensemble du territoire et sont destinées à la collecte
+du verre et des emballages recyclables (papier, carton, plastique).
+
+
+Thèmes 							: Environnement
+
+================================================
+INFORMATIONS TECHNIQUES
+================================================
+
+Date de dernière mise à jour    : 17/11/2014
+Fréquence de mise à jour 		: semestrielle (et/ou à l'occasion de modification majeure)
+Couverture Temporelle : Sans objet 
+
+Derniere mise à jour technique	:
+
+	Date : 17/11/2014
+	Nature de la modification : Mise à jour - 17 novembre 2014
+	Description de la modification : Mise à jour du 17/11/2014 avec une dizaine de nouvelles entrées + modification description
+
+================================================
+ATTRIBUTS
+================================================
+
+
+ID_COLONNE    : Identifiant de la colonne
+TYPE_DECHETS  : Type de déchets. Les valeurs possibles sont : verre, Emb. ménager, plastique, papiercarton
+VOLUME        : Volume de la colonne (exprimé en m3)
+OBS           : Observations : précisions sur la localisation de la colonne (stade, déchèterie, autre équipement, ...)
+PREHENSION    : Système de préhension de la colonne (sera bientôt renseigné)
+VOIE          : Nom de la voie
+MOT_DIRECTEUR : Mot directeur de la voie
+CODE_COM      : Code de la commune
+CODE_POSTAL   : Code postal de la commune
+COMMUNE       : Nom de la commune
+QUARTIER      : Nom du quartier
+POLE_NM       : Nom de pôle de Nantes Métropole
+LONG_WGS84    : Longitude exprimée en WGS84
+LAT_WGS84     : Latitude exprimée en WGS84
+ 
+
+================================================
+CONTACT
+================================================
+
+Pour toute demande d'information ou remarque, 
+merci de passer par le forum du site http://data.nantes.fr
+
+================================================
+INFORMATIONS LEGALES
+================================================
+
+
+Propriétaire : Nantes Métropole
+
+Gestionnaire : Nantes Métropole
+
+Diffuseur	 : Nantes Métropole
+
+Licence      : Open Database License (ODbL)
+
+================================================
+SIGNATURES DES FICHIERS
+================================================
+
+COLONNES_AERIENNES_NM.dbf (md5) : dc6f6418fecd273caf8ca70991ca8671
+COLONNES_AERIENNES_NM.prj (md5) : f6d4872436dd3f0336bd65be52e7e522
+COLONNES_AERIENNES_NM.shp (md5) : 64a676f5d0080b69521bb360524f4c3d
+COLONNES_AERIENNES_NM.shx (md5) : 814393274850d555bb787b8141977440
