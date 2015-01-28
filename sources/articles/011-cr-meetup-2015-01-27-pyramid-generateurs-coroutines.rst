@@ -1,15 +1,15 @@
-Compte-rendu des conférences : Pyramid, Générateurs et coroutines
-#################################################################
+Compte-rendu des conférences : Pyramid, Générateurs et co-routines
+##################################################################
 
 :date: 2015-01-27
 :tags: pyramid, générateur, co-routine
 :category: comptes-rendus
 :author: Florent Lebreton
 :email: florentlebreton@free.fr
-:summary: Compte-rendu du meetup/conférence du 27 janvier 2015
+:summary: Compte-rendu de la présentation de Pyramid par Gaël et de l'intervention sur les générateurs et les co-routines de Hugo.
 :status: draft
 
-Pour ce premier meetup de janvier, deux sujets ont été présentés devant une quarantaine de personnes intéressées et attentives. Vous trouverez dans cet article un résumé de ce qui a été proposé, ainsi que les liens vers les présentations.
+Pour ce premier meetup de janvier, deux sujets ont été présentés devant une quarantaine de personnes visiblement intéressées et attentives. Vous trouverez dans cet article un résumé de ce qui a été proposé, ainsi que les liens vers les présentations.
 
 ==============================================================================
 Pyramid
@@ -97,6 +97,6 @@ L'application principale des co-routines est de faire de la programmation pseudo
 
 Le mot clé ``yield from``, arrivé en Python 3, permet de faire de la *délégation de générateurs*, c'est à dire de créer une sorte de tunnel bidirectionnel entre un générateur et un sous-générateur.
 
-Les slides de la présentation sont disponibles ici : _____
+Les slides de la présentation sont disponibles ici : `Générateurs et co-routines <https://github.com/mhugo/pres_coroutines>`_
 
 Merci à tous pour votre présence, on se retrouve au prochain barcamp le 24 mars !
