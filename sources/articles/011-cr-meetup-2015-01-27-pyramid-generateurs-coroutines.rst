@@ -22,7 +22,7 @@ Il est nativement WSGI, facilement extensible et laisse beaucoup de souplesse da
 
 Vous verrez dans les slides qu'un classique "Hello World", servi en HTTP, est très simple à réaliser.
 
-Le premier composant à appréhender est le `configurateur <http://docs.pylonsproject.org/docs/pyramid/en/latest/api/config.html>`, qui permet de configurer une application Pyramid (et notamment de gérer les routes).
+Le premier composant à appréhender est le `configurateur <http://docs.pylonsproject.org/docs/pyramid/en/latest/api/config.html>`_, qui permet de configurer une application Pyramid (et notamment de gérer les routes).
 
 Le *routeur* a la particularité de pouvoir fonctionner de `deux manière différentes <http://pyramid-cookbook.readthedocs.org/en/latest/routing/>`_ :
 
@@ -55,9 +55,9 @@ Beaucoup de modules supplémentaires sont fournis nativement :
 
 L'écosystème de Pyramid est assez riche et varié ; plus de 250 packages sont indiqués comme étant compatibles Pyramid sur pypi.
 
-Il existe entre autres des CMS basés sur Pyramid : notamment `substanced <http://substanced.net/>` (basé sur la ZODB) et `kotti <http://kotti.pylonsproject.org/>`_.
+Il existe entre autres des CMS basés sur Pyramid : notamment `substanced <http://substanced.net/>`_ (basé sur la ZODB) et `kotti <http://kotti.pylonsproject.org/>`_.
 
-Les slides de la présentation sont disponibles ici : `Pyramid <http://nantes.afpy.org/presentations/pyramid>`_
+Les slides de la présentation sont disponibles ici : `Présentation de Pyramid <http://nantes.afpy.org/presentations/pyramid>`_
 
 ==============================================================================
 Générateurs et coroutines
