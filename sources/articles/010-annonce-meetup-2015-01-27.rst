@@ -6,7 +6,7 @@ Premier meetup Python 2015 !
 :category: évènements
 :author: Florent Lebreton
 :email: florentlebreton@free.fr
-:summary: Lors ce premier meetup 2015, RDV le 27 janvier 19H à la Cantine. Nous parlons du framework Pyramid, puis de générateurs et de co-routines!
+:summary: Pour ce premier meetup 2015, RDV le 27 janvier 19H à la Cantine. Nous parlerons du framework Pyramid, puis de générateurs et de co-routines!
 
 Pythonistes nantais, attaquons l'année 2015 comme il se doit avec un meetup dès la fin de ce mois de janvier, le 27, toujours à partir de 19h à la Cantine.
 
