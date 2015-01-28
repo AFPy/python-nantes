@@ -7,7 +7,6 @@ Compte-rendu des conférences : Pyramid, Générateurs et co-routines
 :author: Florent Lebreton
 :email: florentlebreton@free.fr
 :summary: Compte-rendu de la présentation de Pyramid par Gaël et de l'intervention sur les générateurs et les co-routines de Hugo.
-:status: draft
 
 Pour ce premier meetup de janvier, deux sujets ont été présentés devant une quarantaine de personnes visiblement intéressées et attentives. Vous trouverez dans cet article un résumé de ce qui a été proposé, ainsi que les liens vers les présentations.
 
