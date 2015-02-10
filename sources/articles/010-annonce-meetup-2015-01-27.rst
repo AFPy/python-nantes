@@ -19,4 +19,5 @@ Nous espérons donc vous compter nombreux parmi nous le 27 janvier à la Cantine
 
 Si vous avez des questions ou des remarques concernant nos meetups, rejoignez-nous sur le `chan IRC de l'AFPy Nantes <http://webchat.freenode.net/?channels=afpy-nantes>`_ ou inscrivez vous sur la `liste de diffusion <http://lists.afpy.org/listinfo/nantes>`_ . :)
 
+
 À bientôt !
