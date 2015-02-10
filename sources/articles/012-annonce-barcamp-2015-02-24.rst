@@ -16,5 +16,5 @@ Comme d'habitude, ceux qui le souhaitent pourront prolonger l'évènement autour
 
 Si vous avez des questions ou des remarques concernant nos meetups, rejoignez-nous sur le `chan IRC de l'AFPy Nantes <http://webchat.freenode.net/?channels=afpy-nantes>`_ ou inscrivez vous sur la `liste de diffusion <http://lists.afpy.org/listinfo/nantes>`_ . Vous pouvez aussi nous suivre sur Twitter via notre compte `@PythonNantes <https://twitter.com/PythonNantes>`_ :)
 
-** N'hésitez pas à vous inscrire ici pour que nous ayons un aperçu du nombre de participants ** : `inscription au meetup <http://www.meetup.com/Nantes-Python-Meetup/events/220430364/>`_.
+**N'hésitez pas à vous inscrire ici pour que nous ayons un aperçu du nombre de participants** : `inscription au meetup <http://www.meetup.com/Nantes-Python-Meetup/events/220430364/>`_.
 À bientôt !
