@@ -1,4 +1,4 @@
-Un petit meetup pour fêter le printemps !
+Un meetup pour fêter le printemps !
 #########################################
 
 :date: 2015-01-07
