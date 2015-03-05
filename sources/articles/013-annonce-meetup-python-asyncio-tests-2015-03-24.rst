@@ -1,7 +1,7 @@
 Un meetup pour fêter le printemps !
 #########################################
 
-:date: 2015-01-07
+:date: 2015-03-05
 :tags: python,ayncio,unittest,nantes
 :category: évènements
 :author: Florent Lebreton
