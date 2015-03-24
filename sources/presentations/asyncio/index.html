@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>asyncio</title>
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/impress.css" type="text/css" />
+    <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  </head>
+  <body>
+    <div id="impress">
+      
+  <div class="step first center slide section" id="asyncio">
+<h1>asyncio<a class="headerlink" href="#asyncio" title="Permalink to this headline">¶</a></h1>
+<p>Gael Pasgrimaud <a class="reference external" href="http://twitter.com/gawel_">&#64;gawel_</a></p>
+<p>python-nantes 2015</p>
+</div>
+<div class="step slide section" data-rotate-x="17.4532925199" data-x="1000" data-y="500" id="about-me">
+<h1>About me<a class="headerlink" href="#about-me" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Pythonista <a class="reference external" href="http://twitter.com/bearstech">&#64;bearstech</a></li>
+<li>Membre fondateur de l&#8217;<a class="reference external" href="http://www.afpy.org">AFPy</a></li>
+<li>Créateur de irc3, aiowsgi, aiocron, panoramisk</li>
+</ul>
+</div>
+<div class="step slide section" data-rotate-x="34.9065850399" data-x="2000" data-y="1000" id="quoi-c-est">
+<h1>Quoi c&#8217;est ?<a class="headerlink" href="#quoi-c-est" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Du réseau</li>
+<li>De l&#8217;asynchrone</li>
+<li>Du python + ...</li>
+</ul>
+</div>
+<div class="step slide section" data-rotate-x="52.3598775598" data-x="3000" data-y="1500" id="historique">
+<h1>Historique<a class="headerlink" href="#historique" title="Permalink to this headline">¶</a></h1>
+<p>BDFL want async</p>
+<p>=&gt; tulip =&gt; python3.4 asyncio</p>
+</div>
+<div class="step slide section" data-rotate-x="69.8131700798" data-x="4000" data-y="2000" id="comment-que-c-est">
+<h1>Comment que c&#8217;est ?<a class="headerlink" href="#comment-que-c-est" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Fournis l&#8217;implémentation de base d&#8217;une eventloop mono-thread</li>
+<li>Notion de taches non bloquante (coroutine)</li>
+<li>yield from FTW</li>
+</ul>
+</div>
+<div class="step slide section" data-rotate-x="87.2664625997" data-x="5000" data-y="2500" id="exemple">
+<h1>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h1>
+<p>Une simple requete http:</p>
+<div class="highlight-py"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;http://python.org&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="104.71975512" data-x="6000" data-y="3000" id="et-avec-asyncio">
+<h1>Et avec asyncio...<a class="headerlink" href="#et-avec-asyncio" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-py"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">aiohttp</span>
+
+
+<span class="nd">@asyncio.coroutine</span>
+<span class="k">def</span> <span class="nf">fetch_page</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="k">yield from</span> <span class="n">aiohttp</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">200</span>
+    <span class="k">return</span> <span class="p">(</span><span class="k">yield from</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+<span class="n">content</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span>
+    <span class="n">fetch_page</span><span class="p">(</span><span class="s">&#39;http://python.org&#39;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="122.17304764" data-x="7000" data-y="3500" id="event-loop">
+<h1>Event loop<a class="headerlink" href="#event-loop" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>asyncio.get_event_loop()</li>
+<li>loop.run_until_complete(coroutine)</li>
+<li>loop.run_forever()</li>
+<li>loop.create_task(coroutine) (3.4.2)</li>
+<li>loop.call_soon(callback)</li>
+<li>loop.call_later(int, callback)</li>
+<li>loop.run_in_executor()</li>
+</ul>
+</div>
+<div class="step slide section" data-rotate-x="139.62634016" data-x="8000" data-y="4000" id="future">
+<h1>Future<a class="headerlink" href="#future" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>associé à une loop</li>
+<li>yield from future</li>
+</ul>
+<div class="highlight-py"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+
+
+<span class="nd">@asyncio.coroutine</span>
+<span class="k">def</span> <span class="nf">get_future</span><span class="p">():</span>
+    <span class="n">future</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Future</span><span class="p">()</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">call_later</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">future</span><span class="o">.</span><span class="n">set_result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">future</span>
+
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">get_future</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="157.079632679" data-x="9000" data-y="4500" id="outils">
+<h1>Outils<a class="headerlink" href="#outils" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>asyncio.sleep()</li>
+<li>asyncio.wait_for()</li>
+<li>asyncio.gather()</li>
+<li>asyncio.async()</li>
+</ul>
+</div>
+<div class="step slide section" data-rotate-x="174.532925199" data-x="10000" data-y="5000" id="protocol">
+<h1>Protocol<a class="headerlink" href="#protocol" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-py"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">asyncio</span>
+
+
+<span class="k">class</span> <span class="nc">EchoClient</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">Protocol</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">connection_made</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transport</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;connection_made&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transport</span> <span class="o">=</span> <span class="n">transport</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">transport</span><span class="o">.</span><span class="n">get_extra_info</span><span class="p">(</span><span class="s">&#39;peername&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">data_received</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;hook to handle data received by sock.recv()&quot;&quot;&quot;</span>
+        <span class="c"># write data to socket. try to send directly else create a buffer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transport</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">connection_lost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;closed&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="191.986217719" data-x="11000" data-y="5500" id="connection-server">
+<h1>Connection / Server<a class="headerlink" href="#connection-server" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-py"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">myapp</span> <span class="kn">import</span> <span class="n">EchoClient</span>
+<span class="kn">from</span> <span class="nn">myapp</span> <span class="kn">import</span> <span class="n">EchoServer</span>
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+
+
+<span class="nd">@asyncio.coroutine</span>
+<span class="k">def</span> <span class="nf">run_client</span><span class="p">():</span>
+    <span class="n">protocol</span><span class="p">,</span> <span class="n">transport</span> <span class="o">=</span> <span class="k">yield from</span> <span class="n">loop</span><span class="o">.</span><span class="n">create_connection</span><span class="p">(</span><span class="n">EchoClient</span><span class="p">,</span>
+                                                            <span class="s">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="mi">8000</span><span class="p">)</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">call_later</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">transport</span><span class="o">.</span><span class="n">close</span><span class="p">)</span>
+
+<span class="nd">@asyncio.coroutine</span>
+<span class="k">def</span> <span class="nf">run_server</span><span class="p">():</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="k">yield from</span> <span class="n">loop</span><span class="o">.</span><span class="n">create_Server</span><span class="p">(</span><span class="n">EchoServer</span><span class="p">,</span> <span class="s">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="mi">8000</span><span class="p">)</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">run_client</span><span class="p">())</span>
+
+<span class="n">loop</span><span class="o">.</span><span class="n">run_forever</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="209.439510239" data-x="12000" data-y="6000" id="cas-d-utilisation">
+<h1>Cas d&#8217;utilisation<a class="headerlink" href="#cas-d-utilisation" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>HTTP</li>
+<li>irc</li>
+<li>asterisk</li>
+<li>cron</li>
+</ul>
+</div>
+<div class="step slide section" data-rotate-x="226.892802759" data-x="13000" data-y="6500" id="ecosysteme">
+<h1>Ecosystème<a class="headerlink" href="#ecosysteme" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://asyncio.org/">asyncio.org</a></li>
+<li><a class="reference external" href="https://docs.python.org/3/library/asyncio.html">asyncio</a></li>
+</ul>
+</div>
+
+
+    </div>
+    <script src="static/components/impress.js/js/impress.js"></script>
+    <script src="static/jquery.js"></script>
+    <script src="static/impress.js"></script>
+    <script src="static/custom.js"></script>
+    <script>
+      if (! /_modules/.exec(window.location.href)) {
+        impress().init();
+      }
+    </script>
+  </body>
+</html>
