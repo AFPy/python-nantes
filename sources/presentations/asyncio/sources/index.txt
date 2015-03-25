@@ -122,13 +122,13 @@ Connection / Server
 Cas d'utilisation
 =================
 
-- HTTP
+- HTTP - http://aiohttp.readthedocs.org/
 
-- irc
+- irc - https://github.com/gawel/irc3
 
-- asterisk
+- asterisk - https://github.com/gawel/panoramisk
 
-- cron
+- cron - https://github.com/gawel/aiocron
 
 
 Ecosystème
