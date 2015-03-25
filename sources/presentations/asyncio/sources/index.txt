@@ -85,6 +85,16 @@ Future
 .. literalinclude:: future.py
    :language: py
 
+Task
+======
+
+- future qui fait quelque chose
+
+.. code-block:: py
+
+    t = asyncio.Task(coro)
+    t.add_done_callback(func)
+
 Outils
 ======
 
