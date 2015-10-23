@@ -6,7 +6,6 @@ Discutons de PyConFR 2015 le mercredi 28 octobre 2015
 :category: évènements
 :author: Arthur Lutz
 :email: arthur.lutz@logilab.fr
-.. :summary: La prochaine rencontre Python Nantes sera au format BarCamp et se déroulera le mercredi 28 octobre 2015
 
 La prochaine rencontre Python Nantes sera au format BarCamp et se
 déroulera le mercredi 28 octobre 2015.
