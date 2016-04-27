@@ -42,6 +42,9 @@ rejoignez-nous sur le chan IRC de l'AFPy Nantes ou inscrivez vous sur
 aussi nous suivre sur Twitter via notre compte `@PythonNantes
 <http://twitter.com/PythonNantes>`_.
 
+Le meetup est gratuit mais il faut s'inscrire sur
+`<http://www.meetup.com/Nantes-Python-Meetup/events/230661649/>`_.
+
 À bientôt !
 
 
