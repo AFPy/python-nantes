@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python-Nantes, Rencontres pythoniques et ligériennes">
+
+        <link rel="alternate"  href="http://nantes.afpy.org/feeds/all.atom.xml" type="application/atom+xml" title="Python-Nantes Full Atom Feed"/>
+
+        <title>Python-Nantes - Authors</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Authors on Python-Nantes</h1>
+
+    <ul>        <li><a href="http://nantes.afpy.org/author/alex.html">Alex</a> (1)</li>
+        <li><a href="http://nantes.afpy.org/author/arthur-lutz.html">Arthur Lutz</a> (5)</li>
+        <li><a href="http://nantes.afpy.org/author/florent-lebreton.html">Florent Lebreton</a> (9)</li>
+        <li><a href="http://nantes.afpy.org/author/georges-gouriten.html">Georges Gouriten</a> (1)</li>
+        <li><a href="http://nantes.afpy.org/author/pierre-aufrere.html">Pierre Aufrere</a> (2)</li>
+        <li><a href="http://nantes.afpy.org/author/pierre-gordon-florent.html">Pierre, Gordon, Florent</a> (1)</li>
+        <li><a href="http://nantes.afpy.org/author/thomas-durey.html">Thomas Durey</a> (1)</li>
+    </ul>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python-Nantes, Rencontres pythoniques et ligériennes">
+
+        <link rel="alternate"  href="http://nantes.afpy.org/feeds/all.atom.xml" type="application/atom+xml" title="Python-Nantes Full Atom Feed"/>
+
+        <title>Premier meetup Python 2015 ! // Python-Nantes // Rencontres pythoniques et ligériennes</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link rel="stylesheet" href="http://nantes.afpy.org/theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="http://nantes.afpy.org/author/florent-lebreton.html" title="See posts by Florent Lebreton">
+                        <img class="avatar" alt="Florent Lebreton" src="http://www.gravatar.com/avatar/0b65f504c35330d6e74af6ecf32cb528">
+                </a>
+                <h2 class="article-info">Florent Lebreton</h2>
+                <small class="about-author"></small>
+                <h5>Published</h5>
+                <p>Wed 07 January 2015</p>
+                <a href="/">&larr;Home</a>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Premier meetup Python 2015 !</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="http://nantes.afpy.org/tag/python.html">python</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/pyramid.html">pyramid</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/nantes.html">nantes</a>
+                        </p>
+                </header>
+            </section>
+            <p>Pythonistes nantais, attaquons l'année 2015 comme il se doit avec un meetup dès la fin de ce mois de janvier, le 27, toujours à partir de 19h à la Cantine.</p>
+<p>Pour partir du bon pied, deux présentations vous seront proposées :</p>
+<ul class="simple">
+<li><strong>Pyramid</strong> : Pyramid est un framework python léger et pleinement compatible WSGI. Nous présenterons les principaux concept du framework. Création de projet, dispatching vs traversing, rendu de template, sécurité, événements, intégration d'application WSGI tierce.</li>
+<li><strong>Générateurs &amp; co-routines</strong> : Durant cette présentation il sera question du langage Python en tant que tel et en particulier de deux concepts voisins : les générateurs, qui permettent une expression &quot;paresseuse&quot; et les co-routines, qui introduisent un style de programmation relativement méconnu. Après une présentation des aspects syntaxiques, nous pourrons échanger sur les cas d'utilisation possibles de ces concepts.</li>
+</ul>
+<p>Nous espérons donc vous compter nombreux parmi nous le 27 janvier à la Cantine, ainsi pour le verre qui s'en suivra probablement :).</p>
+<p>Si vous avez des questions ou des remarques concernant nos meetups, rejoignez-nous sur le <a class="reference external" href="http://webchat.freenode.net/?channels=afpy-nantes">chan IRC de l'AFPy Nantes</a> ou inscrivez vous sur la <a class="reference external" href="http://lists.afpy.org/listinfo/nantes">liste de diffusion</a> . :)</p>
+<p>À bientôt !</p>
+
+            <div class="hr"></div>
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Python-Nantes &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python-Nantes, Rencontres pythoniques et ligériennes">
+
+        <link rel="alternate"  href="http://nantes.afpy.org/feeds/all.atom.xml" type="application/atom+xml" title="Python-Nantes Full Atom Feed"/>
+
+        <title>Barcamp & micro-python // Python-Nantes // Rencontres pythoniques et ligériennes</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link rel="stylesheet" href="http://nantes.afpy.org/theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="http://nantes.afpy.org/author/pierre-aufrere.html" title="See posts by Pierre Aufrere">
+                        <img class="avatar" alt="Pierre Aufrere" src="http://www.gravatar.com/avatar/48c6ecaa5a4b9c707509f9ef65f540c8">
+                </a>
+                <h2 class="article-info">Pierre Aufrere</h2>
+                <small class="about-author"></small>
+                <h5>Published</h5>
+                <p>Sun 19 October 2014</p>
+                <a href="/">&larr;Home</a>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Barcamp &amp; micro-python</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="http://nantes.afpy.org/tag/python.html">python</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/microcontroleur.html">microcontrôleur</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/nantes.html">nantes</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/microcontroller.html">microcontroller</a>
+                        </p>
+                </header>
+            </section>
+            <p>Pour le barcamp Python du 30 Septembre, nous étions 6 à s'être intéressés à cette mystérieuse carte micro-python. C'est donc convivialement installés autour d'une table qu'on a pu en savoir plus.</p>
+<p>Compte rendu.</p>
+<div class="section" id="presentation">
+<h2>Présentation</h2>
+<p>Né d'un projet Kick-Starter, micro-python est un microcontrôleur embarquant un interpréteur d'un dialect de Python 3.
+Après la réussite du financement sur Kick-Starter, un exemplaire a été envoyé à tous les gens y ayant participé. Puis chaque personne s'étant manifestée sur leur newsletter a pu en avoir un.
+Désormais la boutique Internet est ouverte à tous. Si ça vous fait déjà rêver, c'est <a class="reference external" href="http://micropython.org/">par ici</a>.</p>
+<p>C'est donc un petit joujou d'open hardware que nous avons pu voir en action. La bestiole est équipée d'un processeur ARM et coûte environ 35€. Pour l'instant on commande depuis le Royaume-Uni, donc c'est en Livres...
+Concernant le stockage, deux options. Une mémoire flash de 128Ko et un port pour micro-SD.
+Pour le reste, notre micro-copain intègre des accéléromètres. Il y a une démo sur le site pour le transformer en souris. Par contre, pas de gyroscope, donc <em>exit</em> la position en temps réelle native. En revanche, il existe de nombreux
+shield (modules additionnels) que l'on peut déjà commander et dont le prix est assez bas. On citera un afficheur LCD, un touch-pad et de quoi supporter le wi-fi.
+Enfin, la carte présente quatre (4) LEDs. Rouge, jaune, verte et bleue. L'intensité de cette dernière peut être réglée.
+La question s'est évidemment posée de l'avantage par rapport à son <em>concurrent</em> direct, le Raspberry Pie. Deux arguments principaux sont ressortis. D'abord la consommation électrique bien inférieure de micro-python : l'absence de processeur graphique
+est l'une des raisons. Il a également été évoqué les fuites de courant des ports USB du Rasberry Pie. De plus, ces derniers ne peuvent pas être désactivés, donc pas d'optimisation de la consommation possible. Second argument en faveur de
+micro-python, éviter <em>l'over-kill</em>. En effet, pour la pluspart des utilisations d'un microcontrôleur, un Raspberry Pie fait un peu office de bombe nucléaire.
+Petit plus de la carte, elle présente une documentation électrique fournie et claire, écrite en blanc au dos de celle-ci.</p>
+<p>Concernant le logiciel, c'est donc un dialecte de Python 3. Cette variante est disponible et compilable sur de nombreuses architectures autres que ARM. Le code source est disponible sur
+<a class="reference external" href="https://github.com/micropython/micropython">GitHub</a>. En plus de cela, il existe un <a class="reference external" href="https://github.com/micropython/micropython-lib">repo</a> de différentes bibliothèques adaptées pour micro-python. On peut notamment y trouver pip.</p>
+</div>
+<div class="section" id="let-s-roll">
+<h2>Let's roll</h2>
+<p><em>C'est bien mignon tout ça, mais qu'en fait-on ?</em> me direz-vous. Pas d'impatience, voici le moment venu du test !</p>
+<div class="section" id="que-la-lumiere-soit">
+<h3>Que la lumière soit</h3>
+<p>On commence par sortir en boîte :). Notre démonstrateur nous sort sa plus jolie boucle <em>while</em> pour éclairer les LEDs en séquences. Vidéo du résultat ci-dessous avec en prime le code source en arrière plan.</p>
+<div class="youtube" align="left"><iframe width="500" height="280" src="https://www.youtube.com/embed/LCrE0T3FtEU" frameborder="0"></iframe></div><p>Ce test est l'occasion de découvrir comment on code et déploie. Le processeur cherche successivement sur la micro-SD ou sur la flash un fichier <strong>main.py</strong> qui sert de point d'entrée au programme. Lors de l'écriture sur la
+mémoire flash, la LED rouge s'allume et s'éteint à la fin de l'opération. Un petit reboot et le tour est joué. Il est possible de faire de l'inlining assembleur pour optimiser les chemins critiques et un portage de l'API C de Python est disponible. De quoi s'occuper donc.</p>
+</div>
+<div class="section" id="moteur-ca-tourne">
+<h3>Moteur, ça tourne</h3>
+<p>Seconde démo, utilisation d'un servomoteur. Même logique concernant le code et le déploiement. Concrètement, une classe Servo permet de contrôler le servo :</p>
+<pre class="code python literal-block">
+<span class="n">brain</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">Servo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre>
+<p>On peut ensuite changer l'angle, en degré :</p>
+<pre class="code python literal-block">
+<span class="n">brain</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">brain</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">)</span>
+</pre>
+<p>Consulter l'angle courant :</p>
+<pre class="code python literal-block">
+<span class="n">servo1</span><span class="o">.</span><span class="n">angle</span><span class="p">()</span>
+<span class="o">-</span><span class="mi">60</span>
+</pre>
+<p>Et aussi changer l'angle en spécifiant un temps de transition, en millisecondes :</p>
+<pre class="code python literal-block">
+<span class="n">servo1</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</pre>
+<p>Dans le contexte de ce test, comment ne pas parler des drones ? Du coup, nous avons évoqué une conférence TED sur les
+<a class="reference external" href="http://www.ted.com/talks/raffaello_d_andrea_the_astounding_athletic_power_of_quadcopters?language=en">drones agiles</a>
+et aussi le projet open-source de drone <a class="reference external" href="http://wiki.paparazziuav.org/wiki/Main_Page">Paparazzi</a>.</p>
+</div>
+</div>
+<div class="section" id="digression">
+<h2>Digression</h2>
+<p>Beaucoup d'effervescence lors de cette rencontre, et donc quelques digressions. Le sujet le plus <em>complet</em> était sans doute l'opposition entre pip et gestionnaire de paquets (celui du système lorsque présent) pour la gestion des bibliothèques.</p>
+<p>pip permet d'installer des paquets Python sans gestion complexe de dépendance non python (compilateur C/C++). Couplé avec les environnements virtuels, il résout de nombreux problèmes mais reste avant tout une solution de contournement. Cependant, faire sans peut s'avérer difficile.</p>
+<p>L'alternative beaucoup plus stable reste donc l'utilisation du gestionnaire de paquet du système. Hors toutes les bibliothèques Python ne sont pas packagées... Donc, si l'on souhaite rester <em>rigoureux</em> il faudra sans-doute <strong>repackager</strong> quelques bibliothèques. Il semble que ce soit la stratégie de <a class="reference external" href="http://www.reddit.com/">Reddit</a>.</p>
+<dl class="docutils">
+<dt>Les autres projets évoqués :</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://www.pingbase.net/">Association PING</a></li>
+<li><a class="reference external" href="http://www.busybee.io/faq/">Busybee</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+
+            <div class="hr"></div>
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Python-Nantes &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>

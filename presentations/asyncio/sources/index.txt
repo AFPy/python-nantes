@@ -1,0 +1,139 @@
+=======================
+asyncio
+=======================
+
+.. slide::
+   :class: first center
+
+Gael Pasgrimaud `@gawel_ <http://twitter.com/gawel_>`_
+
+python-nantes 2015
+
+About me
+========
+
+- Pythonista `@bearstech <http://twitter.com/bearstech>`_
+
+- Membre fondateur de l'`AFPy <http://www.afpy.org>`_
+
+- Créateur de irc3, aiowsgi, aiocron, panoramisk
+
+Quoi c'est ?
+============
+
+- Du réseau
+
+- De l'asynchrone
+
+- Du python + ...
+
+Historique
+==========
+
+BDFL want async
+
+=> tulip => python3.4 asyncio
+
+Comment que c'est ?
+===================
+
+- Fournis l'implémentation de base d'une eventloop mono-thread
+
+- Notion de taches non bloquante (coroutine)
+
+- yield from FTW
+
+
+Exemple
+=======
+
+Une simple requete http:
+
+.. literalinclude:: requests.py
+   :language: py
+
+Et avec asyncio...
+==================
+
+.. literalinclude:: aiohttp.py
+   :language: py
+
+Event loop
+==========
+
+- asyncio.get_event_loop()
+
+- loop.run_until_complete(coroutine)
+
+- loop.run_forever()
+
+- loop.create_task(coroutine) (3.4.2)
+
+- loop.call_soon(callback)
+
+- loop.call_later(int, callback)
+
+- loop.run_in_executor()
+
+Future
+======
+
+- associé à une loop
+
+- yield from future
+
+.. literalinclude:: future.py
+   :language: py
+
+Task
+======
+
+- future qui fait quelque chose
+
+.. code-block:: py
+
+    t = asyncio.Task(coro)
+    t.add_done_callback(func)
+
+Outils
+======
+
+- asyncio.sleep()
+
+- asyncio.wait_for()
+
+- asyncio.gather()
+
+- asyncio.async()
+
+Protocol
+========
+
+.. literalinclude:: protocol.py
+   :language: py
+
+Connection / Server
+===================
+
+.. literalinclude:: connections.py
+   :language: py
+
+
+Cas d'utilisation
+=================
+
+- HTTP - http://aiohttp.readthedocs.org/
+
+- irc - https://github.com/gawel/irc3
+
+- asterisk - https://github.com/gawel/panoramisk
+
+- cron - https://github.com/gawel/aiocron
+
+
+Ecosystème
+==========
+
+- `asyncio.org <http://asyncio.org/>`_
+
+- `asyncio <https://docs.python.org/3/library/asyncio.html>`_

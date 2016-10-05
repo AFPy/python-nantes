@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Python-Nantes</title><link>http://nantes.afpy.org/</link><description></description><lastBuildDate>Sun, 19 Oct 2014 00:00:00 +0200</lastBuildDate><item><title>Barcamp &amp; micro-python</title><link>http://nantes.afpy.org/barcamp-micro-python.html</link><description>&lt;p&gt;Pour le barcamp Python du 30 Septembre, nous étions 6 à s'être intéressés à cette mystérieuse carte micro-python. C'est donc convivialement installés autour d'une table qu'on a pu en savoir plus.&lt;/p&gt;
+&lt;p&gt;Compte rendu.&lt;/p&gt;
+&lt;div class="section" id="presentation"&gt;
+&lt;h2&gt;Présentation&lt;/h2&gt;
+&lt;p&gt;Né d'un projet Kick-Starter, micro-python est un microcontrôleur embarquant un interpréteur d'un dialect de Python 3.
+Après la réussite du financement sur Kick-Starter, un exemplaire a été envoyé à tous les gens y ayant participé. Puis chaque personne s'étant manifestée sur leur newsletter a pu en avoir un.
+Désormais la boutique Internet est ouverte à tous. Si ça vous fait déjà rêver, c'est &lt;a class="reference external" href="http://micropython.org/"&gt;par ici&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;C'est donc un petit joujou d'open hardware que nous avons pu voir en action. La bestiole est équipée d'un processeur ARM et coûte environ 35€. Pour l'instant on commande depuis le Royaume-Uni, donc c'est en Livres...
+Concernant le stockage, deux options. Une mémoire flash de 128Ko et un port pour micro-SD.
+Pour le reste, notre micro-copain intègre des accéléromètres. Il y a une démo sur le site pour le transformer en souris. Par contre, pas de gyroscope, donc &lt;em&gt;exit&lt;/em&gt; la position en temps réelle native. En revanche, il existe de nombreux
+shield (modules additionnels) que l'on peut déjà commander et dont le prix est assez bas. On citera un afficheur LCD, un touch-pad et de quoi supporter le wi-fi.
+Enfin, la carte présente quatre (4) LEDs. Rouge, jaune, verte et bleue. L'intensité de cette dernière peut être réglée.
+La question s'est évidemment posée de l'avantage par rapport à son &lt;em&gt;concurrent&lt;/em&gt; direct, le Raspberry Pie. Deux arguments principaux sont ressortis. D'abord la consommation électrique bien inférieure de micro-python : l'absence de processeur graphique
+est l'une des raisons. Il a également été évoqué les fuites de courant des ports USB du Rasberry Pie. De plus, ces derniers ne peuvent pas être désactivés, donc pas d'optimisation de la consommation possible. Second argument en faveur de
+micro-python, éviter &lt;em&gt;l'over-kill&lt;/em&gt;. En effet, pour la pluspart des utilisations d'un microcontrôleur, un Raspberry Pie fait un peu office de bombe nucléaire.
+Petit plus de la carte, elle présente une documentation électrique fournie et claire, écrite en blanc au dos de celle-ci.&lt;/p&gt;
+&lt;p&gt;Concernant le logiciel, c'est donc un dialecte de Python 3. Cette variante est disponible et compilable sur de nombreuses architectures autres que ARM. Le code source est disponible sur
+&lt;a class="reference external" href="https://github.com/micropython/micropython"&gt;GitHub&lt;/a&gt;. En plus de cela, il existe un &lt;a class="reference external" href="https://github.com/micropython/micropython-lib"&gt;repo&lt;/a&gt; de différentes bibliothèques adaptées pour micro-python. On peut notamment y trouver pip.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="let-s-roll"&gt;
+&lt;h2&gt;Let's roll&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;C'est bien mignon tout ça, mais qu'en fait-on ?&lt;/em&gt; me direz-vous. Pas d'impatience, voici le moment venu du test !&lt;/p&gt;
+&lt;div class="section" id="que-la-lumiere-soit"&gt;
+&lt;h3&gt;Que la lumière soit&lt;/h3&gt;
+&lt;p&gt;On commence par sortir en boîte :). Notre démonstrateur nous sort sa plus jolie boucle &lt;em&gt;while&lt;/em&gt; pour éclairer les LEDs en séquences. Vidéo du résultat ci-dessous avec en prime le code source en arrière plan.&lt;/p&gt;
+&lt;div class="youtube" align="left"&gt;&lt;iframe width="500" height="280" src="https://www.youtube.com/embed/LCrE0T3FtEU" frameborder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;Ce test est l'occasion de découvrir comment on code et déploie. Le processeur cherche successivement sur la micro-SD ou sur la flash un fichier &lt;strong&gt;main.py&lt;/strong&gt; qui sert de point d'entrée au programme. Lors de l'écriture sur la
+mémoire flash, la LED rouge s'allume et s'éteint à la fin de l'opération. Un petit reboot et le tour est joué. Il est possible de faire de l'inlining assembleur pour optimiser les chemins critiques et un portage de l'API C de Python est disponible. De quoi s'occuper donc.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="moteur-ca-tourne"&gt;
+&lt;h3&gt;Moteur, ça tourne&lt;/h3&gt;
+&lt;p&gt;Seconde démo, utilisation d'un servomoteur. Même logique concernant le code et le déploiement. Concrètement, une classe Servo permet de contrôler le servo :&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;brain&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pyb&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Servo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;On peut ensuite changer l'angle, en degré :&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;brain&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;angle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;45&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;brain&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;angle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Consulter l'angle courant :&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;servo1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;angle&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;60&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Et aussi changer l'angle en spécifiant un temps de transition, en millisecondes :&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="n"&gt;servo1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;angle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Dans le contexte de ce test, comment ne pas parler des drones ? Du coup, nous avons évoqué une conférence TED sur les
+&lt;a class="reference external" href="http://www.ted.com/talks/raffaello_d_andrea_the_astounding_athletic_power_of_quadcopters?language=en"&gt;drones agiles&lt;/a&gt;
+et aussi le projet open-source de drone &lt;a class="reference external" href="http://wiki.paparazziuav.org/wiki/Main_Page"&gt;Paparazzi&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="digression"&gt;
+&lt;h2&gt;Digression&lt;/h2&gt;
+&lt;p&gt;Beaucoup d'effervescence lors de cette rencontre, et donc quelques digressions. Le sujet le plus &lt;em&gt;complet&lt;/em&gt; était sans doute l'opposition entre pip et gestionnaire de paquets (celui du système lorsque présent) pour la gestion des bibliothèques.&lt;/p&gt;
+&lt;p&gt;pip permet d'installer des paquets Python sans gestion complexe de dépendance non python (compilateur C/C++). Couplé avec les environnements virtuels, il résout de nombreux problèmes mais reste avant tout une solution de contournement. Cependant, faire sans peut s'avérer difficile.&lt;/p&gt;
+&lt;p&gt;L'alternative beaucoup plus stable reste donc l'utilisation du gestionnaire de paquet du système. Hors toutes les bibliothèques Python ne sont pas packagées... Donc, si l'on souhaite rester &lt;em&gt;rigoureux&lt;/em&gt; il faudra sans-doute &lt;strong&gt;repackager&lt;/strong&gt; quelques bibliothèques. Il semble que ce soit la stratégie de &lt;a class="reference external" href="http://www.reddit.com/"&gt;Reddit&lt;/a&gt;.&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Les autres projets évoqués :&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.pingbase.net/"&gt;Association PING&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.busybee.io/faq/"&gt;Busybee&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pierre Aufrere</dc:creator><pubDate>Sun, 19 Oct 2014 00:00:00 +0200</pubDate><guid isPermaLink="false">tag:nantes.afpy.org,2014-10-19:barcamp-micro-python.html</guid><category>python</category><category>microcontrôleur</category><category>nantes</category><category>microcontroller</category></item><item><title>40 pythons, 1 conférence et des trolls</title><link>http://nantes.afpy.org/40-pythons-1-conference-et-des-trolls.html</link><description>&lt;p&gt;Nous étions nombreux mardi dernier aux conférences. À la louche, une quarantaine. Un groupe assez hétérogène composé de curieux comme d'experts.&lt;/p&gt;
+&lt;p&gt;Deux sujets ont donc été abordés, merci à Florent et Alex pour leur préparation :).&lt;/p&gt;
+&lt;p&gt;Ci-dessous, le compte-rendu de près de 2h de conférence :).&lt;/p&gt;
+&lt;div class="section" id="django-framework-web"&gt;
+&lt;h2&gt;Django, framework web&lt;/h2&gt;
+&lt;p&gt;Intervenant : Florent&lt;/p&gt;
+&lt;p&gt;Les slides de la présentation sont disponibles ici : &lt;a class="reference external" href="http://fle.github.io/lectures/presentation-django-2014.html"&gt;Introduction à Django&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;chapter Part I: Django
+Django&lt;/p&gt;
+&lt;div class="section" id="presentation"&gt;
+&lt;h3&gt;Présentation&lt;/h3&gt;
+&lt;p&gt;Django est donc un framework pour le web développé dans l'optique d'être rapide à configurer et déployer. Ainsi, il présente un haut niveau d'abstraction. Étant un projet open-source, il est assez facile de l'étendre.&lt;/p&gt;
+&lt;p&gt;La dernière release est 1.6 et celle à venir, 1.7, devrait présenter des mises à jour de fond, tel un système de migration intégré : django-migrations.&lt;/p&gt;
+&lt;p&gt;Le projet est développé selon les philosophies KISS (Keep It Shot &amp;amp; Simple) et DRY (Don't Repeat Yourself). Si le premier objectif est bien rempli, il semble que le second soit sujet à débat. On notera différents avantages à django, notamment son installation très facile ainsi que son excellente documentation. Il dispose également d'une communauté très active.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sous-le-capot"&gt;
+&lt;h3&gt;Sous le capot ?&lt;/h3&gt;
+&lt;p&gt;Concernant les aspects techniques, l'environnement classique est une version 1.6 du framework sous python 2.7. Django est compatible python 3 mais ce n'est pas le cas de tous les modules qui peuvent s'y ajouter. Pour la partie serveur, il semble qu'il s'intègre correctement derrière tout et n'importe quoi (apache, nginx,...). Du côté base de données (BDD), django fonctionne essentiellement avec SQL (MySQL, PostgreSQL, SQLite). Il est possible de l'interfacer avec des bases NoSQL, mais il faut garder en tête que tout le framework est pensé pour intéragir avec des bases de données relationnelles.&lt;/p&gt;
+&lt;p&gt;Pour ce qui est de la création de site, Django repose sur un modèle type MVC (modèle-vue-contrôleur) qui sera appelé MTV (modèle-template-vue). Les modèles, qui décrivent les objets stockés en base, sont écrits en Python. Cela rend la configuration intuitive. Il est à noter que le moteur de template, semblable à Jinja en terme de syntaxe, est réputé comme étant lourd et lent.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="en-pratique"&gt;
+&lt;h3&gt;En pratique...&lt;/h3&gt;
+&lt;p&gt;Après toute cette théorie, démonstration rapide avec la mise en place d'un site pour recenser les coins à champignons. C'est l'occasion d'observer la rapidité avec laquelle il est possible de déployer un nouveau site (environ 4 commandes ^^). Cerise sur le gâteau, Django génère automatiquement une interface d'administration contenant formulaire et tout ce qu'il faut pour gérer le contenu de la BDD (opérations CRUD). L'administration d'un projet se fait essentiellement via le script manage.py.&lt;/p&gt;
+&lt;p&gt;Django sépare les modules métiers sous forme d'applications. Chacune contenant un fichier models.py, views.py, admin.py et tests.py (pour vous &lt;strong&gt;encourager&lt;/strong&gt; à créer des tests unitaires). Les modèles se déclarent sous forme de classes Python dont les champs sont des colonnes en base. Il est possible d'étendre facilement les types de champs pour créer des types spécifiques, autre que ceux de SQL.&lt;/p&gt;
+&lt;p&gt;Concernant la définition des routes, comme souvent, elle se fait via l'utilisation de schémas et d'expressions régulières. Ici, on découvre avec plaisir que Django repère automatiquement lorsqu'un fichier est modifié et redéploie.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="aller-plus-loin"&gt;
+&lt;h3&gt;Aller plus loin&lt;/h3&gt;
+&lt;p&gt;Les bases de Django en poche, on évoque rapidement les fonctionnalités avancées. Notamment de l'héritage sur les modèles, à la fois puissant mais rapidement complexe. Des mécanismes similaires existent sur les vues et les templates.&lt;/p&gt;
+&lt;p&gt;Django présente aussi des fonctionnalités d'internationnalisation, tant pour les URL que pour le contenu.&lt;/p&gt;
+&lt;p&gt;Pour la gestion des login, la notion de groupes, d'utilisateur et de droits est pré-intégrée et est aisément personnalisable.&lt;/p&gt;
+&lt;p&gt;Il est ressorti des questions que Django possède un système de rétro-spécification, capable de définir les fichiers modèles nécessaires décrivant une BDD pré-existante, très utile quand combiné avec des modules de migration, type south (c.f. ci-après).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="les-modules"&gt;
+&lt;h3&gt;Les modules&lt;/h3&gt;
+&lt;p&gt;Que serait un framework (open-source) sans ses plugins &amp;amp; modules ? La communauté étant active, il existe de nombreux modules très utiles, il ressort de la conférence :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;South. Un outil pour effectuer des migrations de base de données. Un exemple de cas d'utilisation : l'intervenant devait migrer une vieille application vers Django. Parmi les problèmes, il faisait face à la structure SQL de très mauvaise qualité (du genre clé étrangère non unique...). A l'aide de l'outils de rétro-spécification de Django, il a été capable de récupérer les définitions des modèles et de corriger la BDD grâce à South. Hallelujah ! Comme mentionné plus haut, la version 1.7 de Django intègre un tel module (essentiellement basé sur South). Cela peut également être très utile pour manipuler différentes bases sur différents serveurs (dev, prod, pre-prod,...).&lt;/li&gt;
+&lt;li&gt;django-extensions: utilitaire pour manage.py ajoutant des commandes pour faciliter l'administration.&lt;/li&gt;
+&lt;li&gt;django-debug-toolbar: outil pour faire du profiling dans le navigateur.&lt;/li&gt;
+&lt;li&gt;factory-boy: création de grappes de données pour le test (Déclaration de factory). Par rapport à l'utilisation de fixtures, il permet un maintien plus facile des données de test. De plus, la gestion des clés étrangères est très pratique.&lt;/li&gt;
+&lt;li&gt;Un module shop très différent de prestashop. Beaucoup plus modulaire que ce dernier (donc pas solution out of the box).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div class="section" id="conclusion-commentaires"&gt;
+&lt;h3&gt;Conclusion &amp;amp; commentaires&lt;/h3&gt;
+&lt;p&gt;Ce petit tour d'horizon nous aura permis de constater l'extrême rapidité de développement qu'offre Django. Énorme avantage également, sa large bibliothèque de modules.&lt;/p&gt;
+&lt;p&gt;Concernant la question du choix du framework web, il existe des alternatives à Django. Pour choisir ce dernier, c'est l'usage final qui est déterminant. Bien que Django soit rapide et efficace, il est en revanche très monolythique. Si vous comptez utiliser un autre ORM par exemple, un framework plus modulaire serait &lt;a class="reference external" href="http://www.pylonsproject.org/"&gt;Pyramid&lt;/a&gt;. Enfin, il existe des framework très léger comme &lt;a class="reference external" href="http://flask.pocoo.org/"&gt;Flask&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;L'inévitable comparaison avec d'autres langages tels que PHP était plutôt sans appel (l'occasion pour certains templiers/trolls de partir en croisade contre Symfony :)). PHP est jugé (très) lourd et peu efficace. Il y avait d'ailleurs parmi nous 3 personnes qui souhaitaient quitter l'univers PHP au profit de Python.&lt;/p&gt;
+&lt;p&gt;Finalement, Django présente quelques points noirs, tels que la personnalisation de l'interface d'administration ou bien la gestion de pages multi-formulaires. Si ces dernières se complexifient, leur maintien devient vite très difficile.&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Quelques liens pour se documenter :&lt;/dt&gt;
+&lt;dd&gt;&lt;ul class="first last simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.djangoproject.com/"&gt;site du projet&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://django-planet.com/"&gt;Django planet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.django-fr.org/planete/"&gt;Django planet fr&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="questions"&gt;
+&lt;h3&gt;Questions&lt;/h3&gt;
+&lt;p&gt;Les questions ont fait ressortir les points suivant.&lt;/p&gt;
+&lt;p&gt;Il est aisé de définir plusieurs environnements (prod, pre-prod, dev) via les fichiers de configuration. Le script settings.py (configuration générale) se charge ensuite de sélectionner la configuration appropriée en fonction de l'environnement.&lt;/p&gt;
+&lt;p&gt;Pour les tests unitaires, les capacités de test de Python sont très utiles. Ainsi que le module LiveServerTestCase pour tester les requêtes réellement à travers de réelles requêtes HTTP.&lt;/p&gt;
+&lt;p&gt;Il est possible d'utiliser Django sans installer un SGBD relationnel sur son poste, grâce à SQLite. L'utilisation du framework sans base de donnée du tout se limitera à l'utilisation du routage d'URL, des vues et des templates. Dans un tel cas d'utilisation, un coup d'oeil à un framework plus léger comme Flask (c.f. plus haut) est conseillé.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="python-les-bonnes-pratiques"&gt;
+&lt;h2&gt;Python, les bonnes pratiques.&lt;/h2&gt;
+&lt;p&gt;Intervenant : Alex&lt;/p&gt;
+&lt;p&gt;Les slides de la présentation sont disponibles ici : &lt;a class="reference external" href="http://nantes.afpy.org/presentations/pythonic-code-alex-garel"&gt;Écrire du code vraiment pythonique&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Vous voulez coder en Python ? D'accord, mais pas n'importe comment ! Les bonnes pratiques facilitent la relecture du code et le maintien que cela soit par un tier ou par son auteur lui-même. Il ne faut pas oublier qu'on laisse parfois nos projets personnels un peu en suspend, et lorsqu'on les reprend, on est alors un étranger dans sa propre maison. Au cas où, mieux vaut baliser le terrain ;).&lt;/p&gt;
+&lt;p&gt;Notre intervenant commence par quelques généralités sur Python, sa syntaxe et sa philosophie. &amp;quot;Python essaie d'être élégant&amp;quot;, voilà une des premières choses qu'on entend. Par rapport à d'autres langages (e.g. Ruby) qui recherchent en plus la &lt;em&gt;pureté&lt;/em&gt;. Pour le développeur Python, la pureté n'est pas une fin en soi. c.f. &lt;a class="reference external" href="http://legacy.python.org/dev/peps/pep-0020/"&gt;The Zen of Python&lt;/a&gt; que je cite &amp;quot; Special cases aren't special enough to break the rules. Although practicality beats purity&amp;quot;. En bref, un mot très important : pragramatisme (&lt;em&gt;practicality&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Coder proprement, ça ne s'invente pas, encore moins quand on débute et les gens qui travaillent avec Python y réfléchissent. Du coup il existe un guide de références définissant les bonnes pratiques, on l'appelle le &lt;a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/"&gt;PEP8&lt;/a&gt;. Derrière ce terme à l'apparence obscure de PEP (&lt;em&gt;Python Enhancement Proposals&lt;/em&gt;) se cache tout simplement des propositions d'amélioration du langage, qu'elles soient techniques ou formelles.&lt;/p&gt;
+&lt;p&gt;Pour ce qui est de la mise en pratique du PEP8, je me permets de vous renvoyer aux slides de la présentation qui seront plus clairs et exhaustifs. Cependant, durant la présentation, quelques points sont ressortis plus que d'autres. Je continue donc avec une liste non exhaustive...&lt;/p&gt;
+&lt;p&gt;D'abord, il existe des outils pour suivre les lignes directrices (&lt;em&gt;guide lines&lt;/em&gt;) comme flake8 qui vérifie le respect du PEP8 (il en existe d'autres !). Mais plus simple encore, l'&lt;em&gt;easter egg&lt;/em&gt; (introduit par le PEP20) du &lt;strong&gt;import this&lt;/strong&gt; qui affiche le &lt;em&gt;Zen of Python&lt;/em&gt;.&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Concernant les entrées d'un programme, une bonne habitude est de traiter les données en deux fois :&lt;/dt&gt;
+&lt;dd&gt;&lt;ol class="first last arabic simple"&gt;
+&lt;li&gt;Normaliser l'entrée&lt;/li&gt;
+&lt;li&gt;Traiter la donnée normalisée&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;Cela permet de simplifier le code, notamment celui du traitement qui est du coup toujours le même. Donc, évitez d'avoir à gérer trop de cas d'erreurs (excpetions) dans le code de traitement. On notera ici la phrase célèbre de &lt;a class="reference external" href="http://fr.wikipedia.org/wiki/Jon_Postel"&gt;Jon Postel&lt;/a&gt; : &amp;quot;Be liberal in what you accept, and conservative in what you send&amp;quot;. Qu'on pourrait traduire par : soyer souple pour vos entrées, intransigent pour vos sorties.&lt;/p&gt;
+&lt;p&gt;On a aussi parlé des tuples, structure de données &lt;strong&gt;constantes&lt;/strong&gt; (&lt;em&gt;immutable&lt;/em&gt;) très pratique pour passer de la donnée à une fonction. Attention cependant à ne pas en abuser. Si de nombreux traitements sont inhérents à vos tuples, vous avez peut-être besoin d'un objet (classe) pour mieux gérer tout ça (e.g. points en mathématique...). Pour un type point en Mathématiques, peut-être qu'une classe est plus adaptée. VOus pourrez alors profiter de la &lt;strong&gt;surcharge d'opérateur&lt;/strong&gt; pour implémenter les opérations spécifiques.&lt;/p&gt;
+&lt;p&gt;A plusieurs reprises nous avons mentionné les dictionnaires, c'est un synonyme de tableau associatif, i.e. un ensemble clé-valeur.&lt;/p&gt;
+&lt;p&gt;Autre point fort, les ContextManager, ces objets qu'on utilise grâce au mots clés &lt;strong&gt;with-as&lt;/strong&gt;. Ils sont une fonctionnalité très importante du langage qui permet de bien maîtriser la portée des variables. Par exemple pour l'ouverture et la fermeture d'un fichier, ou encore pour la création et l'excécution d'une requête dans Django :).&lt;/p&gt;
+&lt;p&gt;A propos des lambda functions, ces petits bouts de code très courts qui n'acceptent qu'une expression pour seule opération, rappel qui a son importance : pas de &lt;em&gt;unpacking&lt;/em&gt; de tuple dans les paramètres (c.f. slydes et tuples pour la notion de &lt;em&gt;unpacking&lt;/em&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="le-mot-de-la-fin"&gt;
+&lt;h2&gt;Le mot de la fin&lt;/h2&gt;
+&lt;p&gt;Les slides des deux présentations sont disponibles ici:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://fle.github.io/lectures/presentation-django-2014.html"&gt;Introduction à Django, par Florent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://nantes.afpy.org/presentations/pythonic-code-alex-garel"&gt;Écrire du code vraiment pythonique, par Alex&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On a vu et appris plein de choses, c'était super ! A la prochaine fois, et d'ici là, codez bien !&lt;/p&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pierre Aufrere</dc:creator><pubDate>Tue, 26 Aug 2014 00:00:00 +0200</pubDate><guid isPermaLink="false">tag:nantes.afpy.org,2014-08-26:40-pythons-1-conference-et-des-trolls.html</guid><category>python</category><category>django</category><category>nantes</category><category>PEP</category><category>PEP8</category></item></channel></rss>

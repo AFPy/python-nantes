@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python-Nantes, Rencontres pythoniques et ligériennes">
+
+        <link rel="alternate"  href="http://nantes.afpy.org/feeds/all.atom.xml" type="application/atom+xml" title="Python-Nantes Full Atom Feed"/>
+
+        <title>Compte-rendu des conférences : Pélican et (i)Python // Python-Nantes // Rencontres pythoniques et ligériennes</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link rel="stylesheet" href="http://nantes.afpy.org/theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="http://nantes.afpy.org/author/pierre-gordon-florent.html" title="See posts by Pierre, Gordon, Florent">
+                        <img class="avatar" alt="Pierre, Gordon, Florent" src="http://www.gravatar.com/avatar/eb4e729cc545aa2f444d85e1de7953b1">
+                </a>
+                <h2 class="article-info">Pierre, Gordon, Florent</h2>
+                <small class="about-author"></small>
+                <h5>Published</h5>
+                <p>Thu 04 December 2014</p>
+                <a href="/">&larr;Home</a>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Compte-rendu des conférences&nbsp;: Pélican et (i)Python</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="http://nantes.afpy.org/tag/pelican.html">pelican</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/travis.html">travis</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/ipython.html">ipython</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/dataviz.html">dataviz</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/cartographie.html">cartographie</a>
+                        </p>
+                </header>
+            </section>
+            <p>Un meetup tardif, dû à la PyConFr, centré sur deux présentations opposées en
+termes de technicité&nbsp;: une présentation d’un outil (presque) clés-en-mains, et
+un survol des possibilités de iPython dans la dataviz cartographique, ainsi que
+quelques bibliothèques utiles.</p>
+<div class="section" id="pelican-le-futur-du-web-vintage">
+<h2>Pelican&nbsp;: le futur du web vintage</h2>
+<p>Intervenant&nbsp;: Damien Nicolas, Gordon</p>
+<div class="section" id="principe">
+<h3>Principe</h3>
+<p>Pelican est un générateur de site statique écrit en Python initialement par Alexis Métaireau.</p>
+<p>Le site est réalisé via un langage de template ensuite traduit en HTML. Le contenu généré peut ensuite être déployé sur un serveur sans configuration supplémentaire. Il n’y a donc pas d’applicatif sur le serveur.</p>
+<p>Les avantages d’un tel système sont nombreux. D’abord la simplicité. Un simple éditeur de texte suffit pour écrire le contenu. Étant purement textuel, le contenu est facilement versionnable et recevoir/fournir un patch peut se résumer à un envoi de mail. L'absence d’applicatif côté serveur rend la configuration serveur aisée et la sécurité proche de la perfection : pas d’applicatif = pas de faille.</p>
+<p>Bon évidemment, il y a quelques inconvénients. En terme de fonctionnalité d’abord, l’absence native de recherche ou de commentaire. Mais heureusement, il est possible via des extensions de remédier à ces problèmes.
+En revanche, la barrière à l’entrée est immuable. Pour faire du Pelican, il faut pouvoir écrire du RestructuredText ou du Markdown. Pour profiter pleinement de tout ça, il est bon de savoir invoquer une commande “make” ou “git push”. Plus que rébarbatif pour un néophyte.</p>
+</div>
+<div class="section" id="en-pratique">
+<h3>En pratique</h3>
+<p>L’installation se fait comme n’importe quelle bibliothèque Python. On crée un environnement virtuel (e.g. via pyvenv en Python 3). On l’active et via pip on peut installer Pelican. A noter que par défaut, Pelican supporte uniquement le RestructuredText pour les articles, pour markdown, il faudra installer le paquet markdown en plus.
+On peut ensuite préparer le site via l'installer de Pelican, qui de façon interactive pose quelques questions qui facilitent grandement la configuration. A cette étape, on paramètre notamment les différents moyens utiliser pour déployer le site web sur le serveur.</p>
+<p>Une fois configuré, on peut écrire des articles. Ces derniers pourront être placés dans un dossier <strong>articles</strong> dans le dossier <strong>content</strong> (tout ceci est paramétrable). Pour générer le site, le plus simple est d'utiliser la commande make :</p>
+<pre class="code literal-block">
+make html
+</pre>
+<p>Et on déploie :</p>
+<pre class="code literal-block">
+make upload
+</pre>
+<p>Et la magie opère. Le site est redéployé !</p>
+<p>Il est assez facile de tester localement, Pelican permet d’utiliser un simple serveur HTTP en local pour vérifier ses modifications avant de publier des erreurs ;).</p>
+</div>
+<div class="section" id="extensions">
+<h3>Extensions</h3>
+<p>On l’a écrit, nativement, il n’existe pas de gestion des commentaires
+ni de fonction de recherche. Rien d’insurmontable cependant.</p>
+<div class="section" id="commentaires">
+<h4>Commentaires</h4>
+<p>Pour les commentaires, une solution simple est d’intégrer <a class="reference external" href="https://github.com/Python-Nairobi/pelican-plugins/tree/master/disqus">Disqus</a>. Disqus est un service permettant de stoquer des commentaires sur un autre serveur que celui de l’application. L’extension disqus_static permet d’utiliser l’API de ce service pour gérer les commentaires dans Pelican. Il y a d’autres alternatives, comme par exemple gérer des commentaires statiquement dans des fichiers sur le serveur hébergeant Pelican. Cette dernière solution permet d’éviter les dépendances à un service tiers.</p>
+</div>
+<div class="section" id="recherche">
+<h4>Recherche</h4>
+<p>Ici, on pourra fait appel à <a class="reference external" href="http://www.tipue.com/search/">tipue_search</a>, qui permet d’intégrer une fonctionnalité de recherche côté client. Sur le serveur, un fichier JSON est généré. Celui-ci est ensuite utilisé côté client pour de la recherche via JQuery. Le thème <tt class="docutils literal">elegant</tt> intègre cette fonctionnalité nativement.</p>
+</div>
+<div class="section" id="autres-extensions">
+<h4>Autres extensions</h4>
+<p>Très extensible, il est possible de faire tout un tas de choses avec Pelican. C’est d’ailleurs le moteur utilisé pour le blog que vous lisez en ce moment. Pour vous faire une idée des possibilités, c’est par là : &lt;<a class="reference external" href="https://github.com/Python-Nairobi/pelican-plugins">https://github.com/Python-Nairobi/pelican-plugins</a>&gt;`_.</p>
+<p>Les slides de la présentation sont disponibles ici&nbsp;: <a class="reference external" href="/presentations/pelican/pelican-meetup-python.pdf">Pelican</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="dataviz-avec-ipython">
+<h2>Dataviz avec iPython</h2>
+<p>Intervenant&nbsp;: Thomas Gratier</p>
+<p>IPython est un shell Python interactif offrant autocomplétion et historique des commandes. Il peut également s’utiliser sous forme de notebook dans un navigateur. De nombreuses bibliothèques sont disponibles et peuvent être chargées dynamiquement. Ainsi, il est très aisé de préparer des présentations dynamiques avec démonstration Python en temps réel et image générée directement dans un navigateur. IPython permet aussi de déployer les notebooks sur un site web. C’est donc un outil très puissant à la fois pour expérimenter avec Python mais aussi pour préparer des présentations interactives.</p>
+<p>Pas plus de mots, lors du meetup, nous avons pu voir des résultats assez chouettes que vous invités à expérimenter par vous-même ici : <a class="reference external" href="http://nantes.afpy.org/presentations/ipython_par_exemple/Ipython_par_l_exemple.html">Dataviz avec iPython</a>.</p>
+<p>Merci à tous pour votre présence et à très bientôt :) !</p>
+</div>
+
+            <div class="hr"></div>
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Python-Nantes &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>

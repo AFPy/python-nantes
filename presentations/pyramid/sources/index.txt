@@ -1,0 +1,258 @@
+=======================
+Pyramid
+=======================
+
+.. slide::
+   :class: first center
+
+Gael Pasgrimaud `@gawel_ <http://twitter.com/gawel_>`_
+
+python-nantes 2015
+
+About me
+========
+
+- Pythonista `@bearstech <http://twitter.com/bearstech>`_
+
+- Membre fondateur de l'`AFPy <http://www.afpy.org>`_
+
+- Mainteneur WebTest
+
+Quoi c'est ?
+============
+
+- Du www
+
+- Du python + ...
+
+Python
+======
+
+.. slide::
+   :hide-title: true
+
+.. image:: static/pyramid_mommie.jpg
+   :align: center
+
+`. <http://pylonsproject.storenvy.com/products/283795-pyramid-hacker-t-shirt>`_
+
+Comment que c'est ?
+===================
+
+- Petit framework pas minimaliste
+
+- Nativement WSGI
+
+- Liberté de choisir et concevoir
+
+- Pluggable / Extensible
+
+Hello world
+===========
+
+.. literalinclude:: app.py
+
+
+Dispatch d'url
+==============
+
+On déclare une route que l'on associe à un callable:
+
+::
+
+    config.add_route('hello', '/hello/{name}')
+    config.add_view(hello_world, route_name='hello')
+
+Traversing
+==========
+
+On traverse un mapping clé/prochaine valeur:
+
+.. code-block:: py
+
+    class Parent:
+
+        def __init__(self, request):
+            self.request = request
+
+        def __getitem__(self, item):
+            return Children(self.request)
+
+
+    config.add_route('home', 'traversable/*traverse',
+                     factory=root_factory')
+    config.add_view('mypackage.views.myview', route_name='home')
+
+Résolution de routes
+=====================
+
+Recontruire des urls à partir de route nommées:
+
+.. code-block:: py
+
+    request.route_url('home', name='francois')
+
+Exceptions
+==========
+
+Moins on a de ``if`` mieux on se porte:
+
+.. code-block:: py
+
+   from pyramid import httpexceptions as exc
+
+   def view(request):
+        raise exc.HTTPFound(location='/')
+
+Contexte de vue
+===============
+
+Une factory permet de retrouver un objet:
+
+::
+
+   def view_with_context(context, request):
+        return {}
+
+   config.add_view(view_with_context, route_name='home',
+                   factory=Context)
+
+
+Authentification
+================
+
+- Pluggable
+
+- Secure Cookie / Auth Basic
+
+::
+
+    request.authentidated_user
+
+Authorisations
+==============
+
+- Permission sur les vues
+
+::
+
+    config.add_view(edit_view, route_name='edit',
+                    permission=Edit)
+
+- ACL sur les factory
+
+::
+
+  class Context:
+      def __acl__(self):
+          return [
+              (Allow, 'admin', Edit),
+              (Allow, Everyone, View),
+          ]
+
+- check
+
+::
+
+  request.has_permission(Edit, context)
+
+Rendering
+=========
+
+Une vue retourne un dictionnaire, le renderer est responsable du rendu:
+
+::
+
+    config.add_view(view, renderer='json')
+    config.add_view(view, renderer='template/index.html')
+
+Il en existe pour Chameleon, Jinja, Mako, json, text ...
+
+Renderers
+=========
+
+
+Mais on peut ajouter le sien::
+
+    class TSVRenderer(object):
+        def __init__(self, info):
+            pass
+
+        def __call__(self, value, system):
+            fout = StringIO()
+            writer = csv.writer(fout, delimiter='\t', quotechar='"',
+                                quoting=csv.QUOTE_MINIMAL)
+            writer.writerow(value['header'])
+            writer.writerows(value['rows'])
+            filename = value['filename']
+            resp = system['request'].response
+            resp.content_type = 'text/csv'
+            resp.content_disposition = 'attachment;filename=' + filename + '.tsv'
+            return fout.getvalue()
+
+    config.add_renderer('tsv', TSVRenderer)
+
+Tweens
+=======
+
+- Middleware ala Django
+
+- Exemple: debugtoolbar
+
+Evénements
+==========
+
+NewRequest, BeforeRender
+
+Modulaire / extensible
+======================
+
+La magie du includemémé:
+
+::
+
+    def includeme(config):
+        config.include('mymodule', route_prefix='/foo')
+
+Etendre l'objet request:
+
+::
+
+    config.add_request_method(*args)
+
+Et encore...
+============
+
+- Static files
+
+- Session
+
+- HTTP Cache
+
+- Predicat de vue
+
+- Transaction
+
+Ecosystème
+==========
+
+- `sqlalchemy <http://www.sqlalchemy.org/>`_
+
+- `webassets <http://webassets.readthedocs.org/en/latest/>`_
+
+- `pyramid_tm <https://pypi.python.org/pypi/pyramid_tm>`_
+
+- `pyramid_mailer <https://pypi.python.org/pypi/pyramid_mailer>`_
+
+- `pyramid_redis_session <https://pypi.python.org/pypi/pyramid_redis_sessions>`_
+
+- `pyramid_layout <https://pypi.python.org/pypi/pyramid_layout>`_
+
+- `substanced <http://substanced.net/>`_
+
+- `koti <http://kotti.pylonsproject.org/>`_
+
+- 259 packages classés ``Framework::Pyramid`` sur pypi
+
+
+

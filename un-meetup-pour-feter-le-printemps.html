@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python-Nantes, Rencontres pythoniques et ligériennes">
+
+        <link rel="alternate"  href="http://nantes.afpy.org/feeds/all.atom.xml" type="application/atom+xml" title="Python-Nantes Full Atom Feed"/>
+
+        <title>Un meetup pour fêter le printemps ! // Python-Nantes // Rencontres pythoniques et ligériennes</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link rel="stylesheet" href="http://nantes.afpy.org/theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="http://nantes.afpy.org/author/florent-lebreton.html" title="See posts by Florent Lebreton">
+                        <img class="avatar" alt="Florent Lebreton" src="http://www.gravatar.com/avatar/0b65f504c35330d6e74af6ecf32cb528">
+                </a>
+                <h2 class="article-info">Florent Lebreton</h2>
+                <small class="about-author"></small>
+                <h5>Published</h5>
+                <p>Thu 05 March 2015</p>
+                <a href="/">&larr;Home</a>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Un meetup pour fêter le printemps !</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="http://nantes.afpy.org/tag/python.html">python</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/ayncio.html">ayncio</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/unittest.html">unittest</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/nantes.html">nantes</a>
+                        </p>
+                </header>
+            </section>
+            <p>Lors de notre prochain meetup, le 24 mars à 19h à la Cantine, deux sujets très pythoniques vous seront proposés par nos orateurs :</p>
+<ul class="simple">
+<li><strong>Présentation d'asyncio</strong> (par Gaël) : La bibliothèque Python 3 asyncio fournit une infrastructure pour écrire du code concurrent mono-threadé en utilisant les coroutines, multiplexer des entrées-sorties à travers des sockets ou d'autres ressources, faire tourner des clients et serveurs réseaux, ...</li>
+<li><strong>Tests unitaires en python</strong> (par Thomas) : Python nous offre par défaut des outils terriblement pratiques pour la mise en place de tests automatisés. Nous aborderons la question de l'utilité et de la pertinence de ces tests unitaires, la mise en oeuvre basique du module unittest. Nous expliquerons ensuite le sujet des fixtures, puis nous irons un peu plus loin, avec le concept de Factory. Enfin, nous présenterons certains modules de tests alternatifs.</li>
+</ul>
+<p>Nous espérons vous compter aussi nombreux que d'habitude à ce meetup ainsi qu'au verre qui s'en suivra.</p>
+<p>Rejoignez-nous sur le <a class="reference external" href="http://webchat.freenode.net/?channels=afpy-nantes">chan IRC de l'AFPy Nantes</a> ou inscrivez vous sur la <a class="reference external" href="http://lists.afpy.org/listinfo/nantes">liste de diffusion</a> . :)</p>
+<p>À bientôt !</p>
+
+            <div class="hr"></div>
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Python-Nantes &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>

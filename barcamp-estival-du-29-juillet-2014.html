@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python-Nantes, Rencontres pythoniques et ligériennes">
+
+        <link rel="alternate"  href="http://nantes.afpy.org/feeds/all.atom.xml" type="application/atom+xml" title="Python-Nantes Full Atom Feed"/>
+
+        <title>Barcamp estival du 29 juillet 2014 // Python-Nantes // Rencontres pythoniques et ligériennes</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link rel="stylesheet" href="http://nantes.afpy.org/theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="http://nantes.afpy.org/author/georges-gouriten.html" title="See posts by Georges Gouriten">
+                        <img class="avatar" alt="Georges Gouriten" src="http://www.gravatar.com/avatar/b73e37824f0e490106df9c8fd07de2e2">
+                </a>
+                <h2 class="article-info">Georges Gouriten</h2>
+                <small class="about-author"></small>
+                <h5>Published</h5>
+                <p>Thu 31 July 2014</p>
+                <a href="/">&larr;Home</a>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Barcamp estival du 29 juillet 2014</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="http://nantes.afpy.org/tag/django.html">django</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/fabric.html">fabric</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/ansible.html">ansible</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/salt.html">salt</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/barcamp.html">barcamp</a>
+                        </p>
+                </header>
+            </section>
+            <p>Notre premier barcamp, animé par <a class="reference external" href="https://netiru.fr">Georges</a> nous
+a permis d'aborder différents sujets en groupes de 3 à 5 personnes pendant 45
+minutes environ.</p>
+<p>Les comptes-rendus sont ci-dessous, rendez-vous à la prochaine rencontre !</p>
+<img alt="barcamp estival du 29 juillet 2014" src="/images/003-1.jpg" />
+<div class="section" id="outils-python-pour-les-adminsys-devops">
+<h2>Outils Python pour les adminsys/devops</h2>
+<p>Participants : Florent, Antoine et Pablo</p>
+<p>Rapporteur : Pablo</p>
+<p>L'idée était de discuter des outils Python disponibles pour les adminsys.</p>
+<p>Les point abordés étaient :</p>
+<ul class="simple">
+<li>Les outils pour disponibles pour le déploiement/provisioning, comme Fabric
+<a class="reference external" href="http://www.fabfile.org/">http://www.fabfile.org/</a>, Ansible <a class="reference external" href="http://www.ansible.com/home">http://www.ansible.com/home</a> ou Saltstack
+<a class="reference external" href="http://www.saltstack.com/">http://www.saltstack.com/</a></li>
+<li>Les nouvelles façons de travailler entre développeurs et administrateurs
+systèmes, Antoine nous a raconté son expérience avec Fabric et Puppet (Ruby)
+chez Wikipedia, nous avons évoqué la problématique du stockage/versioning de
+donnés sensibles et partagées dans une même équipe</li>
+<li>Les outils de monitoring comme Graphite <a class="reference external" href="http://graphite.wikidot.com/">http://graphite.wikidot.com/</a> et
+ElasticSearch/Logstash/Kibana (Java) pour les métriques des apps/activités</li>
+<li>L'utilisation de Sentry <a class="reference external" href="https://getsentry.com/">https://getsentry.com/</a> pour le tracking des
+erreurs/exception dans une application Python</li>
+</ul>
+<p>Pour résumer, la discussion a été ouverte et variée. De plus, c'était la
+première fois que nous nous rencontrions et les échanges ont permis de mieux
+connaître l'intérêt et l'expérience de chacun sur le sujet, le tout dans une
+très bonne ambiance.</p>
+</div>
+<div class="section" id="django">
+<h2>Django</h2>
+<p>Participants : Mathieu F., ?, ?, ?</p>
+<p>Rapporteur : Mathieu F.</p>
+<p>Nous avons évoqué les serveurs web et leurs modes &quot;FastCGI&quot; et WSGI&quot;.</p>
+<p>FastCGI :</p>
+<ul class="simple">
+<li><a class="reference external" href="http://fr.wikipedia.org/wiki/FastCGI">http://fr.wikipedia.org/wiki/FastCGI</a> (voir aussi les liens vers les
+implémentations / modules pour Apache / Lighttpd / Nginx / Cherokee)</li>
+</ul>
+<p>WSGI :</p>
+<ul class="simple">
+<li><a class="reference external" href="http://fr.wikipedia.org/wiki/WSGI">http://fr.wikipedia.org/wiki/WSGI</a></li>
+<li><a class="reference external" href="http://wsgi.readthedocs.org/en/latest/what.html">http://wsgi.readthedocs.org/en/latest/what.html</a></li>
+<li><a class="reference external" href="https://code.google.com/p/modwsgi/">https://code.google.com/p/modwsgi/</a></li>
+</ul>
+<p>Nous avons ensuite rapidement parlé de Gunicorn (<a class="reference external" href="http://gunicorn.org/">http://gunicorn.org/</a>), un
+serveur web conçu pour Python et WSGI.</p>
+<p>Puis Django :</p>
+<ul class="simple">
+<li>framework de développement web</li>
+<li>permet d'architecturer le code selon le modèle MVC</li>
+<li>permet de définir une liste d'URL (exemple pour &quot;www.monsite.fr&quot; : /login,
+/blog, /admin, /voirArticle et d'associer une action / un script à chacune
+(ce que Symfony appelle des routes, dans le monde PHP ;-)</li>
+<li>fournit une commande shell &quot;manage.py&quot; permet des actions de debug,
+initialisation, lancement du serveur web en local, etc</li>
+<li>Django permet de créer un back office très light (CRUD) de manière presque
+automatique</li>
+</ul>
+<p>Les &quot;virtualenv&quot; :</p>
+<ul class="simple">
+<li>permettent de faire cohabiter des logiciels écrits en Python ayant des
+prérequis différents. Par exemple : le logiciel &quot;Toto&quot; requiert la lib &quot;libA&quot;
+en version 12, alors que le logiciel &quot;Truc&quot; requiert la lib &quot;libA&quot; en version
+10</li>
+<li>sont utiles (indispensables !) à la fois en environnement de dév et en prod</li>
+<li>voir commandes &quot;virtualenv&quot;, &quot;virtualenvwrapper&quot; et &quot;venv&quot;</li>
+</ul>
+<p>Déploiement d'applis Django :</p>
+<ul class="simple">
+<li>peut se faire avec des outils maison ou des outils dédiés tels que Fabric
+(<a class="reference external" href="http://www.fabfile.org/">http://www.fabfile.org/</a>)</li>
+</ul>
+<p>Hébergement :</p>
+<ul class="simple">
+<li>a priori, peu d'hébergement mutualisé pour Python (loin de l'offre de PHP)</li>
+<li>quelques hébergeurs :<ul>
+<li><a class="reference external" href="https://www.alwaysdata.com/">https://www.alwaysdata.com/</a> (propose du mutualisé avec Python en
+gratuit), support technique réacti (joignable via IRC)</li>
+<li><a class="reference external" href="https://www.heroku.com/">https://www.heroku.com/</a></li>
+<li><a class="reference external" href="http://aws.amazon.com/fr/">http://aws.amazon.com/fr/</a></li>
+</ul>
+</li>
+</ul>
+<dl class="docutils">
+<dt>Python 2.7 ou Python 3.x ? (troll inside ;-)</dt>
+<dd>==&gt; A ce jour, la seule raison de commencer un développement en 2.7 plutôt
+qu'en 3.x serait d'avoir un besoin impératif d'une lib non dispo en Python 3
+(et dont le portage n'est pas envisagé). De très nombreuses libs ont été
+mises à jour, donc ce cas de figure devrait se raréfier.</dd>
+</dl>
+<p>Depuis la version 1.6, Django (<a class="reference external" href="https://www.djangoproject.com/">https://www.djangoproject.com/</a>) supporte Python
+3.</p>
+<p>Pour terminer, un petit lien vers un blog TRES intéressant sur Python (mais
+pas que ;-) :</p>
+<ul class="simple">
+<li>Sam &amp; Max: Python, Django, Git et du cul (ouioui, vous avez bien lu ;-) :
+<a class="reference external" href="http://sametmax.com/">http://sametmax.com/</a></li>
+</ul>
+</div>
+<div class="section" id="bonnes-pratiques-et-outils-python">
+<h2>Bonnes pratiques et outils python</h2>
+<p>Participants : Reine, Nicolas, Yoann</p>
+<p>Rapporteur : Yoann</p>
+<p>Tout d'abord, nous avons discuté de maisons d'édition chez qui paraissent des
+livres intéressants pour de la doc ou de l'outillage (Python/Linux mais pas
+que) : Packt, O'Reilly, Apress, No starch press. Nous avons aussi parlé de
+sites plus orientés Linux : TLLTS (The Linux Link Tech Show:podcasts sur
+youtube), Linux Luddites, distrowatch.</p>
+<p>Ensuite, nous avons abordé la démarche générale à suivre dans les projets pour
+en venir plus particulièrement à l'outillage : en fonction des besoins du
+projet on choisit les technologies, puis vient le choix des outils. Avec
+Python, la référence permet généralement comprendre rapidement comment
+utiliser les librairies.</p>
+<p>Enfin, nous avons parlé des virtualenv qui permettent d'avoir plusieurs
+environnements bien séparés sur une machine physique (et donc de disposer de
+différentes versions des librairies, voire de Python) ainsi que les
+importer/exporter grâce à pip, par l'intermédiaire d'un fichier listant les
+dépendances du projet.</p>
+</div>
+<div class="section" id="regards-croises-sur-des-projets-python">
+<h2>Regards croisés sur des projets python</h2>
+<p>Participants : Jean D., Georges G., Jean-Baptiste, ?</p>
+<p>Rapporteur : Jean D.</p>
+<p>Python est recherché pour simplifier et debugger des développements existants.
+D'un accès facile sur le Web, il est également rapide d'apprentissage. Il
+permet de réduire la taille d'un développement classique. L'ordre de grandeur
+de cette réduction peut-être de 75 % du temps.  Ceci grâce à 2 atouts
+principaux : son &quot;moteur&quot; performant ses nombreuses fonctionnalités.</p>
+</div>
+
+            <div class="hr"></div>
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Python-Nantes &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>

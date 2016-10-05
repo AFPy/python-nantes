@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Python-Nantes</title><link href="http://nantes.afpy.org/" rel="alternate"></link><link href="http://nantes.afpy.org/feeds/arthur-lutz.atom.xml" rel="self"></link><id>http://nantes.afpy.org/</id><updated>2016-10-05T00:00:00+02:00</updated><entry><title>Annonce meetup du mois de octobre 2016 : les tests en python</title><link href="http://nantes.afpy.org/annonce-meetup-du-mois-de-octobre-2016-les-tests-en-python.html" rel="alternate"></link><published>2016-10-05T00:00:00+02:00</published><updated>2016-10-05T00:00:00+02:00</updated><author><name>Arthur Lutz</name></author><id>tag:nantes.afpy.org,2016-10-05:annonce-meetup-du-mois-de-octobre-2016-les-tests-en-python.html</id><summary type="html">&lt;p&gt;La prochaine rencontre Python Nantes sera au format Présentations et
+se déroulera le mercredi 5 ocotbre de 19h à 21h, à la Cantine de
+Nantes.&lt;/p&gt;
+&lt;p&gt;Au programme :&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;introduction aux tests unittaires&lt;/li&gt;
+&lt;li&gt;lancer les tests : unittest de base, py.test, nose, pytest, etc.&lt;/li&gt;
+&lt;li&gt;tox pour lancer les test dans des virtualenvs&lt;/li&gt;
+&lt;li&gt;l'intégration continue avec python (jenkins, travis, etc.)&lt;/li&gt;
+&lt;li&gt;les tests en prod : healthchecks au cœur de l'application&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Comme toujours ce meetup est ouvert à tous les amoureux ou curieux du langage
+Python, nous apprécions particulièrement la diversité des profils qui joignent
+à nous !&lt;/p&gt;
+&lt;p&gt;Ceux qui ont envie pourront prolonger la soirée autour d'un verre en centre
+ville de Nantes.&lt;/p&gt;
+&lt;p&gt;Si vous avez des questions ou des remarques concernant nos meetups,
+rejoignez-nous sur le chan IRC de l'AFPy Nantes ou inscrivez vous sur
+&lt;a class="reference external" href="http://lists.afpy.org/nantes/"&gt;la liste de diffusion&lt;/a&gt; . Vous pouvez
+aussi nous suivre sur Twitter via notre compte &lt;a class="reference external" href="http://twitter.com/PythonNantes"&gt;&amp;#64;PythonNantes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Le meetup est gratuit mais il faut s'inscrire sur
+&lt;a class="reference external" href="http://www.meetup.com/Nantes-Python-Meetup/events/233581812/"&gt;http://www.meetup.com/Nantes-Python-Meetup/events/233581812/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;À bientôt !&lt;/p&gt;
+</summary><category term="python"></category><category term="nantes"></category><category term="présentations"></category></entry><entry><title>Annonce meetup du mois de mai 2016 : Celery &amp; Sentry</title><link href="http://nantes.afpy.org/annonce-meetup-du-mois-de-mai-2016-celery-sentry.html" rel="alternate"></link><published>2016-05-26T00:00:00+02:00</published><updated>2016-05-26T00:00:00+02:00</updated><author><name>Arthur Lutz</name></author><id>tag:nantes.afpy.org,2016-05-26:annonce-meetup-du-mois-de-mai-2016-celery-sentry.html</id><summary type="html">&lt;p&gt;La prochaine rencontre Python Nantes sera au format Présentations et
+se déroulera le mercredi 18 mai de 19h à 21h, à la Cantine de
+Nantes.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Dejan Filipovic (&lt;a class="reference external" href="http://twitter.com/nuoyas"&gt;&amp;#64;nuoyas&lt;/a&gt;) de &lt;a class="reference external" href="http://gandi.net"&gt;Gandi&lt;/a&gt; nous présentera &lt;a class="reference external" href="http://www.celeryproject.org/"&gt;Celery&lt;/a&gt; (queue de taches distribuée)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img alt="celery" src="/images/celery-logo-7.resized.png" /&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Arthur Lutz (&lt;a class="reference external" href="http://twitter.com/arthurlutz"&gt;&amp;#64;arthurlutz&lt;/a&gt;) de
+&lt;a class="reference external" href="http://www.logilab.fr"&gt;Logilab&lt;/a&gt; présentera un retour sur &lt;a class="reference external" href="https://github.com/getsentry/sentry/"&gt;Sentry&lt;/a&gt; (collecteur d'erreurs
+python écrit en python, mais aussi javascript et autres)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img alt="sentry" src="/images/svgporn-sentry.resized.png" /&gt;
+&lt;p&gt;Comme toujours ce meetup est ouvert à tous les amoureux ou curieux du langage
+Python, nous apprécions particulièrement la diversité des profils qui joignent
+à nous !&lt;/p&gt;
+&lt;p&gt;Ceux qui ont envie pourront prolonger la soirée autour d'un verre en centre
+ville de Nantes.&lt;/p&gt;
+&lt;p&gt;Si vous avez des questions ou des remarques concernant nos meetups,
+rejoignez-nous sur le chan IRC de l'AFPy Nantes ou inscrivez vous sur
+&lt;a class="reference external" href="http://lists.afpy.org/nantes/"&gt;la liste de diffusion&lt;/a&gt; . Vous pouvez
+aussi nous suivre sur Twitter via notre compte &lt;a class="reference external" href="http://twitter.com/PythonNantes"&gt;&amp;#64;PythonNantes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Le meetup est gratuit mais il faut s'inscrire sur
+&lt;a class="reference external" href="http://www.meetup.com/Nantes-Python-Meetup/events/230661649/"&gt;http://www.meetup.com/Nantes-Python-Meetup/events/230661649/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;À bientôt !&lt;/p&gt;
+</summary><category term="python"></category><category term="nantes"></category><category term="présentations"></category></entry><entry><title>Un petit barcamp en novembre 2015 ?!</title><link href="http://nantes.afpy.org/un-petit-barcamp-en-novembre-2015.html" rel="alternate"></link><published>2015-11-17T00:00:00+01:00</published><updated>2015-11-17T00:00:00+01:00</updated><author><name>Arthur Lutz</name></author><id>tag:nantes.afpy.org,2015-11-17:un-petit-barcamp-en-novembre-2015.html</id><summary type="html">&lt;p&gt;La prochaine rencontre Python Nantes sera au format &lt;a class="reference external" href="http://fr.wikipedia.org/wiki/BarCamp"&gt;BarCamp&lt;/a&gt; et se déroulera le jeudi 26
+novembre de 19h à 21h, à la Cantine de Nantes.&lt;/p&gt;
+&lt;p&gt;L'idée est simplement de se retrouver et de décider sur place des sujets de
+discussions qui vous intéressent, de les aborder ensemble en différents
+groupes, puis de mettre en commun ce qui s'est dit pendant les ateliers.&lt;/p&gt;
+&lt;p&gt;Comme toujours ce meetup est ouvert à tous les amoureux ou curieux du langage
+Python, nous apprécions particulièrement la diversité des profils qui joignent
+à nous !&lt;/p&gt;
+&lt;p&gt;Ceux qui ont envie pourront prolonger la soirée autour d'un verre en centre
+ville de Nantes.&lt;/p&gt;
+&lt;p&gt;Si vous avez des questions ou des remarques concernant nos meetups,
+rejoignez-nous sur le chan IRC de l'AFPy Nantes ou inscrivez vous sur
+&lt;a class="reference external" href="http://lists.afpy.org/nantes/"&gt;la liste de diffusion&lt;/a&gt; . Vous pouvez
+aussi nous suivre sur Twitter via notre compte &lt;a class="reference external" href="http://twitter.com/PythonNantes"&gt;&amp;#64;PythonNantes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;À bientôt !&lt;/p&gt;
+</summary><category term="python"></category><category term="nantes"></category><category term="barcamp"></category></entry><entry><title>Discussions autour de PyConFR 2015 et relance du meetup</title><link href="http://nantes.afpy.org/discussions-autour-de-pyconfr-2015-et-relance-du-meetup.html" rel="alternate"></link><published>2015-11-04T00:00:00+01:00</published><updated>2015-11-04T00:00:00+01:00</updated><author><name>Arthur Lutz</name></author><id>tag:nantes.afpy.org,2015-11-04:discussions-autour-de-pyconfr-2015-et-relance-du-meetup.html</id><summary type="html">&lt;p&gt;Nous étions une vingtaine à nous réunir pour relancer la dynamiques
+des meetup python à Nantes ce 28 octobre 2015 dans les locaux de
+&lt;a class="reference external" href="http://www.oasiswork.fr"&gt;Oasiswork&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Nous avons parlé de manière informelle des conférences et sujets
+abordés lors de la &lt;a class="reference external" href="http://www.pycon.fr/2015/"&gt;PyConFR2015&lt;/a&gt;,
+conférence autour du language de programmation python organisée par
+l'&lt;a class="reference external" href="http://www.afpy.org"&gt;AFPY&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Nous avons parlé et partagé sur de nombreux sujets dont :&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;ansible, salt et le devops&lt;/li&gt;
+&lt;li&gt;bus d'évenements dans salt et dans fedmsg&lt;/li&gt;
+&lt;li&gt;scapy&lt;/li&gt;
+&lt;li&gt;tox, guix-tox&lt;/li&gt;
+&lt;li&gt;l'inevitable docker&lt;/li&gt;
+&lt;li&gt;sqlalchemy, l'ORM de django, pyramid, flask&lt;/li&gt;
+&lt;li&gt;pelican&lt;/li&gt;
+&lt;li&gt;elasticsearch&lt;/li&gt;
+&lt;li&gt;micropython et wipy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;De nombreux sujets à explorer lors des prochains meetups. En attendant
+la publication des vidéos de PyConFR 2015, vous pouvez consulter &lt;a class="reference external" href="http://www.pycon.fr/2015/schedule/"&gt;le
+programme de pyconfr 2015&lt;/a&gt; ou
+lire &lt;a class="reference external" href="https://www.logilab.org/2337253"&gt;un compte rendu rédigé par Logilab&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Nous nous sommes mis d'accord pour nous réunir à un rhythme d'une fois
+par mois, alternant entre trois formats : les meetups présentation,
+les meetups en mode &amp;quot;barcamp&amp;quot; (non-conférence où chacun peut proposer
+un sujet avec constitution de petits groupes pour parler ou travailler
+sur ce sujet), et le format &lt;em&gt;afpyro&lt;/em&gt; (tout simplement un apéro
+communautaire dans un bar). L'organisation des présentations se
+coordonne sur &lt;a class="reference external" href="https://lite4.framapad.org/p/aiWGnNwwIb"&gt;le pad&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Si vous avez des questions ou des remarques concernant nos meetups,
+rejoignez-nous sur le chan IRC de l'AFPy Nantes ou inscrivez vous sur
+&lt;a class="reference external" href="http://lists.afpy.org/nantes/"&gt;la liste de diffusion&lt;/a&gt; . Vous pouvez
+aussi nous suivre sur Twitter via notre compte &lt;a class="reference external" href="http://twitter.com/PythonNantes"&gt;&amp;#64;PythonNantes&lt;/a&gt;.&lt;/p&gt;
+</summary><category term="python"></category><category term="nantes"></category><category term="pyconfr"></category></entry><entry><title>Discutons de PyConFR 2015 le mercredi 28 octobre 2015</title><link href="http://nantes.afpy.org/discutons-de-pyconfr-2015-le-mercredi-28-octobre-2015.html" rel="alternate"></link><published>2015-10-23T00:00:00+02:00</published><updated>2015-10-23T00:00:00+02:00</updated><author><name>Arthur Lutz</name></author><id>tag:nantes.afpy.org,2015-10-23:discutons-de-pyconfr-2015-le-mercredi-28-octobre-2015.html</id><summary type="html">&lt;p&gt;La prochaine rencontre Python Nantes sera au format BarCamp et se
+déroulera le mercredi 28 octobre 2015.&lt;/p&gt;
+&lt;p&gt;Meetup de rétrospective sur &lt;a class="reference external" href="http://www.pycon.fr/2015/"&gt;PyConFR2015&lt;/a&gt;. Venez discuter de ce qui s'est dit à la
+conférence annuelle sur python qui vient de se dérouler à
+Pau. Inscrivez vous sur &lt;a class="reference external" href="http://www.meetup.com/Nantes-Python-Meetup/events/226253310/"&gt;meetup.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Nous serons accueillis par &lt;a class="reference external" href="http://www.oasiswork.fr"&gt;Oasiswork&lt;/a&gt; au
+&lt;a class="reference external" href="http://osm.org/go/eq2sH9514R-?layers=H&amp;amp;m=&amp;amp;node=1728911181"&gt;11 rue du Marchix, Nantes&lt;/a&gt; (Arrêt
+Jean-Jaurès - Tramway 3 - entre Viarme et Bretagne).&lt;/p&gt;
+&lt;p&gt;Comme toujours ce meetup est ouvert à tous les amoureux ou curieux du
+langage Python, nous apprécions particulièrement la diversité des
+profils qui joignent à nous !&lt;/p&gt;
+&lt;p&gt;Si vous avez des questions ou des remarques concernant nos meetups,
+rejoignez-nous sur le chan IRC de l'AFPy Nantes ou inscrivez vous sur
+la liste de diffusion . Vous pouvez aussi nous suivre sur Twitter via
+notre compte &lt;a class="reference external" href="http://twitter.com/PythonNantes"&gt;&amp;#64;PythonNantes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;À bientôt !&lt;/p&gt;
+&lt;iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-1.5625570714473724%2C47.2185925662017%2C-1.5607894957065582%2C47.21953167767592&amp;amp;layer=hot&amp;amp;marker=47.219062124018016%2C-1.5616732835769653" style="border: 1px solid black"&gt;&lt;/iframe&gt;&lt;br/&gt;&lt;small&gt;&lt;a href="http://www.openstreetmap.org/?mlat=47.21906&amp;amp;mlon=-1.56167#map=20/47.21906/-1.56167&amp;amp;layers=H"&gt;View Larger Map&lt;/a&gt;&lt;/small&gt;</summary><category term="python"></category><category term="nantes"></category><category term="pyconfr"></category></entry></feed>

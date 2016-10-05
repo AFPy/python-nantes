@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python-Nantes, Rencontres pythoniques et ligériennes">
+
+        <link rel="alternate"  href="http://nantes.afpy.org/feeds/all.atom.xml" type="application/atom+xml" title="Python-Nantes Full Atom Feed"/>
+
+        <title>Compte-rendu des conférences : Pyramid, Générateurs et co-routines // Python-Nantes // Rencontres pythoniques et ligériennes</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link rel="stylesheet" href="http://nantes.afpy.org/theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="http://nantes.afpy.org/author/florent-lebreton.html" title="See posts by Florent Lebreton">
+                        <img class="avatar" alt="Florent Lebreton" src="http://www.gravatar.com/avatar/0b65f504c35330d6e74af6ecf32cb528">
+                </a>
+                <h2 class="article-info">Florent Lebreton</h2>
+                <small class="about-author"></small>
+                <h5>Published</h5>
+                <p>Tue 27 January 2015</p>
+                <a href="/">&larr;Home</a>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Compte-rendu des conférences&nbsp;: Pyramid, Générateurs et co-routines</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="http://nantes.afpy.org/tag/pyramid.html">pyramid</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/generateur.html">générateur</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/co-routine.html">co-routine</a>
+                        </p>
+                </header>
+            </section>
+            <p>Pour ce premier meetup de janvier, deux sujets ont été présentés devant une quarantaine de personnes visiblement intéressées et attentives. Vous trouverez dans cet article un résumé de ce qui a été proposé, ainsi que les liens vers les présentations.</p>
+<div class="section" id="pyramid">
+<h2>Pyramid</h2>
+<p>Intervenant&nbsp;: Gaël</p>
+<p>Pyramid est un framework web développé en Python. On peut le classer entre Bottle (plus minimaliste) et Django (plus gros et plus monolithique).
+Il est nativement WSGI, facilement extensible et laisse beaucoup de souplesse dans les choix techniques et la conception.</p>
+<p>Vous verrez dans les slides qu'un classique &quot;Hello World&quot;, servi en HTTP, est très simple à réaliser.</p>
+<p>Le premier composant à appréhender est le <a class="reference external" href="http://docs.pylonsproject.org/docs/pyramid/en/latest/api/config.html">configurateur</a>, qui permet de configurer une application Pyramid (et notamment de gérer les routes).</p>
+<p>Le <em>routeur</em> a la particularité de pouvoir fonctionner de <a class="reference external" href="http://pyramid-cookbook.readthedocs.org/en/latest/routing/">deux manière différentes</a> :</p>
+<ul class="simple">
+<li>par mapping des URLs sur des vues</li>
+<li>en mode <em>traversal</em> (les différents fragments de l'URL permettent traverser des classes).</li>
+</ul>
+<p>Le routeur permet aussi classiquement de faire de la résolution d'URL, ce qui évite à avoir à répéter des URLs dans les templates par exemple.</p>
+<p>Un autre concept assez intéressant du framework est l'utilisation des exceptions. Il est notamment possible de lever des exceptions HTTP ce qui permet de gérer les erreurs sous forme de codes du protocole HTTP (500, 403).</p>
+<p>Le concept de <em>factory</em> permet de récupérer/travailler sur un objet avant qu'une vue ne soit invoquée, ce qui rend le code de la vue plus simple. Une <em>factory</em> peut être factorisée et utilisée dans plusieurs vues.</p>
+<p>Le rendu d'une vue se fait via par l'intermédiaire d'une <em>renderer</em> et une vue peut être associée à plusieurs renderer (par exemple un rendu json et un rendu HTML via une template). On pourrait aussi avoir plusieurs renderers utilisant des moteurs de templates différents (Chameleon, Jinja, Mako, ...). Il est aussi possible de créer son propre renderer (par exemple pour renvoyer un fichier csv, un pdf, ...).</p>
+<p>Le concept de <em>tween</em> permet d'intercepter une requête, puis la réponse pour analyser ou modifier l'une ou l'autre. Un cas pratique classique est l'utilisation d'une barre de debuggage permettant d'analyser le comportement de l'application.</p>
+<p>Un système d'évènements permet d'associer une fonction à un évènement. Par exemple : <tt class="docutils literal">BeforeRender</tt> est déclenché avant le rendu d'une template et laisse la possibilité d'injecter des données dans le context passé à la template.</p>
+<p>Par ailleurs, Pyramid est modulaire et peut être facilement étendu via la fonction magique <tt class="docutils literal">includeme</tt>. Il est aussi possible d'étendre l'objet <tt class="docutils literal">request</tt> pour lui ajouter des méthodes par exemple, ce qui peut s'avérer pratique dans certains cas.</p>
+<p>Beaucoup de modules supplémentaires sont fournis nativement :</p>
+<ul class="simple">
+<li>Gestion de l'authentification et d'autorisations</li>
+<li>Gestion et service des fichiers statiques</li>
+<li>Gestion des sessoins</li>
+<li>Gestion du cache HTTP</li>
+<li>Gestion de prédicats de vue</li>
+<li>Gestion de trasaction étendue (par exemple pour éviter un envoi de mail si une requête SQL a précédemment échoué)</li>
+<li>...</li>
+</ul>
+<p>L'écosystème de Pyramid est assez riche et varié ; plus de 250 packages sont indiqués comme étant compatibles Pyramid sur pypi.</p>
+<p>Il existe entre autres des CMS basés sur Pyramid : notamment <a class="reference external" href="http://substanced.net/">substanced</a> (basé sur la ZODB) et <a class="reference external" href="http://kotti.pylonsproject.org/">kotti</a>.</p>
+<p>Les slides de la présentation sont disponibles ici : <a class="reference external" href="http://nantes.afpy.org/presentations/pyramid">Présentation de Pyramid</a></p>
+</div>
+<div class="section" id="generateurs-et-coroutines">
+<h2>Générateurs et coroutines</h2>
+<p>Intervenant&nbsp;: Hugo</p>
+<div class="section" id="les-iterateurs-iterables">
+<h3>Les itérateurs / iterables</h3>
+<p>Le concept d'itérable est simplement une généralisation du concept de séquence ou de liste. Un itérable est défini par le fait qu'il est possible d'itérer dessus, par exemple dans une boucle for ...
+La syntaxe [] permet de définir ce qu'on appelle une liste <em>en compréhension</em>. L'iterable est un concept pratique mais il a le défaut de stocker tous ses éléménts en mémoire.</p>
+</div>
+<div class="section" id="les-generateurs">
+<h3>Les générateurs</h3>
+<p>Un générateur est un itérable qui a la particularité de générer les résultats à la volée. Syntaxiquement une <em>expression génératrice</em> peut s'écrire de la même manière qu'un itérable classique, en remplaçant les [] par des ().</p>
+<p>Dans un générateur, on utilise le mot clé <tt class="docutils literal">yield</tt> à la place de <tt class="docutils literal">return</tt>. La première différence est que l'appel de la fonction renverra non pas un résultat mais un générateur, sans que la fonction soit exécutée. La fonction est exécutée à partir du moment où on itère sur le générateur. Le premier appel à la méthode <tt class="docutils literal">next</tt> permet d'exécuter la fonction jusq'au premier <tt class="docutils literal">yield</tt>. À l'exécution du <tt class="docutils literal">yield</tt>, le générateur rend la main à la fonction appelante et s'arrête (mais l'état de son exécution est enregistré). Dans la fonction appelante, chaque appel de la méthode <tt class="docutils literal">next</tt> relance donc une exécution du générateur, de l'état où il s'était arrêté jusqu'au <tt class="docutils literal">yield</tt> suivant.</p>
+<p>Plusieurs intérêts notables :</p>
+<ul class="simple">
+<li>l'évaluation paresseuse limite l'allocation mémoire</li>
+<li>elle permet aussi de travailler avec une vision &quot;flux de données&quot; (en chainant plusieurs générateurs comme on chaine des commandes unix par exemple <tt class="docutils literal">cat foo.txt | grep bar</tt>)</li>
+<li>possibilité de faire du pseudo-asynchrone de manière synchrone</li>
+</ul>
+</div>
+<div class="section" id="les-co-routines">
+<h3>Les co-routines</h3>
+<p>Une co-routine est à peu prêt la même chose qu'un générateur à la différence près qu'elle dispose d'une méthode supplémentaire <tt class="docutils literal">send</tt> qui permet à la fonction appelante d'envoyer des données à la co-routine. Cela permet d'influer sur son comportement depuis la fonction appelante.</p>
+<p>La vision est inversée : dans une chaine de co-routines, la fonction appelante pousse les données vers la fonction appelée. Il est aussi possible de diffuser des données à plusieurs co-routines.</p>
+<p>L'application principale des co-routines est de faire de la programmation pseudo-asynchrone tout en gardant une lisibilité proche du code synchrone classique. L'autre avantage est que la co-routine est &quot;maitre&quot; de son état et sait à quel endroit et dans quel état elle peut être interrompue et reprendre son exécution.</p>
+<p>Le mot clé <tt class="docutils literal">yield from</tt>, arrivé en Python 3, permet de faire de la <em>délégation de générateurs</em>, c'est à dire de créer une sorte de tunnel bidirectionnel entre un générateur et un sous-générateur.</p>
+<p>Les slides de la présentation sont disponibles ici : <a class="reference external" href="https://github.com/mhugo/pres_coroutines">Générateurs et co-routines</a></p>
+<p>Merci à tous pour votre présence, on se retrouve au prochain barcamp le 24 mars !</p>
+</div>
+</div>
+
+            <div class="hr"></div>
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Python-Nantes &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>

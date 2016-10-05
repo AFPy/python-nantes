@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pyramid</title>
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/impress.css" type="text/css" />
+    <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  </head>
+  <body>
+    <div id="impress">
+      
+  <div class="step first center slide section" id="pyramid">
+<h1>Pyramid<a class="headerlink" href="#pyramid" title="Permalink to this headline">¶</a></h1>
+<p>Gael Pasgrimaud <a class="reference external" href="http://twitter.com/gawel_">&#64;gawel_</a></p>
+<p>python-nantes 2015</p>
+</div>
+<div class="step slide section" data-rotate-x="17.4532925199" data-x="1000" data-y="500" id="about-me">
+<h1>About me<a class="headerlink" href="#about-me" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Pythonista <a class="reference external" href="http://twitter.com/bearstech">&#64;bearstech</a></li>
+<li>Membre fondateur de l&#8217;<a class="reference external" href="http://www.afpy.org">AFPy</a></li>
+<li>Mainteneur WebTest</li>
+</ul>
+</div>
+<div class="step slide section" data-rotate-x="34.9065850399" data-x="2000" data-y="1000" id="quoi-c-est">
+<h1>Quoi c&#8217;est ?<a class="headerlink" href="#quoi-c-est" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Du www</li>
+<li>Du python + ...</li>
+</ul>
+</div>
+<div class="step slide section" data-rotate-x="52.3598775598" data-x="3000" data-y="1500" id="python">
+<h1 class="hidden">Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<img alt="images/pyramid_mommie.jpg" class="align-center" src="images/pyramid_mommie.jpg" />
+<p><a class="reference external" href="http://pylonsproject.storenvy.com/products/283795-pyramid-hacker-t-shirt">.</a></p>
+</div>
+<div class="step slide section" data-rotate-x="69.8131700798" data-x="4000" data-y="2000" id="comment-que-c-est">
+<h1>Comment que c&#8217;est ?<a class="headerlink" href="#comment-que-c-est" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Petit framework pas minimaliste</li>
+<li>Nativement WSGI</li>
+<li>Liberté de choisir et concevoir</li>
+<li>Pluggable / Extensible</li>
+</ul>
+</div>
+<div class="step slide section" data-rotate-x="87.2664625997" data-x="5000" data-y="2500" id="hello-world">
+<h1>Hello world<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">wsgiref.simple_server</span> <span class="kn">import</span> <span class="n">make_server</span>
+<span class="kn">from</span> <span class="nn">pyramid.config</span> <span class="kn">import</span> <span class="n">Configurator</span>
+<span class="kn">from</span> <span class="nn">pyramid.response</span> <span class="kn">import</span> <span class="n">Response</span>
+
+
+<span class="k">def</span> <span class="nf">hello_world</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="s">&#39;Hello </span><span class="si">%(name)s</span><span class="s">!&#39;</span> <span class="o">%</span> <span class="n">request</span><span class="o">.</span><span class="n">matchdict</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Configurator</span><span class="p">()</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">add_route</span><span class="p">(</span><span class="s">&#39;hello&#39;</span><span class="p">,</span> <span class="s">&#39;/hello/{name}&#39;</span><span class="p">)</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">hello_world</span><span class="p">,</span> <span class="n">route_name</span><span class="o">=</span><span class="s">&#39;hello&#39;</span><span class="p">)</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">make_wsgi_app</span><span class="p">()</span>
+    <span class="n">make_server</span><span class="p">(</span><span class="s">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">,</span> <span class="n">app</span><span class="p">)</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="104.71975512" data-x="6000" data-y="3000" id="dispatch-d-url">
+<h1>Dispatch d&#8217;url<a class="headerlink" href="#dispatch-d-url" title="Permalink to this headline">¶</a></h1>
+<p>On déclare une route que l&#8217;on associe à un callable:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">config</span><span class="o">.</span><span class="n">add_route</span><span class="p">(</span><span class="s">&#39;hello&#39;</span><span class="p">,</span> <span class="s">&#39;/hello/{name}&#39;</span><span class="p">)</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">hello_world</span><span class="p">,</span> <span class="n">route_name</span><span class="o">=</span><span class="s">&#39;hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="122.17304764" data-x="7000" data-y="3500" id="traversing">
+<h1>Traversing<a class="headerlink" href="#traversing" title="Permalink to this headline">¶</a></h1>
+<p>On traverse un mapping clé/prochaine valeur:</p>
+<div class="highlight-py"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="n">request</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Children</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">)</span>
+
+
+<span class="n">config</span><span class="o">.</span><span class="n">add_route</span><span class="p">(</span><span class="s">&#39;home&#39;</span><span class="p">,</span> <span class="s">&#39;traversable/*traverse&#39;</span><span class="p">,</span>
+                 <span class="n">factory</span><span class="o">=</span><span class="n">root_factory</span><span class="s">&#39;)</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="s">&#39;mypackage.views.myview&#39;</span><span class="p">,</span> <span class="n">route_name</span><span class="o">=</span><span class="s">&#39;home&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="139.62634016" data-x="8000" data-y="4000" id="resolution-de-routes">
+<h1>Résolution de routes<a class="headerlink" href="#resolution-de-routes" title="Permalink to this headline">¶</a></h1>
+<p>Recontruire des urls à partir de route nommées:</p>
+<div class="highlight-py"><div class="highlight"><pre><span class="n">request</span><span class="o">.</span><span class="n">route_url</span><span class="p">(</span><span class="s">&#39;home&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;francois&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="157.079632679" data-x="9000" data-y="4500" id="exceptions">
+<h1>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h1>
+<p>Moins on a de <tt class="docutils literal"><span class="pre">if</span></tt> mieux on se porte:</p>
+<div class="highlight-py"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pyramid</span> <span class="kn">import</span> <span class="n">httpexceptions</span> <span class="k">as</span> <span class="n">exc</span>
+
+<span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+     <span class="k">raise</span> <span class="n">exc</span><span class="o">.</span><span class="n">HTTPFound</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="174.532925199" data-x="10000" data-y="5000" id="contexte-de-vue">
+<h1>Contexte de vue<a class="headerlink" href="#contexte-de-vue" title="Permalink to this headline">¶</a></h1>
+<p>Une factory permet de retrouver un objet:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">view_with_context</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+     <span class="k">return</span> <span class="p">{}</span>
+
+<span class="n">config</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">view_with_context</span><span class="p">,</span> <span class="n">route_name</span><span class="o">=</span><span class="s">&#39;home&#39;</span><span class="p">,</span>
+                <span class="n">factory</span><span class="o">=</span><span class="n">Context</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="191.986217719" data-x="11000" data-y="5500" id="authentification">
+<h1>Authentification<a class="headerlink" href="#authentification" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Pluggable</li>
+<li>Secure Cookie / Auth Basic</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">request</span><span class="o">.</span><span class="n">authentidated_user</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="209.439510239" data-x="12000" data-y="6000" id="authorisations">
+<h1>Authorisations<a class="headerlink" href="#authorisations" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Permission sur les vues</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">config</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">edit_view</span><span class="p">,</span> <span class="n">route_name</span><span class="o">=</span><span class="s">&#39;edit&#39;</span><span class="p">,</span>
+                <span class="n">permission</span><span class="o">=</span><span class="n">Edit</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>ACL sur les factory</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Context</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__acl__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="p">(</span><span class="n">Allow</span><span class="p">,</span> <span class="s">&#39;admin&#39;</span><span class="p">,</span> <span class="n">Edit</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">Allow</span><span class="p">,</span> <span class="n">Everyone</span><span class="p">,</span> <span class="n">View</span><span class="p">),</span>
+        <span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>check</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">request</span><span class="o">.</span><span class="n">has_permission</span><span class="p">(</span><span class="n">Edit</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="226.892802759" data-x="13000" data-y="6500" id="rendering">
+<h1>Rendering<a class="headerlink" href="#rendering" title="Permalink to this headline">¶</a></h1>
+<p>Une vue retourne un dictionnaire, le renderer est responsable du rendu:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">config</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">renderer</span><span class="o">=</span><span class="s">&#39;json&#39;</span><span class="p">)</span>
+<span class="n">config</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">renderer</span><span class="o">=</span><span class="s">&#39;template/index.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Il en existe pour Chameleon, Jinja, Mako, json, text ...</p>
+</div>
+<div class="step slide section" data-rotate-x="244.346095279" data-x="14000" data-y="7000" id="renderers">
+<h1>Renderers<a class="headerlink" href="#renderers" title="Permalink to this headline">¶</a></h1>
+<p>Mais on peut ajouter le sien:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">TSVRenderer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">info</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">system</span><span class="p">):</span>
+        <span class="n">fout</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">fout</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s">&#39;&quot;&#39;</span><span class="p">,</span>
+                            <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_MINIMAL</span><span class="p">)</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s">&#39;header&#39;</span><span class="p">])</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="s">&#39;rows&#39;</span><span class="p">])</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="s">&#39;filename&#39;</span><span class="p">]</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">system</span><span class="p">[</span><span class="s">&#39;request&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">response</span>
+        <span class="n">resp</span><span class="o">.</span><span class="n">content_type</span> <span class="o">=</span> <span class="s">&#39;text/csv&#39;</span>
+        <span class="n">resp</span><span class="o">.</span><span class="n">content_disposition</span> <span class="o">=</span> <span class="s">&#39;attachment;filename=&#39;</span> <span class="o">+</span> <span class="n">filename</span> <span class="o">+</span> <span class="s">&#39;.tsv&#39;</span>
+        <span class="k">return</span> <span class="n">fout</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+
+<span class="n">config</span><span class="o">.</span><span class="n">add_renderer</span><span class="p">(</span><span class="s">&#39;tsv&#39;</span><span class="p">,</span> <span class="n">TSVRenderer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="261.799387799" data-x="15000" data-y="7500" id="tweens">
+<h1>Tweens<a class="headerlink" href="#tweens" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Middleware ala Django</li>
+<li>Exemple: debugtoolbar</li>
+</ul>
+</div>
+<div class="step slide section" data-rotate-x="279.252680319" data-x="16000" data-y="8000" id="evenements">
+<h1>Evénements<a class="headerlink" href="#evenements" title="Permalink to this headline">¶</a></h1>
+<p>NewRequest, BeforeRender</p>
+</div>
+<div class="step slide section" data-rotate-x="296.705972839" data-x="17000" data-y="8500" id="modulaire-extensible">
+<h1>Modulaire / extensible<a class="headerlink" href="#modulaire-extensible" title="Permalink to this headline">¶</a></h1>
+<p>La magie du includemémé:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">includeme</span><span class="p">(</span><span class="n">config</span><span class="p">):</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">include</span><span class="p">(</span><span class="s">&#39;mymodule&#39;</span><span class="p">,</span> <span class="n">route_prefix</span><span class="o">=</span><span class="s">&#39;/foo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Etendre l&#8217;objet request:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">config</span><span class="o">.</span><span class="n">add_request_method</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="step slide section" data-rotate-x="314.159265359" data-x="18000" data-y="9000" id="et-encore">
+<h1>Et encore...<a class="headerlink" href="#et-encore" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Static files</li>
+<li>Session</li>
+<li>HTTP Cache</li>
+<li>Predicat de vue</li>
+<li>Transaction</li>
+</ul>
+</div>
+<div class="step slide section" data-rotate-x="331.612557879" data-x="19000" data-y="9500" id="ecosysteme">
+<h1>Ecosystème<a class="headerlink" href="#ecosysteme" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://www.sqlalchemy.org/">sqlalchemy</a></li>
+<li><a class="reference external" href="http://webassets.readthedocs.org/en/latest/">webassets</a></li>
+<li><a class="reference external" href="https://pypi.python.org/pypi/pyramid_tm">pyramid_tm</a></li>
+<li><a class="reference external" href="https://pypi.python.org/pypi/pyramid_mailer">pyramid_mailer</a></li>
+<li><a class="reference external" href="https://pypi.python.org/pypi/pyramid_redis_sessions">pyramid_redis_session</a></li>
+<li><a class="reference external" href="https://pypi.python.org/pypi/pyramid_layout">pyramid_layout</a></li>
+<li><a class="reference external" href="http://substanced.net/">substanced</a></li>
+<li><a class="reference external" href="http://kotti.pylonsproject.org/">koti</a></li>
+<li>259 packages classés <tt class="docutils literal"><span class="pre">Framework::Pyramid</span></tt> sur pypi</li>
+</ul>
+</div>
+
+
+    </div>
+    <script src="static/components/impress.js/js/impress.js"></script>
+    <script src="static/jquery.js"></script>
+    <script src="static/impress.js"></script>
+    <script src="static/custom.js"></script>
+    <script>
+      if (! /_modules/.exec(window.location.href)) {
+        impress().init();
+      }
+    </script>
+  </body>
+</html>

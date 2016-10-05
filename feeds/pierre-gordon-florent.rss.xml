@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Python-Nantes</title><link>http://nantes.afpy.org/</link><description></description><lastBuildDate>Thu, 04 Dec 2014 00:00:00 +0100</lastBuildDate><item><title>Compte-rendu des conférences : Pélican et (i)Python</title><link>http://nantes.afpy.org/compte-rendu-des-conferences-pelican-et-ipython.html</link><description>&lt;p&gt;Un meetup tardif, dû à la PyConFr, centré sur deux présentations opposées en
+termes de technicité&amp;nbsp;: une présentation d’un outil (presque) clés-en-mains, et
+un survol des possibilités de iPython dans la dataviz cartographique, ainsi que
+quelques bibliothèques utiles.&lt;/p&gt;
+&lt;div class="section" id="pelican-le-futur-du-web-vintage"&gt;
+&lt;h2&gt;Pelican&amp;nbsp;: le futur du web vintage&lt;/h2&gt;
+&lt;p&gt;Intervenant&amp;nbsp;: Damien Nicolas, Gordon&lt;/p&gt;
+&lt;div class="section" id="principe"&gt;
+&lt;h3&gt;Principe&lt;/h3&gt;
+&lt;p&gt;Pelican est un générateur de site statique écrit en Python initialement par Alexis Métaireau.&lt;/p&gt;
+&lt;p&gt;Le site est réalisé via un langage de template ensuite traduit en HTML. Le contenu généré peut ensuite être déployé sur un serveur sans configuration supplémentaire. Il n’y a donc pas d’applicatif sur le serveur.&lt;/p&gt;
+&lt;p&gt;Les avantages d’un tel système sont nombreux. D’abord la simplicité. Un simple éditeur de texte suffit pour écrire le contenu. Étant purement textuel, le contenu est facilement versionnable et recevoir/fournir un patch peut se résumer à un envoi de mail. L'absence d’applicatif côté serveur rend la configuration serveur aisée et la sécurité proche de la perfection : pas d’applicatif = pas de faille.&lt;/p&gt;
+&lt;p&gt;Bon évidemment, il y a quelques inconvénients. En terme de fonctionnalité d’abord, l’absence native de recherche ou de commentaire. Mais heureusement, il est possible via des extensions de remédier à ces problèmes.
+En revanche, la barrière à l’entrée est immuable. Pour faire du Pelican, il faut pouvoir écrire du RestructuredText ou du Markdown. Pour profiter pleinement de tout ça, il est bon de savoir invoquer une commande “make” ou “git push”. Plus que rébarbatif pour un néophyte.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="en-pratique"&gt;
+&lt;h3&gt;En pratique&lt;/h3&gt;
+&lt;p&gt;L’installation se fait comme n’importe quelle bibliothèque Python. On crée un environnement virtuel (e.g. via pyvenv en Python 3). On l’active et via pip on peut installer Pelican. A noter que par défaut, Pelican supporte uniquement le RestructuredText pour les articles, pour markdown, il faudra installer le paquet markdown en plus.
+On peut ensuite préparer le site via l'installer de Pelican, qui de façon interactive pose quelques questions qui facilitent grandement la configuration. A cette étape, on paramètre notamment les différents moyens utiliser pour déployer le site web sur le serveur.&lt;/p&gt;
+&lt;p&gt;Une fois configuré, on peut écrire des articles. Ces derniers pourront être placés dans un dossier &lt;strong&gt;articles&lt;/strong&gt; dans le dossier &lt;strong&gt;content&lt;/strong&gt; (tout ceci est paramétrable). Pour générer le site, le plus simple est d'utiliser la commande make :&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+make html
+&lt;/pre&gt;
+&lt;p&gt;Et on déploie :&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+make upload
+&lt;/pre&gt;
+&lt;p&gt;Et la magie opère. Le site est redéployé !&lt;/p&gt;
+&lt;p&gt;Il est assez facile de tester localement, Pelican permet d’utiliser un simple serveur HTTP en local pour vérifier ses modifications avant de publier des erreurs ;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="extensions"&gt;
+&lt;h3&gt;Extensions&lt;/h3&gt;
+&lt;p&gt;On l’a écrit, nativement, il n’existe pas de gestion des commentaires
+ni de fonction de recherche. Rien d’insurmontable cependant.&lt;/p&gt;
+&lt;div class="section" id="commentaires"&gt;
+&lt;h4&gt;Commentaires&lt;/h4&gt;
+&lt;p&gt;Pour les commentaires, une solution simple est d’intégrer &lt;a class="reference external" href="https://github.com/Python-Nairobi/pelican-plugins/tree/master/disqus"&gt;Disqus&lt;/a&gt;. Disqus est un service permettant de stoquer des commentaires sur un autre serveur que celui de l’application. L’extension disqus_static permet d’utiliser l’API de ce service pour gérer les commentaires dans Pelican. Il y a d’autres alternatives, comme par exemple gérer des commentaires statiquement dans des fichiers sur le serveur hébergeant Pelican. Cette dernière solution permet d’éviter les dépendances à un service tiers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="recherche"&gt;
+&lt;h4&gt;Recherche&lt;/h4&gt;
+&lt;p&gt;Ici, on pourra fait appel à &lt;a class="reference external" href="http://www.tipue.com/search/"&gt;tipue_search&lt;/a&gt;, qui permet d’intégrer une fonctionnalité de recherche côté client. Sur le serveur, un fichier JSON est généré. Celui-ci est ensuite utilisé côté client pour de la recherche via JQuery. Le thème &lt;tt class="docutils literal"&gt;elegant&lt;/tt&gt; intègre cette fonctionnalité nativement.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="autres-extensions"&gt;
+&lt;h4&gt;Autres extensions&lt;/h4&gt;
+&lt;p&gt;Très extensible, il est possible de faire tout un tas de choses avec Pelican. C’est d’ailleurs le moteur utilisé pour le blog que vous lisez en ce moment. Pour vous faire une idée des possibilités, c’est par là : &amp;lt;&lt;a class="reference external" href="https://github.com/Python-Nairobi/pelican-plugins"&gt;https://github.com/Python-Nairobi/pelican-plugins&lt;/a&gt;&amp;gt;`_.&lt;/p&gt;
+&lt;p&gt;Les slides de la présentation sont disponibles ici&amp;nbsp;: &lt;a class="reference external" href="/presentations/pelican/pelican-meetup-python.pdf"&gt;Pelican&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="dataviz-avec-ipython"&gt;
+&lt;h2&gt;Dataviz avec iPython&lt;/h2&gt;
+&lt;p&gt;Intervenant&amp;nbsp;: Thomas Gratier&lt;/p&gt;
+&lt;p&gt;IPython est un shell Python interactif offrant autocomplétion et historique des commandes. Il peut également s’utiliser sous forme de notebook dans un navigateur. De nombreuses bibliothèques sont disponibles et peuvent être chargées dynamiquement. Ainsi, il est très aisé de préparer des présentations dynamiques avec démonstration Python en temps réel et image générée directement dans un navigateur. IPython permet aussi de déployer les notebooks sur un site web. C’est donc un outil très puissant à la fois pour expérimenter avec Python mais aussi pour préparer des présentations interactives.&lt;/p&gt;
+&lt;p&gt;Pas plus de mots, lors du meetup, nous avons pu voir des résultats assez chouettes que vous invités à expérimenter par vous-même ici : &lt;a class="reference external" href="http://nantes.afpy.org/presentations/ipython_par_exemple/Ipython_par_l_exemple.html"&gt;Dataviz avec iPython&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Merci à tous pour votre présence et à très bientôt :) !&lt;/p&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Pierre, Gordon, Florent</dc:creator><pubDate>Thu, 04 Dec 2014 00:00:00 +0100</pubDate><guid isPermaLink="false">tag:nantes.afpy.org,2014-12-04:compte-rendu-des-conferences-pelican-et-ipython.html</guid><category>pelican</category><category>travis</category><category>ipython</category><category>dataviz</category><category>cartographie</category></item></channel></rss>

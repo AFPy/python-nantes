@@ -1,0 +1,378 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                    <h2>présentation Celery</h2>
+                    <h4>Python-Nantes, mai 2016</h4>
+                    <p>
+                        <small>par <a href="http://twitter.com/nuoyas">sayoun</a></small>
+                    </p>
+                </section>
+                <section>
+                    <h2>About me</h2>
+                    <ul>
+                        <li>Dejan Filipovic</li>
+                        <li>Travaille chez <a href="https://www.gandi.net">Gandi</a> depuis 4 ans</li>
+                        <li>API/Backend/Tools/Ops</li>
+                    </ul>
+                    <p><img src="sayoun.jpg"></img></p>
+                </section>
+				<section>
+                    <h2>Celery, qu'est ce que c'est ?</h2>
+                    <p>
+                        Crée en 2009 par Ask Solem (@asksol)
+                    </p>
+                    <p>
+                        Un système asynchrone de queue de tâches distribuées
+                    </p>
+                </section>
+                <section>
+                    <section>
+                        <h3>Un quoi ???</h3>
+                    </section>
+                    <section>
+                        <h2>Un système asynchrone</h2>
+                        <p style="text-align:left;">Non bloquant, peut être executé plus tard ou en parallèle, sans forcément avoir besoin du résultat immédiatement.</br>
+                        Peut aussi être executé de façon périodique (comme une <i>cron</i>).</p>
+                    </section>
+                    <section>
+                        <h2>de queue</h2>
+                        <p><img src="queuesimpson.jpg"></img></p>
+                        <p>
+                            File d'attente appelée <i>Broker</i> en language Celery
+                        </p>
+                        <p>
+                            S'occupe de transporter des messages
+                        </p>
+                    </section>
+                    <section>
+                        <h2>de tâches</h2>
+                        <p>une tâche = une ou plusieurs actions à faire</p>
+                        <p>voyez ça comme une fonction de code unitaire</p>
+                        <p>
+                            appelée <i>Task</i> en language Celery
+                        </p>
+                    </section>
+                    <section>
+                        <h2>distribuées</h2>
+                        <p>tâches qui peuvent être réparties sur<p>
+                        <ul>
+                            <li>une ou plusieurs machines (scaling horizontal)</li>
+                            <li>un ou plusieurs processus (scaling vertical)</li>
+                        </ul>
+                        <p>
+                            executées par des <i>Worker</i> en language Celery
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <h2>OK mais à quoi ça peut servir dans la vraie vie ?</h2>
+                    <ul>
+                        <li class="fragment mail">Envoyer des milliers de mails</li>
+                        <li class="fragment videoimage">Faire des traitement lourds/longs d'images/vidéos</li>
+                        <li class="fragment pdf">Générer des PDF</li>
+                        <li class="fragment api">Interaction réseau/API externes</li>
+                        <li class="fragment compute">Faire du calcul distribué</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Comment ça marche ? (en théorie)</h3>
+                    <img class="stretch" src="celeryschema.png"></img>
+                </section>
+                <section>
+                    <section>
+                        <h3>Comment ça marche ? (en pratique)</h3>
+                        <p>D'abord choisir son broker</p>
+                        <ul>
+                            <li style="color: red;">RabbitMQ</li>
+                            <li style="color: red;">Redis</li>
+                            <li style="color: red;">Mongo DB</li>
+                            <li>Django DB</li>
+                            <li>Couch DB</li>
+                            <li>SQLAlchemy</li>
+                            <li>etc.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        on installe le broker (Redis) et les libs python
+                        <pre><code data-trim data-noescape>
+sudo apt-get install redis-server
+pip install celery
+pip install redis
+                        </code></pre>
+                    </section>
+                    <section>
+                        on crée un fichier python tasks.py qui contient notre application Celery et une tâche simple
+                        <pre><code data-trim data-noescape>
+from celery import Celery
+
+app = Celery('tasks', broker='redis://', backend='redis://')
+
+@app.task
+def palindrome(chaine):
+    return chaine == chaine[::-1]
+                        </code></pre>
+
+                        <pre><code data-trim data-noescape>
+class PalindromeTask(app.Task):
+    def run(self, chaine):
+        return chaine == chaine[::-1]
+                        </code></pre>
+                    </section>
+                    <section>
+                        on lance le process celery qui va traiter notre task
+                        <pre class="stretch"><code data-trim data-noescape>
+$ celery -A tasks worker --loglevel=info
+
+ -------------- celery@void v3.1.19 (Cipater)
+---- **** -----
+--- * ***  * -- Linux-3.13.0-85-generic-x86_64-with-Ubuntu-14.04-trusty
+-- * - **** ---
+- ** ---------- [config]
+- ** ---------- .> app:         tasks:0x7fc79fca2d10
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     redis://localhost
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ----
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+
+
+[tasks]
+  . tasks.palindrome
+
+[2016-05-15 17:16:33,844: INFO/MainProcess] Connected to redis://localhost:6379//
+[2016-05-15 17:16:33,850: INFO/MainProcess] mingle: searching for neighbors
+[2016-05-15 17:16:34,855: INFO/MainProcess] mingle: all alone
+[2016-05-15 17:16:34,868: WARNING/MainProcess] celery@void ready.
+                        </code></pre>
+                    </section>
+                    <section>
+                        on va pouvoir éxécuter notre task
+                        <pre><code data-trim data-noescape>
+>>> from tasks import palindrome
+>>> result = palindrome.delay('kayak')
+>>> result
+&lt;AsyncResult: 14046de3-db5a-4fb4-9cad-384c2e07a146&gt;
+>>> result.state
+'SUCCESS'
+>>> result.get()
+True
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>aller plus loin avec les primitives</h2>
+                        <p>Celery vient avec des outils qui permettent d'exécuter des tâches dépendantes les unes des autres: group, chord, chain, etc.</p>
+                    </section>
+                    <section>
+                        <h2>Group</h2>
+                        <p>Exécuter les tâches en parallèle</p>
+                        <pre><code data-trim data-noescape>
+@app.task
+def add(x, y):
+    return x + y
+                        </code></pre>
+                        <pre><code data-trim data-noescape>
+>>> from celery import group
+>>> res = group(add.s(i, i) for i in xrange(5))()
+>>> res.get()
+[0, 2, 4, 6, 8]
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Chord</h2>
+                        <p>Exécuter un groupe de tâche en parallèle puis une tâche à la fin (callback)</p>
+                        <pre><code data-trim data-noescape>
+@app.task
+def total(nombres):
+    return sum(nombres)
+                        </code></pre>
+                        <pre><code data-trim data-noescape>
+>>> from celery import chord
+>>> res = chord((add.s(i, i) for i in xrange(5)), total.s())()
+>>> res.get()
+20
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Chain</h2>
+                        <p>Exécuter les tâches les unes après les autres, en se passant les résultats, revient à avoir une chaîne de callbacks</p>
+                        <pre><code data-trim data-noescape>
+>>> from celery import chain
+>>> res = chain(add.s(2, 2), add.s(4), add.s(8))()
+>>> res.get()
+16
+                        </code></pre>
+                        <pre><code data-trim data-noescape>
+>>> chain(add.s(2, 2), add.s(4), add.s(8))
+tasks.add(2, 2) | tasks.add(4) | tasks.add(8)
+>>> res = (add.s(2, 2) | add.s(4) | add.s(8))()
+>>> res.get()
+16
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Map</h2>
+                        <p>Pour appeler une tâche sur chaque élément d'une séquence</p>
+                        <p>Différent de Group car une seule task est envoyée au Broker et c'est éxécuté séquentiellement</p>
+                        <pre><code data-trim data-noescape>
+>>> ~total.map([range(10), range(100)])
+[45, 4950]
+                        </code></pre>
+                        <pre><code data-trim data-noescape>
+@app.task
+def temp():
+    return [total(range(10)), total(range(100))]
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Starmap</h2>
+                        <p>Comme Map mais appliqué à *args</p>
+                        <pre><code data-trim data-noescape>
+>>> ~add.starmap(zip(range(10), range(10)))
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+                        </code></pre>
+                        <pre><code data-trim data-noescape>
+@app.task
+def temp():
+    return [add(i, i) for i in range(10)]
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Chunks</h2>
+                        <p>Permet de découper une liste d'arguments en bouts</p>
+                        <pre><code data-trim data-noescape>
+>>> items = zip(range(10), range(10))
+>>> add.chunks(items, 5)
+celery.chunks(it=[(0, 0), (1, 1), (2, 2), (3, 3), (4, 4), (5, 5),
+(6, 6), (7, 7), (8, 8), (9, 9)], task=tasks.add(), n=5)
+>>> add.chunks(items, 5)().get()
+[[0, 2, 4, 6, 8], [10, 12, 14, 16, 18]]
+                       </code></pre>
+                        <pre><code data-trim data-noescape>
+Task celery.starmap[2] succeeded in 0.1s: [0, 2, 4, 6, 8]
+Task celery.starmap[3] succeeded in 0.1s: [10, 12, 14, 16, 18]
+                       </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <h3>Periodicité/Récurrence</h3>
+                    <p>Utiliser CeleryBeat</p>
+                    <pre><code data-trim data-noescape>
+$ celery -A tasks -B -c 1
+                    </code></pre>
+                    <pre><code data-trim data-noescape>
+from datetime import timedelta
+
+CELERYBEAT_SCHEDULE = {
+    'add-every-30-seconds': {
+        'task': 'tasks.add',
+        'schedule': timedelta(seconds=30),
+        'args': (16, 16)
+    },
+}
+                    </code></pre>
+                    <pre><code data-trim data-noescape>
+from celery.schedules import crontab
+
+CELERYBEAT_SCHEDULE = {
+    'add-every-monday-morning': {
+        'task': 'tasks.add',
+        'schedule': crontab(hour=7, minute=30, day_of_week=1),
+        'args': (16, 16),
+    },
+}
+                    </code></pre>
+                </section>
+                <section>
+                    <section>
+                        <h3>Monitoring: Flower</h3>
+                        <pre class="stretch"><code data-trim data-noescape>
+$ pip install flower
+
+$ celery -A tasks flower
+[I 160515 18:27:39 command:136] Visit me at http://localhost:5555
+[I 160515 18:27:39 command:141] Broker: redis://localhost:6379//
+[I 160515 18:27:39 command:144] Registered tasks:
+    ['celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'tasks.palindrome']
+[I 160515 18:27:39 mixins:231] Connected to redis://localhost:6379//
+                        </code></pre>
+                    </section>
+                    <section>
+                        <img class="stretch" src="flowerdashboard.png"></img>
+                    </section>
+                    <section>
+                        <img class="stretch" src="flowertasks.png"></img>
+                    </section>
+                    <section>
+                        <img class="stretch" src="flowermonitor.png"></img>
+                    </section>
+                    <section>
+                        <h3>Monitoring: Curses</h3>
+                        <img class="stretch" src="monitorcurses.jpg"></img>
+                    </section>
+                </section>
+                <section>
+                    Plus d'informations:
+                    <ul>
+                        <li>Documentation Celery: <a href="http://docs.celeryproject.org/en/latest/index.html">http://docs.celeryproject.org</a></li>
+                        <li>IRC: #celery channel sur Freenode</li>
+                        <li>Flower: <a href="http://flower.readthedocs.io/en/latest/">http://flower.readthedocs.io</a></li>
+                        <li>Celery + Django: <a href="http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html">voir la documentation</a></li>
+                    </ul>
+                </section>
+    		</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

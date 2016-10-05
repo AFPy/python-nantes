@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python-Nantes, Rencontres pythoniques et ligériennes">
+
+        <link rel="alternate"  href="http://nantes.afpy.org/feeds/all.atom.xml" type="application/atom+xml" title="Python-Nantes Full Atom Feed"/>
+
+        <title>Discussions autour de PyConFR 2015 et relance du meetup // Python-Nantes // Rencontres pythoniques et ligériennes</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link rel="stylesheet" href="http://nantes.afpy.org/theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="http://nantes.afpy.org/author/arthur-lutz.html" title="See posts by Arthur Lutz">
+                        <img class="avatar" alt="Arthur Lutz" src="http://www.gravatar.com/avatar/37aa62b37005a57f8e2b261091d65a03">
+                </a>
+                <h2 class="article-info">Arthur Lutz</h2>
+                <small class="about-author"></small>
+                <h5>Published</h5>
+                <p>Wed 04 November 2015</p>
+                <a href="/">&larr;Home</a>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Discussions autour de PyConFR 2015 et relance du meetup</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="http://nantes.afpy.org/tag/python.html">python</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/nantes.html">nantes</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/pyconfr.html">pyconfr</a>
+                        </p>
+                </header>
+            </section>
+            <p>Nous étions une vingtaine à nous réunir pour relancer la dynamiques
+des meetup python à Nantes ce 28 octobre 2015 dans les locaux de
+<a class="reference external" href="http://www.oasiswork.fr">Oasiswork</a>.</p>
+<p>Nous avons parlé de manière informelle des conférences et sujets
+abordés lors de la <a class="reference external" href="http://www.pycon.fr/2015/">PyConFR2015</a>,
+conférence autour du language de programmation python organisée par
+l'<a class="reference external" href="http://www.afpy.org">AFPY</a>.</p>
+<p>Nous avons parlé et partagé sur de nombreux sujets dont :</p>
+<ul class="simple">
+<li>ansible, salt et le devops</li>
+<li>bus d'évenements dans salt et dans fedmsg</li>
+<li>scapy</li>
+<li>tox, guix-tox</li>
+<li>l'inevitable docker</li>
+<li>sqlalchemy, l'ORM de django, pyramid, flask</li>
+<li>pelican</li>
+<li>elasticsearch</li>
+<li>micropython et wipy</li>
+</ul>
+<p>De nombreux sujets à explorer lors des prochains meetups. En attendant
+la publication des vidéos de PyConFR 2015, vous pouvez consulter <a class="reference external" href="http://www.pycon.fr/2015/schedule/">le
+programme de pyconfr 2015</a> ou
+lire <a class="reference external" href="https://www.logilab.org/2337253">un compte rendu rédigé par Logilab</a>.</p>
+<p>Nous nous sommes mis d'accord pour nous réunir à un rhythme d'une fois
+par mois, alternant entre trois formats : les meetups présentation,
+les meetups en mode &quot;barcamp&quot; (non-conférence où chacun peut proposer
+un sujet avec constitution de petits groupes pour parler ou travailler
+sur ce sujet), et le format <em>afpyro</em> (tout simplement un apéro
+communautaire dans un bar). L'organisation des présentations se
+coordonne sur <a class="reference external" href="https://lite4.framapad.org/p/aiWGnNwwIb">le pad</a>.</p>
+<p>Si vous avez des questions ou des remarques concernant nos meetups,
+rejoignez-nous sur le chan IRC de l'AFPy Nantes ou inscrivez vous sur
+<a class="reference external" href="http://lists.afpy.org/nantes/">la liste de diffusion</a> . Vous pouvez
+aussi nous suivre sur Twitter via notre compte <a class="reference external" href="http://twitter.com/PythonNantes">&#64;PythonNantes</a>.</p>
+
+            <div class="hr"></div>
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Python-Nantes &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>

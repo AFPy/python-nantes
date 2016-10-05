@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python-Nantes, Rencontres pythoniques et ligériennes">
+
+        <link rel="alternate"  href="http://nantes.afpy.org/feeds/all.atom.xml" type="application/atom+xml" title="Python-Nantes Full Atom Feed"/>
+
+        <title>40 pythons, 1 conférence et des trolls // Python-Nantes // Rencontres pythoniques et ligériennes</title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/theme/css/pure.css">
+    <link rel="stylesheet" href="http://nantes.afpy.org/theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="http://nantes.afpy.org/author/pierre-aufrere.html" title="See posts by Pierre Aufrere">
+                        <img class="avatar" alt="Pierre Aufrere" src="http://www.gravatar.com/avatar/48c6ecaa5a4b9c707509f9ef65f540c8">
+                </a>
+                <h2 class="article-info">Pierre Aufrere</h2>
+                <small class="about-author"></small>
+                <h5>Published</h5>
+                <p>Tue 26 August 2014</p>
+                <a href="/">&larr;Home</a>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>40 pythons, 1 conférence et des trolls</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="http://nantes.afpy.org/tag/python.html">python</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/django.html">django</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/nantes.html">nantes</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/pep.html">PEP</a>
+                                <a class="post-category" href="http://nantes.afpy.org/tag/pep8.html">PEP8</a>
+                        </p>
+                </header>
+            </section>
+            <p>Nous étions nombreux mardi dernier aux conférences. À la louche, une quarantaine. Un groupe assez hétérogène composé de curieux comme d'experts.</p>
+<p>Deux sujets ont donc été abordés, merci à Florent et Alex pour leur préparation :).</p>
+<p>Ci-dessous, le compte-rendu de près de 2h de conférence :).</p>
+<div class="section" id="django-framework-web">
+<h2>Django, framework web</h2>
+<p>Intervenant : Florent</p>
+<p>Les slides de la présentation sont disponibles ici : <a class="reference external" href="http://fle.github.io/lectures/presentation-django-2014.html">Introduction à Django</a></p>
+<p>chapter Part I: Django
+Django</p>
+<div class="section" id="presentation">
+<h3>Présentation</h3>
+<p>Django est donc un framework pour le web développé dans l'optique d'être rapide à configurer et déployer. Ainsi, il présente un haut niveau d'abstraction. Étant un projet open-source, il est assez facile de l'étendre.</p>
+<p>La dernière release est 1.6 et celle à venir, 1.7, devrait présenter des mises à jour de fond, tel un système de migration intégré : django-migrations.</p>
+<p>Le projet est développé selon les philosophies KISS (Keep It Shot &amp; Simple) et DRY (Don't Repeat Yourself). Si le premier objectif est bien rempli, il semble que le second soit sujet à débat. On notera différents avantages à django, notamment son installation très facile ainsi que son excellente documentation. Il dispose également d'une communauté très active.</p>
+</div>
+<div class="section" id="sous-le-capot">
+<h3>Sous le capot ?</h3>
+<p>Concernant les aspects techniques, l'environnement classique est une version 1.6 du framework sous python 2.7. Django est compatible python 3 mais ce n'est pas le cas de tous les modules qui peuvent s'y ajouter. Pour la partie serveur, il semble qu'il s'intègre correctement derrière tout et n'importe quoi (apache, nginx,...). Du côté base de données (BDD), django fonctionne essentiellement avec SQL (MySQL, PostgreSQL, SQLite). Il est possible de l'interfacer avec des bases NoSQL, mais il faut garder en tête que tout le framework est pensé pour intéragir avec des bases de données relationnelles.</p>
+<p>Pour ce qui est de la création de site, Django repose sur un modèle type MVC (modèle-vue-contrôleur) qui sera appelé MTV (modèle-template-vue). Les modèles, qui décrivent les objets stockés en base, sont écrits en Python. Cela rend la configuration intuitive. Il est à noter que le moteur de template, semblable à Jinja en terme de syntaxe, est réputé comme étant lourd et lent.</p>
+</div>
+<div class="section" id="en-pratique">
+<h3>En pratique...</h3>
+<p>Après toute cette théorie, démonstration rapide avec la mise en place d'un site pour recenser les coins à champignons. C'est l'occasion d'observer la rapidité avec laquelle il est possible de déployer un nouveau site (environ 4 commandes ^^). Cerise sur le gâteau, Django génère automatiquement une interface d'administration contenant formulaire et tout ce qu'il faut pour gérer le contenu de la BDD (opérations CRUD). L'administration d'un projet se fait essentiellement via le script manage.py.</p>
+<p>Django sépare les modules métiers sous forme d'applications. Chacune contenant un fichier models.py, views.py, admin.py et tests.py (pour vous <strong>encourager</strong> à créer des tests unitaires). Les modèles se déclarent sous forme de classes Python dont les champs sont des colonnes en base. Il est possible d'étendre facilement les types de champs pour créer des types spécifiques, autre que ceux de SQL.</p>
+<p>Concernant la définition des routes, comme souvent, elle se fait via l'utilisation de schémas et d'expressions régulières. Ici, on découvre avec plaisir que Django repère automatiquement lorsqu'un fichier est modifié et redéploie.</p>
+</div>
+<div class="section" id="aller-plus-loin">
+<h3>Aller plus loin</h3>
+<p>Les bases de Django en poche, on évoque rapidement les fonctionnalités avancées. Notamment de l'héritage sur les modèles, à la fois puissant mais rapidement complexe. Des mécanismes similaires existent sur les vues et les templates.</p>
+<p>Django présente aussi des fonctionnalités d'internationnalisation, tant pour les URL que pour le contenu.</p>
+<p>Pour la gestion des login, la notion de groupes, d'utilisateur et de droits est pré-intégrée et est aisément personnalisable.</p>
+<p>Il est ressorti des questions que Django possède un système de rétro-spécification, capable de définir les fichiers modèles nécessaires décrivant une BDD pré-existante, très utile quand combiné avec des modules de migration, type south (c.f. ci-après).</p>
+</div>
+<div class="section" id="les-modules">
+<h3>Les modules</h3>
+<p>Que serait un framework (open-source) sans ses plugins &amp; modules ? La communauté étant active, il existe de nombreux modules très utiles, il ressort de la conférence :</p>
+<blockquote>
+<ol class="arabic simple">
+<li>South. Un outil pour effectuer des migrations de base de données. Un exemple de cas d'utilisation : l'intervenant devait migrer une vieille application vers Django. Parmi les problèmes, il faisait face à la structure SQL de très mauvaise qualité (du genre clé étrangère non unique...). A l'aide de l'outils de rétro-spécification de Django, il a été capable de récupérer les définitions des modèles et de corriger la BDD grâce à South. Hallelujah ! Comme mentionné plus haut, la version 1.7 de Django intègre un tel module (essentiellement basé sur South). Cela peut également être très utile pour manipuler différentes bases sur différents serveurs (dev, prod, pre-prod,...).</li>
+<li>django-extensions: utilitaire pour manage.py ajoutant des commandes pour faciliter l'administration.</li>
+<li>django-debug-toolbar: outil pour faire du profiling dans le navigateur.</li>
+<li>factory-boy: création de grappes de données pour le test (Déclaration de factory). Par rapport à l'utilisation de fixtures, il permet un maintien plus facile des données de test. De plus, la gestion des clés étrangères est très pratique.</li>
+<li>Un module shop très différent de prestashop. Beaucoup plus modulaire que ce dernier (donc pas solution out of the box).</li>
+</ol>
+</blockquote>
+</div>
+<div class="section" id="conclusion-commentaires">
+<h3>Conclusion &amp; commentaires</h3>
+<p>Ce petit tour d'horizon nous aura permis de constater l'extrême rapidité de développement qu'offre Django. Énorme avantage également, sa large bibliothèque de modules.</p>
+<p>Concernant la question du choix du framework web, il existe des alternatives à Django. Pour choisir ce dernier, c'est l'usage final qui est déterminant. Bien que Django soit rapide et efficace, il est en revanche très monolythique. Si vous comptez utiliser un autre ORM par exemple, un framework plus modulaire serait <a class="reference external" href="http://www.pylonsproject.org/">Pyramid</a>. Enfin, il existe des framework très léger comme <a class="reference external" href="http://flask.pocoo.org/">Flask</a>.</p>
+<p>L'inévitable comparaison avec d'autres langages tels que PHP était plutôt sans appel (l'occasion pour certains templiers/trolls de partir en croisade contre Symfony :)). PHP est jugé (très) lourd et peu efficace. Il y avait d'ailleurs parmi nous 3 personnes qui souhaitaient quitter l'univers PHP au profit de Python.</p>
+<p>Finalement, Django présente quelques points noirs, tels que la personnalisation de l'interface d'administration ou bien la gestion de pages multi-formulaires. Si ces dernières se complexifient, leur maintien devient vite très difficile.</p>
+<dl class="docutils">
+<dt>Quelques liens pour se documenter :</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://www.djangoproject.com/">site du projet</a>,</li>
+<li><a class="reference external" href="http://django-planet.com/">Django planet</a></li>
+<li><a class="reference external" href="http://www.django-fr.org/planete/">Django planet fr</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="questions">
+<h3>Questions</h3>
+<p>Les questions ont fait ressortir les points suivant.</p>
+<p>Il est aisé de définir plusieurs environnements (prod, pre-prod, dev) via les fichiers de configuration. Le script settings.py (configuration générale) se charge ensuite de sélectionner la configuration appropriée en fonction de l'environnement.</p>
+<p>Pour les tests unitaires, les capacités de test de Python sont très utiles. Ainsi que le module LiveServerTestCase pour tester les requêtes réellement à travers de réelles requêtes HTTP.</p>
+<p>Il est possible d'utiliser Django sans installer un SGBD relationnel sur son poste, grâce à SQLite. L'utilisation du framework sans base de donnée du tout se limitera à l'utilisation du routage d'URL, des vues et des templates. Dans un tel cas d'utilisation, un coup d'oeil à un framework plus léger comme Flask (c.f. plus haut) est conseillé.</p>
+</div>
+</div>
+<div class="section" id="python-les-bonnes-pratiques">
+<h2>Python, les bonnes pratiques.</h2>
+<p>Intervenant : Alex</p>
+<p>Les slides de la présentation sont disponibles ici : <a class="reference external" href="http://nantes.afpy.org/presentations/pythonic-code-alex-garel">Écrire du code vraiment pythonique</a></p>
+<p>Vous voulez coder en Python ? D'accord, mais pas n'importe comment ! Les bonnes pratiques facilitent la relecture du code et le maintien que cela soit par un tier ou par son auteur lui-même. Il ne faut pas oublier qu'on laisse parfois nos projets personnels un peu en suspend, et lorsqu'on les reprend, on est alors un étranger dans sa propre maison. Au cas où, mieux vaut baliser le terrain ;).</p>
+<p>Notre intervenant commence par quelques généralités sur Python, sa syntaxe et sa philosophie. &quot;Python essaie d'être élégant&quot;, voilà une des premières choses qu'on entend. Par rapport à d'autres langages (e.g. Ruby) qui recherchent en plus la <em>pureté</em>. Pour le développeur Python, la pureté n'est pas une fin en soi. c.f. <a class="reference external" href="http://legacy.python.org/dev/peps/pep-0020/">The Zen of Python</a> que je cite &quot; Special cases aren't special enough to break the rules. Although practicality beats purity&quot;. En bref, un mot très important : pragramatisme (<em>practicality</em>).</p>
+<p>Coder proprement, ça ne s'invente pas, encore moins quand on débute et les gens qui travaillent avec Python y réfléchissent. Du coup il existe un guide de références définissant les bonnes pratiques, on l'appelle le <a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/">PEP8</a>. Derrière ce terme à l'apparence obscure de PEP (<em>Python Enhancement Proposals</em>) se cache tout simplement des propositions d'amélioration du langage, qu'elles soient techniques ou formelles.</p>
+<p>Pour ce qui est de la mise en pratique du PEP8, je me permets de vous renvoyer aux slides de la présentation qui seront plus clairs et exhaustifs. Cependant, durant la présentation, quelques points sont ressortis plus que d'autres. Je continue donc avec une liste non exhaustive...</p>
+<p>D'abord, il existe des outils pour suivre les lignes directrices (<em>guide lines</em>) comme flake8 qui vérifie le respect du PEP8 (il en existe d'autres !). Mais plus simple encore, l'<em>easter egg</em> (introduit par le PEP20) du <strong>import this</strong> qui affiche le <em>Zen of Python</em>.</p>
+<dl class="docutils">
+<dt>Concernant les entrées d'un programme, une bonne habitude est de traiter les données en deux fois :</dt>
+<dd><ol class="first last arabic simple">
+<li>Normaliser l'entrée</li>
+<li>Traiter la donnée normalisée</li>
+</ol>
+</dd>
+</dl>
+<p>Cela permet de simplifier le code, notamment celui du traitement qui est du coup toujours le même. Donc, évitez d'avoir à gérer trop de cas d'erreurs (excpetions) dans le code de traitement. On notera ici la phrase célèbre de <a class="reference external" href="http://fr.wikipedia.org/wiki/Jon_Postel">Jon Postel</a> : &quot;Be liberal in what you accept, and conservative in what you send&quot;. Qu'on pourrait traduire par : soyer souple pour vos entrées, intransigent pour vos sorties.</p>
+<p>On a aussi parlé des tuples, structure de données <strong>constantes</strong> (<em>immutable</em>) très pratique pour passer de la donnée à une fonction. Attention cependant à ne pas en abuser. Si de nombreux traitements sont inhérents à vos tuples, vous avez peut-être besoin d'un objet (classe) pour mieux gérer tout ça (e.g. points en mathématique...). Pour un type point en Mathématiques, peut-être qu'une classe est plus adaptée. VOus pourrez alors profiter de la <strong>surcharge d'opérateur</strong> pour implémenter les opérations spécifiques.</p>
+<p>A plusieurs reprises nous avons mentionné les dictionnaires, c'est un synonyme de tableau associatif, i.e. un ensemble clé-valeur.</p>
+<p>Autre point fort, les ContextManager, ces objets qu'on utilise grâce au mots clés <strong>with-as</strong>. Ils sont une fonctionnalité très importante du langage qui permet de bien maîtriser la portée des variables. Par exemple pour l'ouverture et la fermeture d'un fichier, ou encore pour la création et l'excécution d'une requête dans Django :).</p>
+<p>A propos des lambda functions, ces petits bouts de code très courts qui n'acceptent qu'une expression pour seule opération, rappel qui a son importance : pas de <em>unpacking</em> de tuple dans les paramètres (c.f. slydes et tuples pour la notion de <em>unpacking</em>).</p>
+</div>
+<div class="section" id="le-mot-de-la-fin">
+<h2>Le mot de la fin</h2>
+<p>Les slides des deux présentations sont disponibles ici:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://fle.github.io/lectures/presentation-django-2014.html">Introduction à Django, par Florent</a></li>
+<li><a class="reference external" href="http://nantes.afpy.org/presentations/pythonic-code-alex-garel">Écrire du code vraiment pythonique, par Alex</a></li>
+</ul>
+<p>On a vu et appris plein de choses, c'était super ! A la prochaine fois, et d'ici là, codez bien !</p>
+</div>
+
+            <div class="hr"></div>
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
+    <p>&copy; Python-Nantes &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>
