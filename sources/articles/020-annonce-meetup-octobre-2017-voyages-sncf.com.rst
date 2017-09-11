@@ -2,12 +2,12 @@ Meetup du mois d'octobre 2017 à Voyages-Sncf.com Technologies Nantes
 ####################################################################
 
 :date: 2017-09-11
-:tags: python,nantes,présentations,voyages-sncf.com
+:tags: python,nantes,présentations,voyages-sncf.com,luigi,behave
 :category: évènements
 :author: Lucas Cimon
 :email: lucas.cimon AT gmail
 
-Rendez-vous mardi 3 octobre à 19h (acceuil  partir de 18h30 dans les locaux de `Voyages-Sncf.com <https://open.voyages-sncf.com/groupe/qui-sommes-nous>`_ avec l'`AFPY <https://www.afpy.org>`_ pour échanger autour du langage Python !
+Rendez-vous mardi 3 octobre à 19h (accueil à partir de 18h30) dans les locaux de `Voyages-Sncf.com <https://open.voyages-sncf.com/groupe/qui-sommes-nous>`_ avec l'`AFPY <https://www.afpy.org>`_ pour échanger autour du langage Python !
 
 Au programme :
 
