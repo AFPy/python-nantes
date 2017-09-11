@@ -25,6 +25,6 @@ Le meetup est gratuit mais il faut s'inscrire sur `<http://www.meetup.com/Nantes
 
 .. image:: https://chezsoi.org/lucas/PlanAcces_VoyagesSncfTechnologies_34rueDuPreGauchetNantes.png
   :target: https://www.openstreetmap.org/search?query=34%20rue%20du%20Pr%C3%A9%20Gauchet%2C%20nantes
-  :alt:Plan d'accès au 34 rue du Pré Gauchet, Nantes
+  :alt: Plan d'accès au 34 rue du Pré Gauchet, Nantes
        
 A bientôt !
