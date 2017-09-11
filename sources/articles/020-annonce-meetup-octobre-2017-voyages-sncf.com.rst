@@ -14,6 +14,7 @@ Au programme des talks pour le moment :
 •  Tests BDD pour workflow `luigi <https://github.com/spotify/luigi>`_ avec `behave <http://pythonhosted.org/behave/>`_
 
 .. image:: https://raw.githubusercontent.com/spotify/luigi/master/doc/luigi.png
+  :alt: luigi logo
 
 Nous souhaiterions avoir plus de sujets, donc n'hésitez pas à proposer votre talk !
 
