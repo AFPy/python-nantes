@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Python-Nantes</title><link href="http://nantes.afpy.org/" rel="alternate"></link><link href="http://nantes.afpy.org/feeds/alex.atom.xml" rel="self"></link><id>http://nantes.afpy.org/</id><updated>2014-12-20T00:00:00+01:00</updated><entry><title>Meetup Python du 23 décembre : boire un verre !</title><link href="http://nantes.afpy.org/meetup-python-du-23-decembre-boire-un-verre.html" rel="alternate"></link><published>2014-12-20T00:00:00+01:00</published><updated>2014-12-20T00:00:00+01:00</updated><author><name>Alex</name></author><id>tag:nantes.afpy.org,2014-12-20:meetup-python-du-23-decembre-boire-un-verre.html</id><summary type="html">&lt;p&gt;Ce mardi 23 décembre, nous proposons au pythonistas de Nantes
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Python-Nantes - Alex</title><link href="http://nantes.afpy.org/" rel="alternate"></link><link href="http://nantes.afpy.org/feeds/alex.atom.xml" rel="self"></link><id>http://nantes.afpy.org/</id><updated>2014-12-20T00:00:00+01:00</updated><entry><title>Meetup Python du 23 décembre : boire un verre !</title><link href="http://nantes.afpy.org/meetup-python-du-23-decembre-boire-un-verre.html" rel="alternate"></link><published>2014-12-20T00:00:00+01:00</published><updated>2014-12-20T00:00:00+01:00</updated><author><name>Alex</name></author><id>tag:nantes.afpy.org,2014-12-20:/meetup-python-du-23-decembre-boire-un-verre.html</id><summary type="html">&lt;p class="first last"&gt;Pour le meetup du 23 décembre, aux portes de Noël, nous vous proposons de boire un verre ensemble.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Ce mardi 23 décembre, nous proposons au pythonistas de Nantes
 de se retrouver pour prendre un verre.&lt;/p&gt;
 &lt;p&gt;Le rendez-vous est à 19h au
 &lt;a class="reference external" href="https://www.facebook.com/deliriumtremensbeer"&gt;Delirium Tremens&lt;/a&gt;,
@@ -8,4 +9,4 @@ de se retrouver pour prendre un verre.&lt;/p&gt;
 le système de distribution du Père Noël semble-t'il repose sur Python
 (ce qui explique peut-être qu'il dépasse celui d'Amazon écrit en Perl !).&lt;/p&gt;
 &lt;p&gt;Joyeuses fêtes !&lt;/p&gt;
-</summary><category term="python"></category><category term="bar"></category><category term="nantes"></category></entry></feed>
+</content><category term="python"></category><category term="bar"></category><category term="nantes"></category></entry></feed>

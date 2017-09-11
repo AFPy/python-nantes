@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Python-Nantes</title><link href="http://nantes.afpy.org/" rel="alternate"></link><link href="http://nantes.afpy.org/feeds/georges-gouriten.atom.xml" rel="self"></link><id>http://nantes.afpy.org/</id><updated>2014-07-31T00:00:00+02:00</updated><entry><title>Barcamp estival du 29 juillet 2014</title><link href="http://nantes.afpy.org/barcamp-estival-du-29-juillet-2014.html" rel="alternate"></link><published>2014-07-31T00:00:00+02:00</published><updated>2014-07-31T00:00:00+02:00</updated><author><name>Georges Gouriten</name></author><id>tag:nantes.afpy.org,2014-07-31:barcamp-estival-du-29-juillet-2014.html</id><summary type="html">&lt;p&gt;Notre premier barcamp, animé par &lt;a class="reference external" href="https://netiru.fr"&gt;Georges&lt;/a&gt; nous
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Python-Nantes - Georges Gouriten</title><link href="http://nantes.afpy.org/" rel="alternate"></link><link href="http://nantes.afpy.org/feeds/georges-gouriten.atom.xml" rel="self"></link><id>http://nantes.afpy.org/</id><updated>2014-07-31T00:00:00+02:00</updated><entry><title>Barcamp estival du 29 juillet 2014</title><link href="http://nantes.afpy.org/barcamp-estival-du-29-juillet-2014.html" rel="alternate"></link><published>2014-07-31T00:00:00+02:00</published><updated>2014-07-31T00:00:00+02:00</updated><author><name>Georges Gouriten</name></author><id>tag:nantes.afpy.org,2014-07-31:/barcamp-estival-du-29-juillet-2014.html</id><summary type="html">&lt;p class="first last"&gt;Un petit compte-rendu de notre premier meetup en format barcamp.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Notre premier barcamp, animé par &lt;a class="reference external" href="https://netiru.fr"&gt;Georges&lt;/a&gt; nous
 a permis d'aborder différents sujets en groupes de 3 à 5 personnes pendant 45
 minutes environ.&lt;/p&gt;
 &lt;p&gt;Les comptes-rendus sont ci-dessous, rendez-vous à la prochaine rencontre !&lt;/p&gt;
@@ -129,4 +130,4 @@ permet de réduire la taille d'un développement classique. L'ordre de grandeur
 de cette réduction peut-être de 75 % du temps.  Ceci grâce à 2 atouts
 principaux : son &amp;quot;moteur&amp;quot; performant ses nombreuses fonctionnalités.&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="django"></category><category term="fabric"></category><category term="ansible"></category><category term="salt"></category><category term="barcamp"></category></entry></feed>
+</content><category term="django"></category><category term="fabric"></category><category term="ansible"></category><category term="salt"></category><category term="barcamp"></category></entry></feed>

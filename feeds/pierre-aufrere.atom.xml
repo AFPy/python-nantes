@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Python-Nantes</title><link href="http://nantes.afpy.org/" rel="alternate"></link><link href="http://nantes.afpy.org/feeds/pierre-aufrere.atom.xml" rel="self"></link><id>http://nantes.afpy.org/</id><updated>2014-10-19T00:00:00+02:00</updated><entry><title>Barcamp &amp; micro-python</title><link href="http://nantes.afpy.org/barcamp-micro-python.html" rel="alternate"></link><published>2014-10-19T00:00:00+02:00</published><updated>2014-10-19T00:00:00+02:00</updated><author><name>Pierre Aufrere</name></author><id>tag:nantes.afpy.org,2014-10-19:barcamp-micro-python.html</id><summary type="html">&lt;p&gt;Pour le barcamp Python du 30 Septembre, nous étions 6 à s'être intéressés à cette mystérieuse carte micro-python. C'est donc convivialement installés autour d'une table qu'on a pu en savoir plus.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Python-Nantes - Pierre Aufrere</title><link href="http://nantes.afpy.org/" rel="alternate"></link><link href="http://nantes.afpy.org/feeds/pierre-aufrere.atom.xml" rel="self"></link><id>http://nantes.afpy.org/</id><updated>2014-10-19T00:00:00+02:00</updated><entry><title>Barcamp &amp; micro-python</title><link href="http://nantes.afpy.org/barcamp-micro-python.html" rel="alternate"></link><published>2014-10-19T00:00:00+02:00</published><updated>2014-10-19T00:00:00+02:00</updated><author><name>Pierre Aufrere</name></author><id>tag:nantes.afpy.org,2014-10-19:/barcamp-micro-python.html</id><summary type="html">&lt;p class="first last"&gt;Compte-rendu du groupe barcamp sur micro-python.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Pour le barcamp Python du 30 Septembre, nous étions 6 à s'être intéressés à cette mystérieuse carte micro-python. C'est donc convivialement installés autour d'une table qu'on a pu en savoir plus.&lt;/p&gt;
 &lt;p&gt;Compte rendu.&lt;/p&gt;
 &lt;div class="section" id="presentation"&gt;
 &lt;h2&gt;Présentation&lt;/h2&gt;
@@ -66,7 +67,8 @@ et aussi le projet open-source de drone &lt;a class="reference external" href="h
 &lt;/dd&gt;
 &lt;/dl&gt;
 &lt;/div&gt;
-</summary><category term="python"></category><category term="microcontrôleur"></category><category term="nantes"></category><category term="microcontroller"></category></entry><entry><title>40 pythons, 1 conférence et des trolls</title><link href="http://nantes.afpy.org/40-pythons-1-conference-et-des-trolls.html" rel="alternate"></link><published>2014-08-26T00:00:00+02:00</published><updated>2014-08-26T00:00:00+02:00</updated><author><name>Pierre Aufrere</name></author><id>tag:nantes.afpy.org,2014-08-26:40-pythons-1-conference-et-des-trolls.html</id><summary type="html">&lt;p&gt;Nous étions nombreux mardi dernier aux conférences. À la louche, une quarantaine. Un groupe assez hétérogène composé de curieux comme d'experts.&lt;/p&gt;
+</content><category term="python"></category><category term="microcontrôleur"></category><category term="nantes"></category><category term="microcontroller"></category></entry><entry><title>40 pythons, 1 conférence et des trolls</title><link href="http://nantes.afpy.org/40-pythons-1-conference-et-des-trolls.html" rel="alternate"></link><published>2014-08-26T00:00:00+02:00</published><updated>2014-08-26T00:00:00+02:00</updated><author><name>Pierre Aufrere</name></author><id>tag:nantes.afpy.org,2014-08-26:/40-pythons-1-conference-et-des-trolls.html</id><summary type="html">&lt;p class="first last"&gt;Compte-rendu des conférences du 30 août 2014.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Nous étions nombreux mardi dernier aux conférences. À la louche, une quarantaine. Un groupe assez hétérogène composé de curieux comme d'experts.&lt;/p&gt;
 &lt;p&gt;Deux sujets ont donc été abordés, merci à Florent et Alex pour leur préparation :).&lt;/p&gt;
 &lt;p&gt;Ci-dessous, le compte-rendu de près de 2h de conférence :).&lt;/p&gt;
 &lt;div class="section" id="django-framework-web"&gt;
@@ -168,4 +170,4 @@ Django&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;On a vu et appris plein de choses, c'était super ! A la prochaine fois, et d'ici là, codez bien !&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="python"></category><category term="django"></category><category term="nantes"></category><category term="PEP"></category><category term="PEP8"></category></entry></feed>
+</content><category term="python"></category><category term="django"></category><category term="nantes"></category><category term="PEP"></category><category term="PEP8"></category></entry></feed>

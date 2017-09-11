@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Python-Nantes - Lucas Cimon</title><link href="http://nantes.afpy.org/" rel="alternate"></link><link href="http://nantes.afpy.org/feeds/lucas-cimon.atom.xml" rel="self"></link><id>http://nantes.afpy.org/</id><updated>2017-09-11T00:00:00+02:00</updated><entry><title>Meetup du mois d'octobre 2017 à Voyages-Sncf.com Technologies Nantes</title><link href="http://nantes.afpy.org/meetup-du-mois-doctobre-2017-a-voyages-sncfcom-technologies-nantes.html" rel="alternate"></link><published>2017-09-11T00:00:00+02:00</published><updated>2017-09-11T00:00:00+02:00</updated><author><name>Lucas Cimon</name></author><id>tag:nantes.afpy.org,2017-09-11:/meetup-du-mois-doctobre-2017-a-voyages-sncfcom-technologies-nantes.html</id><summary type="html">&lt;p&gt;Rendez-vous mardi 3 octobre à 19h (acceuil  partir de 18h30 dans les locaux de &lt;a class="reference external" href="https://open.voyages-sncf.com/groupe/qui-sommes-nous"&gt;Voyages-Sncf.com&lt;/a&gt; avec l'&lt;a class="reference external" href="https://www.afpy.org"&gt;AFPY&lt;/a&gt; pour échanger autour du langage Python !&lt;/p&gt;
+&lt;p&gt;Au programme des talks pour le moment :&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Tests BDD pour workflow &lt;a class="reference external" href="https://github.com/spotify/luigi"&gt;luigi&lt;/a&gt; avec &lt;a class="reference external" href="http://pythonhosted.org/behave/"&gt;behave&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img alt="luigi logo" src="https://raw.githubusercontent.com/spotify/luigi/master/doc/luigi.png" /&gt;
+&lt;p&gt;Nous souhaiterions avoir plus de sujets, donc n'hésitez pas à proposer …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Rendez-vous mardi 3 octobre à 19h (acceuil  partir de 18h30 dans les locaux de &lt;a class="reference external" href="https://open.voyages-sncf.com/groupe/qui-sommes-nous"&gt;Voyages-Sncf.com&lt;/a&gt; avec l'&lt;a class="reference external" href="https://www.afpy.org"&gt;AFPY&lt;/a&gt; pour échanger autour du langage Python !&lt;/p&gt;
+&lt;p&gt;Au programme des talks pour le moment :&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Tests BDD pour workflow &lt;a class="reference external" href="https://github.com/spotify/luigi"&gt;luigi&lt;/a&gt; avec &lt;a class="reference external" href="http://pythonhosted.org/behave/"&gt;behave&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img alt="luigi logo" src="https://raw.githubusercontent.com/spotify/luigi/master/doc/luigi.png" /&gt;
+&lt;p&gt;Nous souhaiterions avoir plus de sujets, donc n'hésitez pas à proposer votre talk !&lt;/p&gt;
+&lt;p&gt;Un buffet dinatoire sera servi pour l'occasion.&lt;/p&gt;
+&lt;p&gt;Si vous avez des questions ou des remarques concernant le meetup, contactez-nous sur la liste de diffusion : &lt;a class="reference external" href="http://lists.afpy.org/nantes/"&gt;http://lists.afpy.org/nantes/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Le meetup est gratuit mais il faut s'inscrire sur &lt;a class="reference external" href="http://www.meetup.com/Nantes-Python-Meetup"&gt;http://www.meetup.com/Nantes-Python-Meetup&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Accès:&lt;/strong&gt; Voyages-Sncf.com est situé au sud de la gare SNCF, au 5e étage du bâtiment Jalais dont l'entrée principale se trouve au 34 rue du Pré Gauchet :&lt;/p&gt;
+&lt;a class="reference external image-reference" href="https://www.openstreetmap.org/search?query=34%20rue%20du%20Pr%C3%A9%20Gauchet%2C%20nantes"&gt;&lt;img alt="Plan d'accès au 34 rue du Pré Gauchet, Nantes" src="https://chezsoi.org/lucas/PlanAcces_VoyagesSncfTechnologies_34rueDuPreGauchetNantes.png" /&gt;&lt;/a&gt;
+&lt;p&gt;A bientôt !&lt;/p&gt;
+</content><category term="python"></category><category term="nantes"></category><category term="présentations"></category><category term="voyages-sncf.com"></category></entry></feed>

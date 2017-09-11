@@ -1,17 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Python-Nantes</title><link>http://nantes.afpy.org/</link><description></description><lastBuildDate>Mon, 15 Sep 2014 00:00:00 +0200</lastBuildDate><item><title>Un barcamp pour bien terminer l'été indien</title><link>http://nantes.afpy.org/un-barcamp-pour-bien-terminer-lete-indien.html</link><description>&lt;p&gt;Suite au succès du &lt;a class="reference external" href="http://nantes.afpy.org/40-pythons-1-conference-et-des-trolls.html"&gt;dernier meetup&lt;/a&gt;, et pour bien finir ce mois de septembre
-ensoleillé, nous sommes heureux de vous proposer un nouveau
-&lt;a class="reference external" href="http://fr.wikipedia.org/wiki/BarCamp"&gt;BarCamp&lt;/a&gt;, le mardi 30 septembre, 19 heure, à la Cantine numérique Nantaise.&lt;/p&gt;
-&lt;p&gt;Le concept sera de se retrouver autour de plusieurs ateliers, et de
-participer collectivement, chacun étant invité à présenter ses trouvailles,
-à poser ses questions, etc.&lt;/p&gt;
-&lt;p&gt;Que vous soyez pythoniste confirmé, ou simple curieux, le format du
-barcamp devrait donc répondre à vos attentes : la découverte, l'échange, le
-collaboratif.&lt;/p&gt;
-&lt;p&gt;Comme d'habitude, ceux qui le souhaitent pourront prolonger l'évènement
-autour d'un verre.&lt;/p&gt;
-&lt;p&gt;Pour vous inscrire à l'évènement, &lt;a class="reference external" href="http://www.meetup.com/Nantes-Python-Meetup/events/207797652/"&gt;cliquez ici&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Pour vous tenir informé du contenu exact de l'évènement, ou pour faire part de
-vos suggestions, n'hésitez pas à vous inscrire à la &lt;a class="reference external" href="http://lists.afpy.org/listinfo/nantes"&gt;liste de diffusion&lt;/a&gt; des pythonistes nantais.&lt;/p&gt;
-&lt;p&gt;Vous pouvez aussi nous rejoindre sur le &lt;a class="reference external" href="http://webchat.freenode.net/?channels=afpy-nantes"&gt;chan IRC de l'AFPy Nantes&lt;/a&gt;. :)&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Thomas Durey</dc:creator><pubDate>Mon, 15 Sep 2014 00:00:00 +0200</pubDate><guid isPermaLink="false">tag:nantes.afpy.org,2014-09-15:un-barcamp-pour-bien-terminer-lete-indien.html</guid><category>python</category><category>django</category><category>nantes</category></item></channel></rss>
+<rss version="2.0"><channel><title>Python-Nantes - Thomas Durey</title><link>http://nantes.afpy.org/</link><description></description><lastBuildDate>Mon, 15 Sep 2014 00:00:00 +0200</lastBuildDate><item><title>Un barcamp pour bien terminer l'été indien</title><link>http://nantes.afpy.org/un-barcamp-pour-bien-terminer-lete-indien.html</link><description>&lt;p class="first last"&gt;Notre prochain évènement est un barcamp prévu le 30 septembre à la Cantine.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Thomas Durey</dc:creator><pubDate>Mon, 15 Sep 2014 00:00:00 +0200</pubDate><guid isPermaLink="false">tag:nantes.afpy.org,2014-09-15:/un-barcamp-pour-bien-terminer-lete-indien.html</guid><category>python</category><category>django</category><category>nantes</category></item></channel></rss>
