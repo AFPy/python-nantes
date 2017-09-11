@@ -7,11 +7,13 @@ Meetup du mois d'octobre 2017 à Voyages-Sncf.com Technologies Nantes
 :author: Lucas Cimon
 :email: lucas.cimon AT gmail
 
-Rendez-vous mardi 3 octobre à 19 (acceuil  partir de 18h30 dans les locaux de `Voyages-Sncf.com <https://open.voyages-sncf.com/groupe/qui-sommes-nous>`_ avec l'`AFPY <https://www.afpy.org>`_ pour échanger autour du langage Python !
+Rendez-vous mardi 3 octobre à 19h (acceuil  partir de 18h30 dans les locaux de `Voyages-Sncf.com <https://open.voyages-sncf.com/groupe/qui-sommes-nous>`_ avec l'`AFPY <https://www.afpy.org>`_ pour échanger autour du langage Python !
 
 Au programme des talks pour le moment :
 
 •  Tests BDD pour workflow `luigi <https://github.com/spotify/luigi>`_ avec `behave <http://pythonhosted.org/behave/>`_
+
+.. image:: https://raw.githubusercontent.com/spotify/luigi/master/doc/luigi.png
 
 Nous souhaiterions avoir plus de sujets, donc n'hésitez pas à proposer votre talk !
 
