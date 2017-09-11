@@ -21,12 +21,10 @@ Si vous avez des questions ou des remarques concernant le meetup, contactez-nous
 
 Le meetup est gratuit mais il faut s'inscrire sur `<http://www.meetup.com/Nantes-Python-Meetup>`_
 
-<u>Accès:</u> Voyages-Sncf.com est situé au 5e étage du bâtiment Jalais dont l'entrée principale se trouve au 34 rue du Pré Gauchet :
+**Accès:** Voyages-Sncf.com est situé au 5e étage du bâtiment Jalais dont l'entrée principale se trouve au 34 rue du Pré Gauchet :
 
-<a href="https://www.openstreetmap.org/search?query=34%20rue%20du%20Pr%C3%A9%20Gauchet%2C%20nantes">
-  <img alt="Plan d'accès au 34 rue du Pré Gauchet, Nantes"
-       src="https://chezsoi.org/lucas/PlanAcces_VoyagesSncfTechnologies_34rueDuPreGauchetNantes.png"
-       style="max-width: 100%">
-</a>
-
+.. image:: https://chezsoi.org/lucas/PlanAcces_VoyagesSncfTechnologies_34rueDuPreGauchetNantes.png
+  :target: https://www.openstreetmap.org/search?query=34%20rue%20du%20Pr%C3%A9%20Gauchet%2C%20nantes
+  :alt:Plan d'accès au 34 rue du Pré Gauchet, Nantes
+       
 A bientôt !
