@@ -1,24 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Python-Nantes - évènements</title><link href="http://nantes.afpy.org/" rel="alternate"></link><link href="http://nantes.afpy.org/feeds/evenements.atom.xml" rel="self"></link><id>http://nantes.afpy.org/</id><updated>2017-09-11T00:00:00+02:00</updated><entry><title>Meetup du mois d'octobre 2017 à Voyages-Sncf.com Technologies Nantes</title><link href="http://nantes.afpy.org/meetup-du-mois-doctobre-2017-a-voyages-sncfcom-technologies-nantes.html" rel="alternate"></link><published>2017-09-11T00:00:00+02:00</published><updated>2017-09-11T00:00:00+02:00</updated><author><name>Lucas Cimon</name></author><id>tag:nantes.afpy.org,2017-09-11:/meetup-du-mois-doctobre-2017-a-voyages-sncfcom-technologies-nantes.html</id><summary type="html">&lt;p&gt;Rendez-vous mardi 3 octobre à 19h (acceuil  partir de 18h30 dans les locaux de &lt;a class="reference external" href="https://open.voyages-sncf.com/groupe/qui-sommes-nous"&gt;Voyages-Sncf.com&lt;/a&gt; avec l'&lt;a class="reference external" href="https://www.afpy.org"&gt;AFPY&lt;/a&gt; pour échanger autour du langage Python !&lt;/p&gt;
-&lt;p&gt;Au programme des talks pour le moment :&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Python-Nantes - évènements</title><link href="http://nantes.afpy.org/" rel="alternate"></link><link href="http://nantes.afpy.org/feeds/evenements.atom.xml" rel="self"></link><id>http://nantes.afpy.org/</id><updated>2017-10-05T00:00:00+02:00</updated><entry><title>Compte-rendu du meetup du mois d'octobre 2017</title><link href="http://nantes.afpy.org/compte-rendu-du-meetup-du-mois-doctobre-2017.html" rel="alternate"></link><published>2017-10-05T00:00:00+02:00</published><updated>2017-10-05T00:00:00+02:00</updated><author><name>Lucas Cimon</name></author><id>tag:nantes.afpy.org,2017-10-05:/compte-rendu-du-meetup-du-mois-doctobre-2017.html</id><summary type="html">&lt;p&gt;Le meetup a rassemblé une trentaine de personnes.
+Arthur a commencé par rappeler le fonctionnement des ces réunions, et notamment :&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;Tests BDD pour workflow &lt;a class="reference external" href="https://github.com/spotify/luigi"&gt;luigi&lt;/a&gt; avec &lt;a class="reference external" href="http://pythonhosted.org/behave/"&gt;behave&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;l'existence d'un Framapad pour proposer de nouveaux talks: &lt;a class="reference external" href="https://annuel.framapad.org/p/organisation_meetup_python_nantes"&gt;https://annuel.framapad.org/p/organisation_meetup_python_nantes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;que nous cherchons de nouveaux lieux où organiser les prochains meetups&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img alt="Introduction par Arthur" src="/images/021-1.JPG" /&gt;
+&lt;p&gt;Le meetup a ensuite continué …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Le meetup a rassemblé une trentaine de personnes.
+Arthur a commencé par rappeler le fonctionnement des ces réunions, et notamment :&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;l'existence d'un Framapad pour proposer de nouveaux talks: &lt;a class="reference external" href="https://annuel.framapad.org/p/organisation_meetup_python_nantes"&gt;https://annuel.framapad.org/p/organisation_meetup_python_nantes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;que nous cherchons de nouveaux lieux où organiser les prochains meetups&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img alt="Introduction par Arthur" src="/images/021-1.JPG" /&gt;
+&lt;p&gt;Le meetup a ensuite continué avec une présentation des &lt;em&gt;packages&lt;/em&gt; &lt;cite&gt;luigi&lt;/cite&gt; et &lt;cite&gt;behave&lt;/cite&gt;.
+Le support de présentation est disponible en ligne: &lt;a class="reference external" href="https://chezsoi.org/lucas/slides/meetup-afpy-nantes-luigi/"&gt;https://chezsoi.org/lucas/slides/meetup-afpy-nantes-luigi/&lt;/a&gt;&lt;/p&gt;
+&lt;img alt="Lucas expliquant les défis rencontrés avec luigi" src="/images/021-2.JPG" /&gt;
+&lt;img alt="Des concombres" src="/images/021-3.JPG" /&gt;
+&lt;p&gt;Pour le &lt;em&gt;barcamp&lt;/em&gt;, deux groupes se sont ensuite formés pour discuter de :&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;cite&gt;pdb&lt;/cite&gt;, où Julien a improvisé un &lt;em&gt;micro-talk&lt;/em&gt; en se basant sur la présentation &lt;a class="reference external" href="https://speakerdeck.com/matrixise/va-debugger-ton-python"&gt;Va debugger ton Python!&lt;/a&gt; de Stéphane Wirtel.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://click.pocoo.org"&gt;click&lt;/a&gt;, un &lt;em&gt;package&lt;/em&gt; pour créer une interface en ligne de commande à partir d'annotations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img alt="Organisation du barcamp par Thomas" src="/images/021-4.JPG" /&gt;
+&lt;p&gt;Enfin, pour ceux qui souhaiteraient revoir les présentations, les vidéos de la PyConFr sont en ligne:
+&lt;a class="reference external" href="https://www.youtube.com/playlist?list=PLetYPqNT2qjAinIBr976XSjJObaa-zUy5"&gt;https://www.youtube.com/playlist?list=PLetYPqNT2qjAinIBr976XSjJObaa-zUy5&lt;/a&gt;&lt;/p&gt;
+</content><category term="python"></category><category term="nantes"></category><category term="présentations"></category><category term="voyages-sncf.com"></category><category term="luigi"></category><category term="behave"></category><category term="framapad"></category><category term="pdb"></category><category term="click"></category><category term="pyconfr"></category></entry><entry><title>Meetup du mois d'octobre 2017 à Voyages-Sncf.com Technologies Nantes</title><link href="http://nantes.afpy.org/meetup-du-mois-doctobre-2017-a-voyages-sncfcom-technologies-nantes.html" rel="alternate"></link><published>2017-09-11T00:00:00+02:00</published><updated>2017-09-11T00:00:00+02:00</updated><author><name>Lucas Cimon</name></author><id>tag:nantes.afpy.org,2017-09-11:/meetup-du-mois-doctobre-2017-a-voyages-sncfcom-technologies-nantes.html</id><summary type="html">&lt;p&gt;Rendez-vous mardi 3 octobre à 19h (accueil à partir de 18h30) dans les locaux de &lt;a class="reference external" href="https://open.voyages-sncf.com/groupe/qui-sommes-nous"&gt;Voyages-Sncf.com&lt;/a&gt; avec l'&lt;a class="reference external" href="https://www.afpy.org"&gt;AFPY&lt;/a&gt; pour échanger autour du langage Python !&lt;/p&gt;
+&lt;p&gt;Au programme :&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Talk sur les Tests BDD pour workflow &lt;a class="reference external" href="https://github.com/spotify/luigi"&gt;luigi&lt;/a&gt; avec &lt;a class="reference external" href="http://pythonhosted.org/behave/"&gt;behave&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;img alt="luigi logo" src="https://raw.githubusercontent.com/spotify/luigi/master/doc/luigi.png" /&gt;
-&lt;p&gt;Nous souhaiterions avoir plus de sujets, donc n'hésitez pas à proposer …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Rendez-vous mardi 3 octobre à 19h (acceuil  partir de 18h30 dans les locaux de &lt;a class="reference external" href="https://open.voyages-sncf.com/groupe/qui-sommes-nous"&gt;Voyages-Sncf.com&lt;/a&gt; avec l'&lt;a class="reference external" href="https://www.afpy.org"&gt;AFPY&lt;/a&gt; pour échanger autour du langage Python !&lt;/p&gt;
-&lt;p&gt;Au programme des talks pour le moment :&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;Tests BDD pour workflow &lt;a class="reference external" href="https://github.com/spotify/luigi"&gt;luigi&lt;/a&gt; avec &lt;a class="reference external" href="http://pythonhosted.org/behave/"&gt;behave&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Nous vous proposerons ensuite de participer à un barcamp autours de python …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Rendez-vous mardi 3 octobre à 19h (accueil à partir de 18h30) dans les locaux de &lt;a class="reference external" href="https://open.voyages-sncf.com/groupe/qui-sommes-nous"&gt;Voyages-Sncf.com&lt;/a&gt; avec l'&lt;a class="reference external" href="https://www.afpy.org"&gt;AFPY&lt;/a&gt; pour échanger autour du langage Python !&lt;/p&gt;
+&lt;p&gt;Au programme :&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Talk sur les Tests BDD pour workflow &lt;a class="reference external" href="https://github.com/spotify/luigi"&gt;luigi&lt;/a&gt; avec &lt;a class="reference external" href="http://pythonhosted.org/behave/"&gt;behave&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;img alt="luigi logo" src="https://raw.githubusercontent.com/spotify/luigi/master/doc/luigi.png" /&gt;
-&lt;p&gt;Nous souhaiterions avoir plus de sujets, donc n'hésitez pas à proposer votre talk !&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Nous vous proposerons ensuite de participer à un barcamp autours de python, dont vous proposerez les sujets. L'idée est simplement de se retrouver et de décider sur place des sujets de discussions qui vous intéressent, de les aborder ensemble en différents groupes, puis de mettre en commun ce qui s'est dit pendant les ateliers.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Un buffet dinatoire sera servi pour l'occasion.&lt;/p&gt;
 &lt;p&gt;Si vous avez des questions ou des remarques concernant le meetup, contactez-nous sur la liste de diffusion : &lt;a class="reference external" href="http://lists.afpy.org/nantes/"&gt;http://lists.afpy.org/nantes/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Le meetup est gratuit mais il faut s'inscrire sur &lt;a class="reference external" href="http://www.meetup.com/Nantes-Python-Meetup"&gt;http://www.meetup.com/Nantes-Python-Meetup&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Accès:&lt;/strong&gt; Voyages-Sncf.com est situé au sud de la gare SNCF, au 5e étage du bâtiment Jalais dont l'entrée principale se trouve au 34 rue du Pré Gauchet :&lt;/p&gt;
 &lt;a class="reference external image-reference" href="https://www.openstreetmap.org/search?query=34%20rue%20du%20Pr%C3%A9%20Gauchet%2C%20nantes"&gt;&lt;img alt="Plan d'accès au 34 rue du Pré Gauchet, Nantes" src="https://chezsoi.org/lucas/PlanAcces_VoyagesSncfTechnologies_34rueDuPreGauchetNantes.png" /&gt;&lt;/a&gt;
 &lt;p&gt;A bientôt !&lt;/p&gt;
-</content><category term="python"></category><category term="nantes"></category><category term="présentations"></category><category term="voyages-sncf.com"></category></entry><entry><title>Annonce meetup du mois de octobre 2016 : les tests en python</title><link href="http://nantes.afpy.org/annonce-meetup-du-mois-de-octobre-2016-les-tests-en-python.html" rel="alternate"></link><published>2016-10-05T00:00:00+02:00</published><updated>2016-10-05T00:00:00+02:00</updated><author><name>Arthur Lutz</name></author><id>tag:nantes.afpy.org,2016-10-05:/annonce-meetup-du-mois-de-octobre-2016-les-tests-en-python.html</id><summary type="html">&lt;p&gt;La prochaine rencontre Python Nantes sera au format Présentations et
+</content><category term="python"></category><category term="nantes"></category><category term="présentations"></category><category term="voyages-sncf.com"></category><category term="luigi"></category><category term="behave"></category></entry><entry><title>Annonce meetup du mois de octobre 2016 : les tests en python</title><link href="http://nantes.afpy.org/annonce-meetup-du-mois-de-octobre-2016-les-tests-en-python.html" rel="alternate"></link><published>2016-10-05T00:00:00+02:00</published><updated>2016-10-05T00:00:00+02:00</updated><author><name>Arthur Lutz</name></author><id>tag:nantes.afpy.org,2016-10-05:/annonce-meetup-du-mois-de-octobre-2016-les-tests-en-python.html</id><summary type="html">&lt;p&gt;La prochaine rencontre Python Nantes sera au format Présentations et
 se déroulera le mercredi 5 ocotbre de 19h à 21h, à la Cantine de
 Nantes.&lt;/p&gt;
 &lt;p&gt;Au programme :&lt;/p&gt;
