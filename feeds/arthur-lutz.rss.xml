@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0"><channel><title>Python-Nantes - Arthur Lutz</title><link>http://nantes.afpy.org/</link><description></description><lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0200</lastBuildDate><item><title>Compte-rendu du meetup du mois de juin 2017</title><link>http://nantes.afpy.org/compte-rendu-du-meetup-du-mois-de-juin-2017.html</link><description>&lt;p&gt;Le &lt;a class="reference external" href="https://www.meetup.com/Nantes-Python-Meetup/events/lqmbspyxjbhb/"&gt;meetup Python Nantes de juin&lt;/a&gt; a été acceuilli par &lt;a class="reference external" href="https://www.sogeti.com/"&gt;Sogeti&lt;/a&gt;. Et un pot à la fin du meetup a été sponsorisé par &lt;a class="reference external" href="http://www.quanticsoft.com/fr/"&gt;Quanticsoft&lt;/a&gt;&lt;/p&gt;
+&lt;!-- image: /images/meetup_juin_2018.jpg
+:alt: Meetup Python Nantes juin 2018 --&gt;
 &lt;div class="section" id="python-bottle-sqlalchemy"&gt;
 &lt;h2&gt;Python / Bottle / sqlalchemy&lt;/h2&gt;
 &lt;p&gt;Laurent Guérin &lt;a class="reference external" href="https://twitter.com/ltguerin"&gt;ltguerin&lt;/a&gt; a présenté
