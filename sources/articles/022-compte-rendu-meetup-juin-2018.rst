@@ -9,8 +9,8 @@ Compte-rendu du meetup du mois de juin 2017
 
 Le `meetup Python Nantes de juin <https://www.meetup.com/Nantes-Python-Meetup/events/lqmbspyxjbhb/>`_ a été acceuilli par `Sogeti <https://www.sogeti.com/>`_. Et un pot à la fin du meetup a été sponsorisé par `Quanticsoft <http://www.quanticsoft.com/fr/>`_
 
-.. image: /images/meetup_juin_2018.jpg
-  :alt: Meetup Python Nantes juin 2018
+.. image:: /images/meetup_juin_2018.jpg
+   :alt: Meetup Python Nantes juin 2018
 
 Python / Bottle / sqlalchemy
 ----------------------------

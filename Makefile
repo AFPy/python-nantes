@@ -106,6 +106,6 @@ github: publish
 ifeq ($(TRAVIS_PULL_REQUEST), false)
 	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
 else
-        git push origin gh-pages
+	git push origin gh-pages
 endif
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
