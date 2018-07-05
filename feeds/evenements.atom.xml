@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Python-Nantes - évènements</title><link href="http://nantes.afpy.org/" rel="alternate"></link><link href="http://nantes.afpy.org/feeds/evenements.atom.xml" rel="self"></link><id>http://nantes.afpy.org/</id><updated>2018-07-05T00:00:00+02:00</updated><entry><title>Compte-rendu du meetup du mois de juin 2017</title><link href="http://nantes.afpy.org/compte-rendu-du-meetup-du-mois-de-juin-2017.html" rel="alternate"></link><published>2018-07-05T00:00:00+02:00</published><updated>2018-07-05T00:00:00+02:00</updated><author><name>Arthur Lutz</name></author><id>tag:nantes.afpy.org,2018-07-05:/compte-rendu-du-meetup-du-mois-de-juin-2017.html</id><summary type="html">&lt;p&gt;Le &lt;a class="reference external" href="https://www.meetup.com/Nantes-Python-Meetup/events/lqmbspyxjbhb/"&gt;meetup Python Nantes de juin&lt;/a&gt; a été acceuilli par &lt;a class="reference external" href="https://www.sogeti.com/"&gt;Sogeti&lt;/a&gt;. Et un pot à la fin du meetup a été sponsorisé par &lt;a class="reference external" href="http://www.quanticsoft.com/fr/"&gt;Quanticsoft&lt;/a&gt;&lt;/p&gt;
-&lt;!-- image: /images/meetup_juin_2018.jpg
-:alt: Meetup Python Nantes juin 2018 --&gt;
+&lt;img alt="Meetup Python Nantes juin 2018" src="/images/meetup_juin_2018.jpg" /&gt;
 &lt;div class="section" id="python-bottle-sqlalchemy"&gt;
 &lt;h2&gt;Python / Bottle / sqlalchemy&lt;/h2&gt;
 &lt;p&gt;Laurent Guérin &lt;a class="reference external" href="https://twitter.com/ltguerin"&gt;ltguerin&lt;/a&gt; a présenté
 &amp;quot;Bootstraping d'une application web Python / Bottle / SQL&amp;quot; Ou comment générer  la base d’une application web en quelques …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Le &lt;a class="reference external" href="https://www.meetup.com/Nantes-Python-Meetup/events/lqmbspyxjbhb/"&gt;meetup Python Nantes de juin&lt;/a&gt; a été acceuilli par &lt;a class="reference external" href="https://www.sogeti.com/"&gt;Sogeti&lt;/a&gt;. Et un pot à la fin du meetup a été sponsorisé par &lt;a class="reference external" href="http://www.quanticsoft.com/fr/"&gt;Quanticsoft&lt;/a&gt;&lt;/p&gt;
-&lt;!-- image: /images/meetup_juin_2018.jpg
-:alt: Meetup Python Nantes juin 2018 --&gt;
+&lt;img alt="Meetup Python Nantes juin 2018" src="/images/meetup_juin_2018.jpg" /&gt;
 &lt;div class="section" id="python-bottle-sqlalchemy"&gt;
 &lt;h2&gt;Python / Bottle / sqlalchemy&lt;/h2&gt;
 &lt;p&gt;Laurent Guérin &lt;a class="reference external" href="https://twitter.com/ltguerin"&gt;ltguerin&lt;/a&gt; a présenté
