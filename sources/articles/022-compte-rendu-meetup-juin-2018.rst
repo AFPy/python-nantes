@@ -1,4 +1,4 @@
-Compte-rendu du meetup du mois de juin 2017
+Compte-rendu du meetup du mois de juin 2018
 #############################################
 
 :date: 2018-07-05
