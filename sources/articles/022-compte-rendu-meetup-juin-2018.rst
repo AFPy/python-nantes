@@ -15,7 +15,7 @@ Le `meetup Python Nantes de juin <https://www.meetup.com/Nantes-Python-Meetup/ev
 Python / Bottle / sqlalchemy
 ----------------------------
 
-Laurent Guérin `ltguerin <https://twitter.com/ltguerin>`_ a présenté 
+Laurent Guérin `ltguerin <https://twitter.com/ltguerin>`_ a présenté
 "Bootstraping d'une application web Python / Bottle / SQL" Ou comment générer  la base d’une application web en quelques minutes
 
 .. raw:: html
@@ -25,7 +25,7 @@ Laurent Guérin `ltguerin <https://twitter.com/ltguerin>`_ a présenté
 * http://www.telosys.org/
 * `python-persistence-sqlalchemy <https://github.com/telosys-templates-v3/python-persistence-sqlalchemy>`_
 * `python-web-rest-bottle <https://github.com/telosys-templates-v3/python-web-rest-bottle>`_
-* `python-web-mvc-bottle <https://github.com/telosys-templates-v3/python-web-mvc-bottle>`_ 
+* `python-web-mvc-bottle <https://github.com/telosys-templates-v3/python-web-mvc-bottle>`_
 
 
 Lien vers le PDF http://nantes.afpy.org/presentations/python_bottle_sqlalchemy/meetup-python-bottle-telosys-2018-lgu-v1-180607205843.pdf
@@ -33,19 +33,19 @@ Lien vers le PDF http://nantes.afpy.org/presentations/python_bottle_sqlalchemy/m
 PyGame
 ------
 
-Céline Libéral et Zoé Belleton ont "PyGame avec Python 3". Comment en arriver progressivement à un petit jeu de plateforme à l'aide de Python et de PyGame. Le but est de montrer que l'on arrive à faire très vite de petits jeux à l'aide de PyGame qui est une surcouche à la SDL.
+Céline Libéral et Zoé Belleton ont présenté "PyGame avec Python 3". Comment en arriver progressivement à un petit jeu de plateforme à l'aide de Python et de PyGame. Le but est de montrer que l'on arrive à faire très vite de petits jeux à l'aide de PyGame qui est une surcouche à la SDL.
 
-La présentation (en PDF) : 
+La présentation (en PDF) :
 
-.. image:: /images/pygame.png 
-  :target:  http://nantes.afpy.org/presentations/pygame/2018-PyGame-MeetupNantes.pdf 
+.. image:: /images/pygame.png
+  :target:  http://nantes.afpy.org/presentations/pygame/2018-PyGame-MeetupNantes.pdf
   :alt: slides pygame python nantes
 
-Lien vers le PDF http://nantes.afpy.org/presentations/pygame/2018-PyGame-MeetupNantes.pdf 
+Lien vers le PDF http://nantes.afpy.org/presentations/pygame/2018-PyGame-MeetupNantes.pdf
 
 PyConFR
 -------
 
-N'oubliez pas en octobre la PyConFR a lieu en octobre à Lille https://www.pycon.fr/2018/ Organisée par L'AFPy, cette conférence est gratuite, entièrement organisée par des bénévoles et regroupe les personnes intéressées par le langage de programmation Python.
+N'oubliez pas que la PyConFR a lieu en octobre à Lille https://www.pycon.fr/2018/ Organisée par L'AFPy, cette conférence est gratuite, entièrement organisée par des bénévoles et regroupe les personnes intéressées par le langage de programmation Python.
 
 .. image:: https://www.pycon.fr/2018/fr/theme/images/logo.svg
