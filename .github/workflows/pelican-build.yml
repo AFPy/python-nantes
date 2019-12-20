@@ -22,5 +22,5 @@ jobs:
         eval $(ssh-agent)
         ssh-add
         python3 -m pip install --user -U pip wheel setuptools
-        python3 -m pip install --user -U pelican ghp-import
+        python3 -m pip install --user -U pelican ghp-import pelican_youtube
         PATH="$HOME/.local/bin/:$PATH" make rsync_upload
