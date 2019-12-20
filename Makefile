@@ -12,10 +12,10 @@ FTP_HOST=localhost
 FTP_USER=anonymous
 FTP_TARGET_DIR=/
 
-SSH_HOST=localhost
+SSH_HOST=nantes.afpy.org
 SSH_PORT=22
-SSH_USER=root
-SSH_TARGET_DIR=/var/www
+SSH_USER=nantes-afpy-org
+SSH_TARGET_DIR=/var/www/nantes.afpy.org/
 
 S3_BUCKET=my_s3_bucket
 

@@ -1,0 +1,26 @@
+name: Publish
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+    - name: make rsync_upload
+      env:
+        deploy_key: ${{secrets.deploy_key}}
+        known_hosts: ${{secrets.known_hosts}}
+      run: |
+        sudo apt install libjpeg-progs optipng
+        mkdir -p ${HOME}/.ssh
+        printf "%s\n" "$known_hosts" > ${HOME}/.ssh/known_hosts
+        printf "%s\n" "$deploy_key" > ${HOME}/.ssh/id_ed25519
+        chmod 600 ${HOME}/.ssh/id_ed25519
+        eval $(ssh-agent)
+        ssh-add
+        python3 -m pip install --user -U pip wheel setuptools
+        python3 -m pip install --user -U pelican ghp-import
+        PATH="$HOME/.local/bin/:$PATH" make rsync_upload
