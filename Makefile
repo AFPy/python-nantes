@@ -12,7 +12,7 @@ FTP_HOST=localhost
 FTP_USER=anonymous
 FTP_TARGET_DIR=/
 
-SSH_HOST=nantes.afpy.org
+SSH_HOST=deb2.afpy.org
 SSH_PORT=22
 SSH_USER=nantes-afpy-org
 SSH_TARGET_DIR=/var/www/nantes.afpy.org/
