@@ -1,7 +1,9 @@
 Le blog de la communauté Python-Nantes, propulsé par `Pelican <http://docs.getpelican.com/>`_.
 
 * `Blog <http://nantes.afpy.org>`_
-* `Repos Github <https://github.com/AFPy/python-nantes>`_
+* `Repo Github <https://github.com/AFPy/python-nantes>`_
+* `Meetup <https://www.meetup.com/nantes-python-meetup>`_
+* `Discuss <https://discuss.afpy.org/t/sur-nantes-meetups-2024/1861>`_
 
 
 Écrire un article
@@ -20,9 +22,8 @@ Générer le blog en local
 * Lancer la génération du blog en local : ``pelican -s localsettings.py``
 
 
-Framapad
+Discuss
 #########
 
-Le framapad suivant est diponible pour toute remarque ou idée
-concernant les futurs meetups, le blog, ou autre: `le pad
-<https://annuel.framapad.org/p/organisation_meetup_python_nantes>`_
+Pour toute question, idée ou proposition concernant le 
+Nantes Python Meetup https://discuss.afpy.org/t/sur-nantes-meetups-2024/1861
